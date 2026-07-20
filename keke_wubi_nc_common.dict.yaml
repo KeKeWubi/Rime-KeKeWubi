@@ -1,0 +1,3851 @@
+---
+name: keke_wubi_nc_common
+version: "0.1"
+sort: by_weight
+import_tables:
+  - keke_wubi_nc_system
+  - keke_wubi_nc_rare
+  - keke_wubi_global_symbols
+use_preset_vocabulary: false
+columns:    # 码表格式
+  - text    # 文字
+  - code    # 输入码
+  - weight  # 权重
+  - stem
+encoder:
+  exclude_patterns:
+    - '^z.*$'
+  rules:                        # 大写字母表示字序，小写字母表示其所跟随的大写字母所以表的字中的编码序
+    - length_equal: 2           # 对于二字词
+      formula: "AaAbBaBb"       # 取第一字首二码、第二字首二码
+    - length_equal: 3           # 对于三字词
+      formula: "AaBaCaCb"       # 取第一字首码、第二字首码、第三字首码、第三字二笔码
+    - length_in_range: [4, 10]  # 对于四至十字词
+      formula: "AaBaCaZa"       # 取第一字首码，第二字尾码、第三字首码、最后一字尾码
+...
+基	ad
+若	ad
+藏	ad
+莱	ago
+落	ait
+获	aqt
+鞋	akf
+艾	ar
+薄	aig
+苏	ae
+草	aj
+茶	aw
+臣	ah
+蒂	ay
+董	at
+菲	ah
+芬	aw
+甘	af
+戈	ag
+革	ak
+葛	aj
+工	aa
+薛	awn
+贡	am
+荷	aws
+花	aw
+荒	ay
+荒	ayn
+惑	akg
+或	akg
+蒋	auq
+戒	aa
+警	aq
+敬	aq
+敬	aqk
+莱	ag
+蓝	aj
+莉	at
+莲	al
+蒙	ap
+莫	aj
+某	af
+墓	ajd
+幕	ajd
+慕	ajd
+欧	ar
+匹	aq
+葡	aq
+巧	agn
+七	agn
+勤	ak
+荣	ap
+萨	ab
+菜	ae
+甚	adw
+散	ae
+卧	ahn
+萧	av
+蓄	ay
+雅	aht
+牙	aht
+燕	ak
+医	at
+英	am
+工	aaa
+黄	amw
+药	axq
+著	aft
+鞭	akf
+欺	adw
+东	aii
+功	aet
+昔	ajf
+陶	bqr
+降	bta
+承	bd
+除	bw
+聪	buk
+耳	bg
+防	by
+附	bw
+隔	bg
+孩	by
+阶	bw
+聚	bc
+及	byi
+孔	bn
+了	bn
+辽	bp
+聊	bq
+陵	bf
+隆	bt
+陆	bg
+孟	bl
+乃	bn
+陶	bq
+险	bw
+险	bwg
+陷	bq
+耶	bb
+也	b
+了	bnh
+盈	bc
+子	b
+阻	be
+阿	bsk
+孤	brc
+际	bfi
+也	bnh
+联	bud
+随	bde
+限	bve
+隐	bqv
+院	bpf
+职	bkw
+子	bbb
+阴	beg
+巴	c
+欢	cq
+鸡	cq
+马	c
+矛	cn
+柔	cnh
+骗	cg
+骑	cg
+予	cnh
+桑	cc
+圣	cf
+驶	cg
+双	cc
+能	cex
+勇	ceh
+又	ccc
+预	cnh
+巴	cnh
+驻	cgy
+参	cde
+观	cmq
+艰	cve
+难	cwy
+马	cgd
+石	dg
+威	dg
+厉	dg
+夏	dh
+慧	dh
+艳	dh
+戚	dh
+耕	dif
+碍	dj
+邦	dt
+帮	dtb
+奔	df
+布	dm
+厕	dmj
+成	dnx
+厨	dgk
+础	db
+大	d
+大	ddd
+而	dm
+否	dhk
+感	dgk
+耗	dit
+厚	dj
+灰	do
+夸	df
+夸	dfn
+励	dgq
+码	dc
+面	dmj
+耐	dm
+耐	dmj
+戚	dhg
+奇	ds
+牵	dp
+秦	dw
+确	dq
+辱	dfe
+三	d
+盛	dn
+石	dgt
+寿	dt
+碎	dy
+丈	dyi
+态	dy
+泰	dwi
+套	dd
+碗	dp
+袭	dx
+龙	dxy
+雄	dc
+压	df
+页	dm
+尤	dn
+愿	dr
+原	dri
+丈	dy
+奏	dwg
+春	dwj
+磁	dux
+顾	dbd
+还	dhp
+三	dgg
+在	dhf
+太	dyi
+厅	dsk
+牵	dpr
+爱	ep
+胞	eq
+彩	es
+脆	eq
+肚	ef
+股	ew
+贺	ek
+驾	ek
+架	ek
+脚	efc
+腊	ea
+腊	eaj
+脸	ew
+脉	ey
+膀	ey
+朋	ee
+鹏	ee
+受	ep
+腾	eu
+腾	eud
+腿	ev
+县	eg
+胁	ee
+悬	eg
+悬	egc
+腰	es
+遥	er
+助	eg
+办	ew
+胆	ejg
+服	ebc
+毁	eaw
+貌	erq
+脑	eyr
+胜	etg
+脱	euk
+胸	eqr
+须	edm
+月	eee
+脏	eof
+脂	exj
+才	f
+动	fc
+云	fc
+直	fh
+武	fh
+赵	fh
+朝	fj
+刊	fj
+坦	fj
+戴	fla
+声	fn
+卖	fn
+亏	fn
+韦	fn
+勃	fp
+博	fg
+场	fnr
+寸	fg
+戴	fl
+堤	fjg
+都	ftj
+堆	fw
+二	f
+寺	ff
+封	fff
+赶	fhf
+干	fg
+鼓	fk
+规	fw
+韩	fjf
+坏	fd
+零	fwy
+埋	fjf
+嘉	fku
+教	ftb
+劫	fce
+霍	fwy
+均	fq
+款	ff
+雷	fl
+截	fwy
+露	fkh
+南	fmu
+彭	fku
+墙	ff
+墙	ffu
+去	fcu
+坛	ff
+索	fp
+替	fw
+土	fff
+违	fnh
+未	fi
+雾	ft
+喜	fku
+霞	fnh
+献	fm
+孝	ft
+需	fd
+士	fgh
+域	fak
+元	fq
+袁	fk
+远	fq
+者	ft
+圳	fk
+震	fd
+裁	fye
+城	fdn
+地	fb
+进	fjp
+起	fhn
+霜	fsh
+协	few
+载	flx
+增	ful
+寸	fgh
+翰	fjf
+埔	fge
+支	fcu
+雨	fgh
+二	fgg
+志	fnu
+才	fte
+址	fhg
+带	gk
+副	gk
+丽	gm
+瑞	gm
+刺	gm
+遭	gm
+现	gmq
+列	gq
+残	gq
+殊	gq
+班	gy
+逼	gkl
+碧	gr
+玻	gh
+曹	gma
+致	gcf
+毒	gx
+顿	gb
+亚	gog
+恶	go
+更	gj
+环	gd
+惠	gj
+救	gi
+赖	gki
+来	goi
+璃	gy
+两	gmw
+烈	gqj
+裂	gqj
+琳	gs
+玛	gc
+灭	go
+晋	gog
+求	giy
+琴	gg
+球	gg
+素	gx
+吞	gd
+瓦	gn
+玩	gf
+五	g
+刑	gaj
+型	gaj
+严	go
+与	gng
+正	gh
+政	gh
+至	gc
+到	gcf
+班	gyt
+斑	gyg
+互	gxg
+画	glb
+平	guf
+妻	gvh
+事	gkv
+五	ggh
+一	ggl
+珍	gwe
+珠	gri
+速	gki
+屯	gbn
+整	gki
+殖	gqf
+非	h
+盼	hwv
+悲	hd
+辈	hd
+辈	hdh
+卜	hh
+步	hh
+柴	hx
+点	hk
+督	hg
+督	hgi
+非	hdh
+睛	hg
+卡	hg
+龄	hwb
+目	hh
+盼	hw
+频	hh
+颇	hc
+上	hg
+叔	hg
+些	hx
+战	hk
+止	h
+桌	hj
+卓	hj
+紫	hx
+餐	hqc
+歧	hfc
+睡	htf
+眼	hve
+止	hhg
+彪	haw
+光	i
+满	ia
+洪	ia
+汇	ia
+潜	ifw
+兴	ig
+辉	ig
+常	ip
+沉	ip
+沈	ip
+活	it
+洗	it
+劣	it
+济	iy
+洲	iy
+滚	iy
+波	ih
+潮	if
+党	ipk
+洞	im
+渡	io
+浮	ie
+港	iaw
+汗	ifh
+浩	itf
+湖	id
+滑	im
+梁	iv
+津	ivg
+漂	is
+酒	isg
+举	igw
+渴	ij
+染	iv
+汽	ir
+浅	if
+污	if
+渠	ian
+润	iug
+沙	ii
+赏	ipk
+尚	im
+涉	ih
+深	ipw
+湿	ij
+淑	ih
+水	i
+汤	in
+堂	ipk
+涛	id
+涂	iwg
+温	ijl
+沃	itd
+溪	ie
+消	ii
+小	i
+沿	iw
+洋	iug
+耀	igq
+涌	ic
+游	iyt
+誉	igw
+源	id
+泽	ic
+掌	ipk
+浙	ir
+泪	ihg
+治	ic
+滋	iu
+淡	ioo
+法	ifc
+沟	iqc
+光	igq
+河	isk
+渐	ilr
+流	iyc
+没	iwc
+泥	inx
+派	ire
+水	iii
+小	iht
+学	ipb
+涨	ixt
+婆	ihc
+浦	ige
+液	iyw
+少	ite
+油	img
+江	iag
+帅	jm
+昂	jq
+昌	jj
+畅	jh
+虫	jhn
+坚	jc
+览	jt
+监	jty
+鉴	jty
+颗	js
+里	jf
+临	jty
+曼	jl
+冒	jh
+盟	je
+景	jyk
+暖	je
+日	jjj
+蛇	jp
+师	jg
+题	jg
+贤	jc
+晓	ja
+星	jt
+野	jf
+易	jq
+影	jy
+映	jm
+遇	jmh
+早	jf
+昭	jv
+照	jvk
+暗	juj
+暴	jaw
+晨	jdf
+紧	jcx
+昆	jxx
+量	jgj
+显	jog
+最	jbc
+昨	jth
+旱	jfj
+明	jeg
+晚	jqk
+吕	k
+路	kh
+足	kh
+跑	kh
+贵	kh
+唱	kj
+川	kth
+串	kk
+吹	kq
+吊	km
+吨	kg
+哈	kw
+喊	kdg
+喝	kj
+呼	kt
+唤	kq
+患	kkh
+口	kkk
+哭	kkd
+啦	kr
+吗	kc
+鸣	kq
+呢	kn
+喷	kf
+品	kk
+器	kk
+史	kr
+叹	kc
+跳	khq
+吐	kf
+唯	kwy
+味	kf
+吴	kg
+吸	kb
+响	kt
+吁	kgf
+咬	kyw
+遗	khg
+跃	kht
+咱	kt
+啊	kbs
+吃	ktn
+号	kgn
+叫	knh
+嘛	kos
+顺	kdm
+喂	klg
+呀	kah
+转	lf
+黑	lf
+圈	lud
+轲	lsk
+车	l
+恩	ld
+罚	ly
+固	ld
+国	lg
+轰	lc
+辑	lk
+甲	lh
+轿	lt
+轲	l
+轲	ls
+辆	lg
+轮	lw
+逻	lq
+略	lt
+墨	lfo
+默	lfo
+畏	lge
+软	lq
+输	lw
+四	l
+四	lhn
+围	lfn
+圆	lk
+暂	lr
+置	lfh
+罪	lh
+车	lgn
+国	lgy
+较	lyw
+累	lxi
+轻	lca
+田	lll
+图	ltu
+团	lft
+岸	md
+岸	mdf
+贝	mh
+财	mf
+册	mmg
+崇	mp
+赋	mfh
+雕	mf
+赌	mft
+峰	mt
+赋	mf
+岗	mm
+购	mq
+骨	m
+巾	mh
+凯	mn
+肉	mw
+岁	mq
+贴	mhk
+同	mg
+网	mr
+岩	md
+由	m
+由	mhn
+周	mfk
+败	mt
+刚	mrj
+骨	mef
+峻	mcw
+山	mmm
+同	mgk
+峡	mgu
+幽	mxx
+赃	mof
+赠	mul
+崭	mlr
+曲	mad
+习	n
+己	nn
+书	nn
+快	nn
+忙	ny
+尺	ny
+壁	nku
+避	nku
+臂	nk
+惨	nc
+丑	nh
+蛋	nh
+愤	nf
+改	nt
+怀	nd
+恢	nd
+剧	nd
+情	ng
+悟	ngk
+眉	nh
+民	nna
+尼	nx
+恰	nwg
+屈	nb
+尸	nng
+刷	nm
+愉	nw
+尾	nt
+慰	nf
+惜	naj
+心	n
+心	nyn
+性	nt
+迅	nf
+已	n
+已	nnn
+以	nyw
+翼	nl
+忧	nd
+恰	nw
+发	ntc
+敢	nbt
+怪	ncf
+惯	nxf
+恨	nve
+屡	nov
+慢	njl
+那	ngb
+收	nht
+懈	nqe
+展	nae
+习	nud
+爆	oj
+床	os
+底	oqa
+烦	od
+废	on
+粉	ow
+腐	ow
+府	owf
+糊	od
+煌	org
+精	og
+康	ov
+库	ol
+烂	ou
+廊	oyv
+廉	ou
+炼	oa
+炼	oan
+粮	oy
+炉	oy
+麻	os
+煤	oa
+米	oy
+摩	oss
+磨	oss
+魔	oss
+庞	od
+炮	oq
+庆	od
+燃	oq
+烧	oa
+唐	ov
+糖	oo
+庭	otf
+席	oa
+序	ocn
+炎	oo
+炸	ot
+座	ow
+粗	oeg
+店	ohk
+度	oac
+断	onr
+广	oyg
+火	ooo
+料	ouf
+数	ovt
+烟	old
+应	oig
+籽	ob
+突	pw
+穷	pw
+礼	pyn
+案	pv
+宝	pg
+被	puh
+察	pwf
+额	pt
+福	py
+富	pg
+完	pf
+冠	pfq
+宏	pd
+官	phn
+寄	pd
+寂	ph
+家	pg
+客	ptk
+牢	pt
+塞	paw
+赛	paw
+神	py
+宋	ps
+宪	pt
+宿	pwd
+宴	pj
+宜	pe
+宅	pt
+祝	py
+宗	pf
+祖	py
+宾	prg
+定	pgh
+空	pwa
+宽	pam
+密	pnt
+社	pyf
+审	pjh
+实	pud
+之	ppp
+宫	pkk
+儿	q
+久	q
+触	qeh
+狠	qt
+饮	qn
+饱	qnq
+匆	qr
+岛	qy
+饰	qn
+饿	qnt
+鸟	qyn
+钢	qm
+够	qkq
+忽	qr
+昏	qa
+错	qaj
+急	qv
+键	qv
+键	qvg
+角	qe
+金	qq
+锦	qr
+久	qyi
+免	qk
+链	ql
+铃	qw
+留	qyv
+鲁	qg
+贸	qy
+猛	qtb
+象	qk
+勉	qkq
+铺	qg
+钦	qq
+卿	qtv
+然	qdy
+氏	qa
+铜	qm
+铜	qmg
+外	qhy
+危	qd
+鲜	qg
+钟	qk
+银	qv
+犹	qtd
+鱼	qg
+怨	qb
+针	qf
+镇	qfh
+争	qvh
+钻	qh
+儿	qtn
+饭	qnr
+钱	qfx
+铁	qrw
+印	qgb
+迎	qbp
+狱	qty
+操	rkk
+扬	rn
+扭	rn
+拨	rn
+换	rqm
+托	rt
+搬	rt
+斤	rt
+手	rtg
+扮	rwv
+摘	ryu
+控	rp
+拔	rd
+拜	rd
+抱	rq
+兵	rg
+搏	rge
+皇	rg
+按	rp
+擦	rpw
+操	rk
+撤	ry
+持	rf
+抽	rm
+担	rj
+盾	rf
+反	rc
+扶	rf
+搞	ry
+瓜	rc
+挂	rff
+鬼	rq
+捕	rg
+揭	rj
+捐	rk
+看	rh
+抗	ry
+扣	rk
+年	rhf
+爬	rhy
+拍	rr
+排	rh
+执	rv
+批	rx
+迫	rp
+扑	rh
+气	r
+抢	rw
+缺	rm
+势	rvy
+杀	rs
+摄	rb
+报	rbc
+热	rvy
+誓	rry
+手	r
+搜	reh
+所	rnr
+抬	rc
+探	rpw
+提	rjg
+挑	rq
+挺	rtf
+投	rw
+推	rwy
+挖	rpw
+舞	rl
+希	rd
+凶	rb
+岳	rg
+抓	rrh
+哲	rr
+振	rdf
+抛	rv
+制	rmh
+抓	rr
+捉	rk
+摆	rlf
+摆	rl
+搬	rte
+后	rgk
+护	ryn
+损	rkm
+摇	rer
+指	rxj
+质	rfm
+措	raj
+气	rnb
+择	rcf
+本	s
+术	s
+可	s
+标	sf
+票	sf
+杜	sf
+桂	sf
+柏	sr
+板	sr
+杯	sd
+本	sgd
+楚	ss
+丁	sg
+概	sv
+歌	sk
+哥	sks
+杭	sy
+核	sy
+极	sb
+检	sw
+禁	ss
+柯	ss
+酷	sg
+框	sag
+柳	sq
+楼	so
+梅	st
+梦	ss
+棉	sr
+木	sss
+飘	sfi
+票	sfi
+朴	sh
+枪	sw
+桥	st
+树	sc
+松	sw
+杰	sou
+桃	sq
+西	sgh
+想	sh
+样	sug
+要	sv
+椅	sd
+植	sfh
+醉	sgy
+板	src
+查	sjg
+档	siv
+顶	sdm
+格	stk
+根	sve
+构	sqc
+模	saj
+棚	see
+杨	snr
+校	syw
+相	shg
+程	tk
+入	t
+长	t
+彻	tav
+短	td
+敌	td
+籍	td
+甜	td
+先	tf
+千	tf
+午	tf
+垂	tfa
+重	tgj
+自	th
+片	th
+竹	th
+延	thp
+微	tm
+奥	tm
+射	tm
+币	tm
+秩	trw
+般	tew
+版	thg
+愁	ton
+筹	tdt
+臭	thd
+辞	tdu
+签	twg
+街	tff
+乏	tp
+番	to
+翻	tol
+繁	tx
+繁	txt
+符	tw
+复	tj
+稿	ty
+告	tfk
+行	tg
+很	tve
+衡	tq
+乎	tuf
+徽	tmg
+季	tb
+特	tff
+径	tc
+靠	tfk
+科	tuf
+篮	tjt
+黎	tq
+利	tj
+律	tv
+每	tx
+秘	tn
+敏	tx
+牧	tt
+穆	tr
+牛	tg
+牌	thg
+篇	ty
+答	twg
+身	tmd
+牲	tt
+剩	tux
+释	to
+私	tc
+躺	tmd
+等	tff
+廷	tfp
+透	tb
+徒	tfh
+往	ty
+委	tv
+物	tqr
+牺	ts
+悉	to
+系	tx
+笔	ttf
+香	tj
+箱	ts
+笑	tt
+徐	tw
+选	tfq
+血	tl
+御	tr
+赞	tfq
+造	tfk
+毛	tfn
+秩	tr
+种	tk
+得	tjg
+第	txh
+管	tph
+乐	tni
+秒	tit
+我	trx
+稀	trd
+向	tmk
+长	tay
+知	tdk
+务	ter
+和	tkg
+北	u
+兰	ud
+状	ud
+减	ud
+券	ud
+半	ug
+美	ug
+善	ug
+羊	ug
+阅	uuk
+凉	uyk
+辩	udy
+部	uk
+曾	ul
+慈	uxx
+盗	uq
+姿	uqw
+道	uth
+弟	ux
+递	uxh
+冯	uc
+阁	ut
+痕	uv
+剪	ue
+将	uq
+净	uq
+竞	uk
+竟	uj
+况	ukq
+阔	ui
+冷	uw
+凉	uy
+疗	ub
+门	u
+闹	uy
+凝	ux
+判	ugj
+疲	uh
+瓶	ua
+前	uej
+首	ut
+瘦	ue
+塑	ub
+遂	ue
+疼	ut
+童	ujf
+闲	us
+辛	uf
+新	us
+颜	ut
+养	uf
+益	uw
+毅	ue
+阅	uu
+韵	ujq
+站	uhk
+准	uwy
+资	uqw
+兹	ux
+次	uqw
+总	uk
+尊	us
+遵	usg
+端	umd
+兼	uvo
+决	unw
+立	uuu
+门	uyh
+普	uog
+痛	uce
+着	ugh
+卷	udb
+凌	ufw
+章	ujf
+产	ute
+单	ulj
+彰	ujf
+娃	vff
+刀	v
+妨	vy
+即	vcb
+既	vc
+姐	ve
+九	v
+君	vt
+妈	vc
+妹	vf
+妙	vi
+娜	vn
+奶	vb
+女	vv
+群	vtk
+忍	vy
+始	vc
+肃	vi
+她	vb
+退	vep
+娃	vf
+巡	vp
+姚	vq
+召	vk
+婚	vqa
+嫁	vpg
+建	vgp
+媒	vaf
+娘	vyv
+嫌	vuv
+姻	vld
+剥	vij
+暨	vca
+九	vtn
+伟	wf
+仁	wf
+舍	wf
+佳	wf
+使	wg
+余	wg
+例	wg
+傅	wg
+作	wt
+任	wt
+件	wt
+作	wth
+众	ww
+偷	ww
+谷	ww
+今	wy
+住	wy
+令	wy
+仿	wy
+傲	wgq
+八	w
+爸	wr
+伴	wug
+堡	wk
+保	wks
+侧	wm
+倡	wj
+创	wb
+促	wk
+代	way
+贷	way
+袋	way
+但	wj
+登	wgk
+低	wq
+段	wd
+朵	ws
+风	w
+凤	wc
+佛	wx
+伏	wd
+父	wr
+估	wd
+含	wyn
+合	wgk
+何	ws
+侯	wn
+华	wx
+货	wx
+仅	wc
+俊	wc
+俩	wgm
+邻	wyc
+领	wyc
+命	wgk
+拿	wgk
+念	wyn
+您	wq
+你	wqi
+偶	wj
+佩	wwg
+偏	wyn
+凭	wtf
+倾	wx
+俗	www
+仍	wb
+伸	wj
+似	wn
+公	wcu
+舒	wfk
+人	www
+贪	wyn
+途	wgs
+伪	wyt
+翁	wc
+像	wq
+斜	wgs
+休	ws
+修	wh
+叙	wgs
+仰	wq
+爷	wr
+伊	wv
+亿	wn
+悠	wht
+欲	wwk
+仔	wb
+仗	wdy
+值	wfh
+仲	wk
+仲	wkh
+颁	wvd
+偿	wip
+会	wfc
+假	wnh
+体	wsg
+信	wyg
+做	wdt
+传	wfn
+丛	wwg
+追	wnn
+停	wyk
+愈	wge
+阜	wnn
+介	wjj
+俏	wie
+俏	wieg
+疆	xfg
+编	xy
+缠	xo
+纷	xw
+缝	xtd
+弗	xj
+贯	xf
+缓	xe
+幻	xn
+绘	xw
+纪	xnn
+绩	xg
+疆	xf
+皆	xx
+结	xf
+纠	xn
+绝	xq
+练	xa
+弥	xq
+母	xnn
+纳	xm
+纽	xnh
+绕	xa
+绍	xv
+绳	xk
+强	xkj
+丝	xx
+维	xw
+乡	xt
+绪	xf
+疑	xt
+幼	xe
+张	xta
+织	xk
+旨	xj
+纸	xq
+综	xp
+纵	xw
+组	xeg
+纯	xgb
+费	xjm
+纲	xmr
+给	xwg
+级	xby
+缴	xry
+经	xc
+经	xca
+绿	xvi
+顷	xdm
+弱	xux
+纱	xit
+缩	xpw
+统	xyc
+线	xfx
+约	xqy
+缘	xxg
+义	y
+高	yk
+京	yk
+误	yk
+户	yn
+忘	yn
+启	yn
+谊	ype
+话	yt
+施	yt
+州	yt
+旗	yta
+该	yyn
+帝	yup
+读	yf
+方	y
+方	yyg
+郭	ykb
+计	yfh
+肩	yne
+交	yw
+郊	ywr
+课	yj
+郎	yv
+离	yr
+率	yxi
+亩	yl
+评	yg
+齐	yj
+敲	ykm
+认	yw
+设	yw
+诗	yf
+市	ymh
+衰	ykg
+谁	ywy
+诉	yr
+调	ym
+扇	ynn
+望	yne
+文	yy
+为	ytn
+夜	yw
+议	yy
+译	yc
+谊	yp
+诱	ytb
+育	yc
+这	yp
+诸	yf
+主	yg
+变	yoc
+诚	ydn
+充	ycq
+就	yki
+良	yve
+谋	yaf
+请	yge
+让	yhg
+说	yuk
+谓	yle
+询	yqj
+毫	ykp
+豪	ykp
+郎	yvc
+亮	ykp
+亭	ykp
+享	ykb
+效	ywr
+赢	ynk
+放	yty
+记	ynn
+东	ai	30
+范	ai	30
+世	an	30
+工	a	30
+莎	ai	30
+苏	a	30
+艺	an	30
+戈	agn	30
+散	aet	30
+莎	aii	30
+式	aa	30
+菜	aes	30
+蔡	awf	30
+苍	awb	30
+藏	adn	30
+草	ajf	30
+茶	aws	30
+臣	ahn	30
+茨	auq	30
+萃	ayw	30
+荡	ain	30
+蒂	ayu	30
+荡	ai	30
+董	atg	30
+范	aib	30
+芳	ay	30
+菲	ahd	30
+芬	awv	30
+革	akf	30
+葛	ajq	30
+七	a	30
+功	ae	30
+攻	at	30
+共	aw	30
+菇	avd	30
+花	awx	30
+划	aj	30
+黄	am	30
+或	ak	30
+获	aq	30
+基	adw	30
+荐	adh	30
+蒋	au	30
+节	ab	30
+荆	aga	30
+警	aqk	30
+菊	aqo	30
+菌	alt	30
+恐	awy	30
+蓝	ajt	30
+劳	ape	30
+劳	ap	30
+蕾	afl	30
+莉	atj	30
+莲	alp	30
+芦	ayn	30
+蔓	ajl	30
+茫	aiy	30
+茅	acn	30
+茂	adx	30
+蒙	apf	30
+苗	al	30
+莫	ajd	30
+某	afs	30
+欧	arq	30
+萍	aig	30
+葡	aqg	30
+七	ag	30
+其	ad	30
+切	av	30
+勤	akg	30
+区	ar	30
+荣	aps	30
+若	adk	30
+萨	abu	30
+巨	an	30
+式	aay	30
+蔬	anh	30
+斯	adw	30
+苏	aew	30
+萄	aqr	30
+藤	aeu	30
+萎	atv	30
+芜	afq	30
+项	adm	30
+巷	awn	30
+萧	avi	30
+薪	aus	30
+蓄	ayx	30
+牙	ah	30
+燕	aku	30
+药	ax	30
+医	atd	30
+艺	anb	30
+英	amd	30
+营	apk	30
+苑	aqb	30
+蕴	axj	30
+葬	agq	30
+蒸	abi	30
+著	af	30
+区	ari	30
+世	anv	30
+共	awu	30
+切	avt	30
+节	abj	30
+划	ajh	30
+苦	adf	30
+攻	aty	30
+巨	and	30
+芳	ayr	30
+贡	amu	30
+甘	afd	30
+苗	alf	30
+匹	aqv	30
+芝	apu	30
+戒	aak	30
+艾	aru	30
+联	bu	30
+孙	bi	30
+聪	bu	30
+陪	bu	30
+陈	bai	30
+阻	beg	30
+阿	bs	30
+陈	ba	30
+承	bdi	30
+出	bm	30
+除	bwg	30
+队	bw	30
+耳	bgh	30
+附	bwf	30
+隔	bgk	30
+孤	br	30
+孩	byn	30
+函	bib	30
+及	by	30
+亟	bkc	30
+际	bf	30
+降	bt	30
+阶	bwj	30
+聚	bci	30
+了	b	30
+障	bu	30
+聊	bqt	30
+陵	bfw	30
+隆	btg	30
+陋	bgm	30
+陆	bgb	30
+陌	bdj	30
+聂	bcc	30
+陪	buk	30
+聘	bmg	30
+取	bc	30
+陕	bgu	30
+随	bd	30
+隧	bue	30
+函	bi	30
+卫	bg	30
+限	bv	30
+陷	bqe	30
+逊	bip	30
+阳	bj	30
+也	bn	30
+阴	be	30
+隐	bq	30
+盈	bcl	30
+院	bp	30
+障	buj	30
+阵	bl	30
+职	bk	30
+子	bb	30
+出	bmk	30
+取	bcy	30
+队	bwy	30
+防	byt	30
+阳	bjg	30
+卫	bgd	30
+孔	bnn	30
+孙	biy	30
+阵	blh	30
+乃	bnt	30
+辽	bpk	30
+孟	blf	30
+耶	bbh	30
+孕	bbf	30
+孜	bty	30
+戏	ca	30
+能	ce	30
+劝	ce	30
+通	ce	30
+矛	cnh	30
+熊	cex	30
+骗	cgy	30
+骑	cgd	30
+桑	ccc	30
+驶	cgk	30
+巴	cn	30
+参	cd	30
+叉	cy	30
+邓	cb	30
+对	cf	30
+观	cm	30
+欢	cqw	30
+鸡	cqy	30
+艰	cv	30
+骄	cgt	30
+劲	cae	30
+颈	cad	30
+马	cg	30
+难	cw	30
+熊	ce	30
+驱	cga	30
+台	ck	30
+通	ceh	30
+劲	ca	30
+验	cgw	30
+以	c	30
+又	cc	30
+允	cq	30
+骤	cgb	30
+对	cfy	30
+台	ckf	30
+双	ccy	30
+允	cqb	30
+圣	cff	30
+戏	cay	30
+邓	cbh	30
+劝	cet	30
+叉	cyi	30
+耗	di	30
+胡	de	30
+磁	du	30
+历	de	30
+有	de	30
+袭	dxy	30
+奇	dsk	30
+愿	dri	30
+碍	djg	30
+百	dj	30
+邦	dtb	30
+碑	drt	30
+奔	dfa	30
+布	dmh	30
+辰	dfe	30
+成	dn	30
+础	dbm	30
+春	dw	30
+碰	du	30
+存	dhb	30
+磋	dug	30
+达	dp	30
+大	dd	30
+碘	dma	30
+夺	df	30
+而	dmj	30
+奋	dl	30
+奉	dwg	30
+辜	duf	30
+古	dgh	30
+故	dt	30
+顾	db	30
+还	dh	30
+耕	di	30
+厚	djb	30
+郁	de	30
+慧	dhd	30
+碱	ddg	30
+砍	dqw	30
+克	dq	30
+矿	do	30
+奎	dff	30
+厉	dgq	30
+磷	doq	30
+硫	dyc	30
+龙	dx	30
+码	dcg	30
+面	dm	30
+奈	dfi	30
+碰	duo	30
+破	dhc	30
+契	dhv	30
+牵	dpt	30
+秦	dwt	30
+犬	dyi	30
+确	dqe	30
+三	dg	30
+砂	dit	30
+厦	ddh	30
+盛	dnx	30
+寿	dtf	30
+爽	drr	30
+硕	ddm	30
+肆	dcv	30
+碎	dyw	30
+太	dy	30
+态	dyn	30
+碳	dmd	30
+套	ddc	30
+厅	ds	30
+歪	dhg	30
+碗	dpq	30
+威	dgv	30
+夏	dht	30
+咸	dgk	30
+厢	dsh	30
+雄	dcw	30
+压	dfy	30
+研	dga	30
+艳	dhq	30
+雁	dww	30
+硬	dgj	30
+尤	dny	30
+友	dc	30
+右	dk	30
+郁	deb	30
+原	dr	30
+砸	dam	30
+在	d	30
+砖	dfn	30
+左	da	30
+不	dhi	30
+有	def	30
+百	djf	30
+达	dpi	30
+克	dqb	30
+历	dee	30
+厂	dgt	30
+左	daf	30
+故	dty	30
+右	dkf	30
+友	dcu	30
+矿	dot	30
+丰	dhk	30
+胡	deg	30
+夺	dfu	30
+奋	dlf	30
+灰	dou	30
+页	dmu	30
+泵	diu	30
+厄	dbv	30
+有	e	30
+用	e	30
+办	ewi	30
+爱	epd	30
+胞	eqn	30
+边	ep	30
+采	es	30
+彩	ese	30
+肠	enr	30
+脆	eqd	30
+胆	ej	30
+肥	ec	30
+肺	egm	30
+肤	efw	30
+服	eb	30
+腹	etj	30
+股	ewc	30
+贺	ekm	30
+毁	ea	30
+加	ek	30
+驾	ekc	30
+架	eks	30
+胶	eyw	30
+脚	ef	30
+力	en	30
+脸	ewg	30
+脉	eyn	30
+貌	er	30
+脑	ey	30
+膀	eyu	30
+鹏	eeq	30
+膨	efk	30
+腔	epw	30
+且	eg	30
+乳	ebn	30
+胜	et	30
+受	epc	30
+鼠	enu	30
+胎	eck	30
+腿	eve	30
+脱	eu	30
+妥	ev	30
+县	egc	30
+胁	eew	30
+胸	eq	30
+须	ed	30
+腰	esv	30
+遥	erm	30
+用	eh	30
+力	e	30
+舆	elg	30
+月	ee	30
+脏	eo	30
+胀	eta	30
+肢	efc	30
+脂	ex	30
+肿	ekh	30
+助	ege	30
+用	ehk	30
+力	ent	30
+加	ekg	30
+边	epe	30
+且	egd	30
+采	esu	30
+肥	ecn	30
+朋	eeg	30
+肚	efg	30
+妥	evf	30
+肌	ewn	30
+甩	env	30
+肝	efh	30
+域	fa	30
+赤	fo	30
+霸	fa	30
+增	fu	30
+堪	fa	30
+丧	fu	30
+干	fgg	30
+鼓	fku	30
+卖	fnu	30
+十	fgh	30
+雾	fte	30
+埃	fct	30
+霸	fak	30
+勃	fpb	30
+博	fge	30
+埠	fwn	30
+才	ft	30
+裁	fy	30
+超	fhv	30
+朝	fjf	30
+城	fd	30
+赫	fo	30
+翅	fcn	30
+地	f	30
+动	fce	30
+堵	fft	30
+堆	fwy	30
+二	fg	30
+夫	fw	30
+赴	fhh	30
+规	fwm	30
+过	fp	30
+郝	fob	30
+赫	fof	30
+壶	fpo	30
+坏	fdh	30
+魂	fcr	30
+进	fj	30
+境	fuj	30
+均	fqu	30
+堪	fad	30
+坎	fqw	30
+考	ftg	30
+壳	fpw	30
+坑	fyw	30
+块	fnw	30
+款	ffi	30
+老	ftx	30
+南	fm	30
+培	fuk	30
+坪	fgu	30
+坡	fhc	30
+起	fh	30
+趋	fhq	30
+去	fc	30
+趣	fhb	30
+却	fcb	30
+壤	fyk	30
+丧	fue	30
+示	fi	30
+霜	fs	30
+索	fpx	30
+塌	fjn	30
+塔	faw	30
+坛	ffc	30
+坦	fjg	30
+塘	fov	30
+替	fwf	30
+填	ffh	30
+土	ff	30
+顽	fqd	30
+韦	fnh	30
+无	fq	30
+武	fhn	30
+喜	fk	30
+献	fmu	30
+孝	ftb	30
+协	fe	30
+幸	fuf	30
+需	fdm	30
+雪	fv	30
+盐	fhl	30
+塔	fa	30
+袁	fke	30
+远	fqp	30
+越	fhg	30
+云	fcu	30
+运	fcp	30
+栽	fsx	30
+载	fl	30
+幸	fu	30
+赵	fhr	30
+者	ftj	30
+真	fhw	30
+震	fdf	30
+志	fn	30
+专	fny	30
+过	fpi	30
+地	fbn	30
+无	fqv	30
+直	fhf	30
+走	fhu	30
+声	fnr	30
+示	fiu	30
+元	fqb	30
+夫	fwi	30
+未	fii	30
+雷	flf	30
+雪	fvf	30
+井	fjk	30
+刊	fjh	30
+赤	fou	30
+吉	fkf	30
+圭	fff	30
+亏	fnv	30
+坝	fmy	30
+寺	ffu	30
+坊	fyt	30
+卉	faj	30
+垃	fug	30
+圳	fkh	30
+表	ge	30
+平	gu	30
+开	ga	30
+静	ge	30
+弄	ga	30
+逐	ge	30
+甫	geh	30
+顿	gbn	30
+救	giy	30
+碧	grd	30
+甫	ge	30
+丙	gmw	30
+玻	ghc	30
+残	gqf	30
+蚕	gdj	30
+琛	gpw	30
+刺	gmi	30
+带	gkp	30
+到	gc	30
+豆	gku	30
+恶	gog	30
+副	gkl	30
+更	gjr	30
+互	gx	30
+画	gl	30
+环	gdh	30
+惠	gjh	30
+击	gb	30
+夹	gud	30
+柬	gli	30
+静	geq	30
+形	ga	30
+来	go	30
+璃	gyr	30
+理	gjf	30
+理	gj	30
+丽	gmy	30
+列	gqj	30
+琳	gss	30
+玲	gwy	30
+玛	gcg	30
+迈	gqp	30
+麦	gt	30
+灭	goi	30
+末	gs	30
+囊	gkh	30
+夹	gu	30
+妻	gv	30
+琴	ggw	30
+求	gi	30
+球	ggi	30
+融	gkm	30
+瑞	gmd	30
+事	gk	30
+殊	gqr	30
+束	gki	30
+死	gqx	30
+素	gxi	30
+天	gd	30
+吞	gdk	30
+瓦	gnn	30
+玩	gfq	30
+万	gq	30
+王	ggg	30
+五	gg	30
+下	gh	30
+现	gm	30
+邢	gab	30
+形	gae	30
+严	god	30
+瑶	ger	30
+一	g	30
+于	gf	30
+与	gn	30
+玉	gy	30
+再	gmf	30
+遭	gma	30
+珍	gw	30
+政	ght	30
+至	gcf	30
+珠	gr	30
+逐	gep	30
+于	gfk	30
+下	ghi	30
+开	gak	30
+天	gdi	30
+表	geu	30
+正	ghd	30
+万	gqe	30
+青	gef	30
+击	gbj	30
+责	gmu	30
+末	gsi	30
+玉	gyi	30
+毒	gxu	30
+麦	gtu	30
+弄	gaj	30
+吾	gkf	30
+歹	gqi	30
+虑	ha	30
+虎	ha	30
+虑	han	30
+龄	hw	30
+悲	hdh	30
+餐	hq	30
+柴	hxs	30
+齿	hwb	30
+此	hx	30
+点	hko	30
+盯	hs	30
+鼎	hnd	30
+睹	hft	30
+非	hd	30
+虎	haw	30
+睛	hge	30
+旧	hj	30
+卡	hgh	30
+肯	he	30
+睐	hgo	30
+卢	hn	30
+虚	ha	30
+眠	hnn	30
+瞄	hal	30
+目	hhh	30
+睦	hfw	30
+皮	hc	30
+频	hhd	30
+颇	hcd	30
+歧	hf	30
+上	h	30
+叔	hgi	30
+睡	ht	30
+瞬	hep	30
+些	hxf	30
+虚	hao	30
+眼	hv	30
+占	hk	30
+战	hka	30
+止	hh	30
+瞩	hnt	30
+桌	hjs	30
+卓	hjf	30
+紫	hxx	30
+上	hgd	30
+此	hxn	30
+具	hwu	30
+步	hhr	30
+占	hkf	30
+皮	hci	30
+旧	hjg	30
+肯	hef	30
+卜	hhy	30
+卢	hnr	30
+盯	hsh	30
+不	i	30
+洞	img	30
+辉	igq	30
+劣	ite	30
+满	iag	30
+漫	ijl	30
+演	ipg	30
+澳	itm	30
+滨	ipr	30
+波	ihc	30
+渤	ifp	30
+沧	iwb	30
+测	imj	30
+尝	ipf	30
+常	ipk	30
+潮	ifj	30
+沉	ipw	30
+池	ib	30
+淡	io	30
+当	iv	30
+滴	iyu	30
+涤	its	30
+渡	ioa	30
+法	if	30
+泛	itp	30
+沸	ixj	30
+浮	ieb	30
+溉	ivc	30
+沟	iq	30
+灌	iak	30
+光	ig	30
+滚	iyw	30
+海	itx	30
+涵	ibi	30
+汉	ic	30
+河	is	30
+洪	iaw	30
+鸿	iaq	30
+湖	ide	30
+沪	iyn	30
+滑	ime	30
+淮	iwy	30
+浑	ipl	30
+混	ijx	30
+活	itd	30
+激	iry	30
+脊	iwe	30
+济	iyj	30
+尖	id	30
+渐	il	30
+江	ia	30
+浇	iat	30
+觉	ipm	30
+洁	ifk	30
+浸	ivp	30
+渴	ijq	30
+澜	iug	30
+滥	ijt	30
+浪	iyv	30
+涝	iap	30
+梁	ivw	30
+淋	iss	30
+流	iy	30
+漏	inf	30
+洛	itk	30
+沫	igs	30
+漠	iaj	30
+泥	in	30
+浓	ipe	30
+派	ir	30
+潘	ito	30
+泡	iqn	30
+漂	isf	30
+漆	isw	30
+汽	irn	30
+洽	iwg	30
+浅	ifx	30
+清	ige	30
+染	ivs	30
+沙	iit	30
+尚	imk	30
+少	it	30
+涉	ihh	30
+沈	ipq	30
+渗	icd	30
+省	ith	30
+湿	ijo	30
+淑	ihg	30
+水	ii	30
+汰	idy	30
+滩	icw	30
+潭	isj	30
+汤	inr	30
+涛	idt	30
+淘	iqr	30
+添	igd	30
+湾	iyo	30
+温	ij	30
+污	ifn	30
+溪	iex	30
+洗	itf	30
+肖	ie	30
+消	iie	30
+小	ih	30
+兴	igw	30
+削	iej	30
+学	ip	30
+涯	idf	30
+淹	idj	30
+沿	iwk	30
+洋	iu	30
+溢	iuw	30
+淫	iet	30
+涌	ice	30
+油	im	30
+浴	iww	30
+源	idr	30
+泽	icg	30
+湛	iad	30
+涨	ix	30
+浙	irr	30
+汁	ifh	30
+治	ick	30
+滞	igk	30
+洲	iyt	30
+注	iyg	30
+淄	ivl	30
+滋	iux	30
+当	ivf	30
+汉	icy	30
+汇	ian	30
+尖	idu	30
+池	ibn	30
+尘	iff	30
+汪	igg	30
+肖	ief	30
+洒	isg	30
+汝	ivg	30
+沂	irh	30
+泊	irg	30
+汕	imh	30
+没	iw	30
+影	jyk	30
+暖	jeg	30
+暗	ju	30
+昂	jqb	30
+暴	ja	30
+畅	jhn	30
+晨	jd	30
+电	jn	30
+遏	jqw	30
+蜂	jtd	30
+归	jv	30
+果	js	30
+坚	jcf	30
+紧	jc	30
+晶	jjj	30
+景	jy	30
+颗	jsd	30
+昆	jx	30
+览	jty	30
+量	jg	30
+螺	jlx	30
+曼	jlc	30
+盟	jel	30
+明	je	30
+晴	jge	30
+日	jj	30
+蛇	jpx	30
+申	jh	30
+师	jgm	30
+时	jf	30
+是	j	30
+暑	jft	30
+帅	jmh	30
+题	jgh	30
+晚	jq	30
+晤	jgk	30
+晰	jsr	30
+贤	jcm	30
+显	jo	30
+晓	jat	30
+星	jtg	30
+野	jfc	30
+易	jqr	30
+映	jmd	30
+遇	jm	30
+早	jfj	30
+昭	jvk	30
+最	jb	30
+昨	jt	30
+时	jfy	30
+里	jfd	30
+电	jnv	30
+果	jsi	30
+归	jvg	30
+昌	jjf	30
+申	jhk	30
+冒	jhf	30
+旦	jgf	30
+旺	jgg	30
+虹	jag	30
+另	ke	30
+跌	khr	30
+贵	khg	30
+哪	kng	30
+啊	kb	30
+吧	kc	30
+别	kej	30
+唱	kjj	30
+吃	kt	30
+串	kkh	30
+吹	kqw	30
+呆	ks	30
+吊	kmh	30
+吨	kgb	30
+跟	khv	30
+哈	kwg	30
+号	kg	30
+喝	kjq	30
+哄	kaw	30
+呼	ktu	30
+唤	kqm	30
+践	khf	30
+叫	kn	30
+距	kha	30
+咖	kek	30
+喀	kpt	30
+跨	khd	30
+啦	kru	30
+别	ke	30
+吕	kk	30
+骂	kkc	30
+吗	kcg	30
+嘛	ko	30
+鸣	kqy	30
+呢	knx	30
+跑	khq	30
+喷	kfa	30
+啤	krt	30
+品	kkk	30
+器	kkd	30
+哨	kie	30
+顺	kd	30
+虽	kj	30
+踏	khi	30
+踢	khj	30
+听	kr	30
+味	kfi	30
+喂	kl	30
+吴	kgd	30
+吸	kby	30
+响	ktm	30
+兄	kq	30
+勋	kme	30
+呀	ka	30
+咬	ky	30
+叶	kf	30
+员	km	30
+咱	kth	30
+只	kw	30
+中	k	30
+忠	khn	30
+嘱	knt	30
+踪	khp	30
+嘴	khx	30
+中	khk	30
+只	kwu	30
+员	kmu	30
+史	kri	30
+听	krh	30
+另	ker	30
+足	khu	30
+虽	kju	30
+叶	kfh	30
+吧	kcn	30
+呈	kgf	30
+兄	kqb	30
+呆	ksu	30
+叹	kcy	30
+吐	kfg	30
+吕	kkf	30
+甲	lhn	30
+署	lft	30
+罢	lfc	30
+车	lg	30
+恩	ldn	30
+罚	lyj	30
+辐	lgk	30
+辅	lge	30
+轨	lv	30
+国	l	30
+黑	lfo	30
+轰	lcc	30
+回	lk	30
+辑	lkb	30
+轿	ltd	30
+较	ly	30
+界	lwj	30
+界	lw	30
+困	ls	30
+累	lx	30
+连	lp	30
+辆	lgm	30
+轮	lwx	30
+罗	lq	30
+逻	lqp	30
+略	ltk	30
+男	le	30
+畔	lug	30
+轻	lc	30
+圈	lu	30
+软	lqw	30
+输	lwg	30
+思	ln	30
+四	lh	30
+田	ll	30
+图	lt	30
+团	lf	30
+辖	lpd	30
+鸭	lqy	30
+因	ld	30
+园	lfq	30
+圆	lkm	30
+暂	lrj	30
+轴	lm	30
+转	lfn	30
+罪	lhd	30
+因	ldi	30
+回	lkd	30
+思	lnu	30
+连	lpk	30
+固	ldd	30
+罗	lqu	30
+困	lsi	30
+轴	lmg	30
+男	ler	30
+轨	lvn	30
+轧	lnn	30
+胃	lef	30
+轩	lfh	30
+曲	ma	30
+贝	mhn	30
+雕	mfk	30
+贬	mtp	30
+财	mft	30
+崇	mpf	30
+崔	mwy	30
+丹	my	30
+迪	mp	30
+典	maw	30
+帆	mhw	30
+贩	mrc	30
+峰	mtd	30
+幅	mhg	30
+刚	mr	30
+岗	mmr	30
+购	mqc	30
+骨	me	30
+贿	mde	30
+见	mq	30
+峻	mc	30
+凯	mnw	30
+岚	mwr	30
+赂	mtk	30
+帽	mhj	30
+内	mw	30
+帕	mhr	30
+赔	muk	30
+岐	mfc	30
+岂	mn	30
+典	ma	30
+肉	mww	30
+山	mm	30
+炭	mdo	30
+同	m	30
+网	mrr	30
+巍	mtv	30
+峡	mg	30
+央	md	30
+婴	mmv	30
+幽	mx	30
+由	mh	30
+邮	mb	30
+赃	mo	30
+则	mj	30
+赠	mu	30
+崭	ml	30
+帐	mht	30
+周	mf	30
+贮	mpg	30
+赚	muv	30
+幢	mhu	30
+内	mwi	30
+见	mqb	30
+则	mjh	30
+央	mdi	30
+岁	mqu	30
+败	mty	30
+岩	mdf	30
+丹	myd	30
+邮	mbh	30
+岂	mnb	30
+巾	mhk	30
+迪	mpd	30
+冈	mri	30
+习	nu	30
+飞	nu	30
+尿	ni	30
+展	na	30
+惜	na	30
+惊	nyk	30
+买	nud	30
+必	nt	30
+避	nk	30
+臂	nku	30
+惨	ncd	30
+层	nfc	30
+迟	nyp	30
+丑	nhf	30
+翠	nyw	30
+蛋	nhj	30
+导	nf	30
+殿	naw	30
+懂	nat	30
+愤	nfa	30
+敢	nb	30
+怪	nc	30
+惯	nx	30
+恨	nv	30
+恒	ngj	30
+怀	ndh	30
+恢	ndo	30
+悔	ntx	30
+己	nng	30
+届	nm	30
+尽	nyu	30
+居	nd	30
+局	nnk	30
+剧	ndj	30
+慨	nvc	30
+快	nnw	30
+愧	nrq	30
+屡	no	30
+履	ntt	30
+慢	nj	30
+忙	nyn	30
+民	n	30
+那	ng	30
+恼	nyr	30
+悄	ni	30
+怕	nr	30
+屏	nua	30
+悄	nie	30
+情	nge	30
+屈	nbm	30
+慎	nfh	30
+收	nh	30
+书	nnh	30
+疏	nhy	30
+属	ntk	30
+刷	nmh	30
+司	ngk	30
+屠	nft	30
+尾	ntf	30
+慰	nfi	30
+屋	ngc	30
+买	nu	30
+懈	nq	30
+心	ny	30
+性	ntg	30
+迅	nfp	30
+乙	nnl	30
+已	nn	30
+异	naj	30
+翼	nla	30
+忧	ndn	30
+愉	nwg	30
+羽	nny	30
+悦	nuk	30
+异	na	30
+昼	nyj	30
+民	nav	30
+必	nte	30
+导	nfu	30
+改	nty	30
+飞	nui	30
+怕	nrg	30
+居	ndd	30
+尼	nxv	30
+尺	nyi	30
+忆	nnn	30
+届	nmd	30
+眉	nhd	30
+尿	nii	30
+忌	nnu	30
+为	o	30
+广	o	30
+火	o	30
+腐	owf	30
+爆	oja	30
+炳	ogm	30
+灿	omh	30
+炒	oit	30
+粗	oe	30
+灯	os	30
+底	oq	30
+店	oh	30
+度	oa	30
+断	on	30
+烦	odm	30
+废	ont	30
+粉	owv	30
+府	ow	30
+广	oy	30
+焊	ojf	30
+糊	ode	30
+焕	oqm	30
+煌	or	30
+火	oo	30
+精	oge	30
+炬	oan	30
+康	ovi	30
+烤	oft	30
+烂	oud	30
+类	od	30
+廉	ouv	30
+粮	oyv	30
+料	ou	30
+炉	oyn	30
+麻	oss	30
+煤	oaf	30
+迷	op	30
+米	oyt	30
+庙	om	30
+庞	odx	30
+炮	oqn	30
+燃	oqd	30
+烧	oat	30
+数	ov	30
+唐	ovh	30
+糖	oov	30
+庭	ot	30
+业	o	30
+烯	ord	30
+席	oam	30
+序	oc	30
+烟	ol	30
+业	og	30
+应	oi	30
+庸	ove	30
+炸	oth	30
+庄	of	30
+座	oww	30
+业	ogd	30
+类	odu	30
+庆	odi	30
+灯	osh	30
+粒	oug	30
+床	osi	30
+庄	ofd	30
+库	olk	30
+迷	opi	30
+庙	omd	30
+炎	oou	30
+灶	ofg	30
+籽	obg	30
+实	pu	30
+宽	pa	30
+补	pu	30
+额	ptk	30
+割	pdh	30
+安	pv	30
+案	pvs	30
+宝	pgy	30
+宾	pr	30
+补	puh	30
+宠	pdx	30
+初	puv	30
+穿	pwa	30
+窗	pwt	30
+定	pg	30
+福	pyg	30
+富	pgk	30
+宫	pk	30
+官	ph	30
+害	pd	30
+寒	paw	30
+罕	pwf	30
+鹤	pwy	30
+宏	pdc	30
+寄	pds	30
+寂	phg	30
+家	pge	30
+究	pwv	30
+军	pl	30
+客	pt	30
+空	pw	30
+窟	pwn	30
+裤	puo	30
+寒	pa	30
+牢	ptg	30
+禄	pyv	30
+密	pn	30
+宁	ps	30
+农	pe	30
+穷	pwe	30
+容	pww	30
+衫	pue	30
+社	py	30
+神	pyj	30
+审	pj	30
+裤	pu	30
+视	pym	30
+室	pgc	30
+守	pf	30
+它	px	30
+突	pwd	30
+完	pfq	30
+窝	pwk	30
+宪	ptf	30
+祥	pyu	30
+写	pgn	30
+袖	pum	30
+宣	pgj	30
+宴	pjv	30
+宜	peg	30
+宇	pgf	30
+寓	pjm	30
+裕	puw	30
+灾	po	30
+宰	puf	30
+宅	pta	30
+这	p	30
+之	pp	30
+祝	pyk	30
+字	pb	30
+宗	pfi	30
+祖	pye	30
+它	pxb	30
+军	plj	30
+农	pei	30
+安	pvf	30
+字	pbf	30
+守	pfu	30
+宁	psj	30
+宋	psu	30
+灾	pou	30
+穴	pwu	30
+销	qi	30
+镜	qu	30
+尔	qi	30
+锁	qi	30
+销	qie	30
+昏	qaj	30
+狂	qtg	30
+铃	qwy	30
+夕	qtn	30
+钟	qkh	30
+猪	qtf	30
+鲍	qgq	30
+饼	qnu	30
+钞	qit	30
+匆	qry	30
+错	qa	30
+岛	qyn	30
+甸	ql	30
+钓	qqy	30
+独	qtj	30
+锻	qwd	30
+多	qq	30
+儿	qt	30
+犯	qtb	30
+饭	qn	30
+锋	qtd	30
+负	qm	30
+钢	qmr	30
+钩	qqc	30
+狗	qtq	30
+馆	qnp	30
+锅	qkm	30
+狠	qtv	30
+忽	qrn	30
+饥	qnw	30
+急	qvn	30
+角	qeh	30
+解	qe	30
+金	qqq	30
+锦	qrm	30
+镜	quj	30
+久	qy	30
+馈	qnk	30
+链	qlp	30
+鲁	qgj	30
+锣	qlq	30
+铝	qkk	30
+猫	qta	30
+贸	qyv	30
+免	qkq	30
+名	qk	30
+铭	qqk	30
+铺	qge	30
+铅	qwk	30
+钱	qf	30
+欠	qw	30
+钦	qqw	30
+然	qd	30
+饶	qna	30
+锐	quk	30
+色	qc	30
+蚀	qnj	30
+饰	qnt	30
+锁	qim	30
+逃	qip	30
+铁	qr	30
+外	qh	30
+危	qdb	30
+我	q	30
+乌	qng	30
+锡	qjq	30
+鲜	qgu	30
+象	qke	30
+逃	qi	30
+匈	qrb	30
+旬	qj	30
+银	qve	30
+饮	qnq	30
+印	qg	30
+迎	qb	30
+怨	qbn	30
+争	qv	30
+铸	qdt	30
+邹	qvb	30
+钻	qhk	30
+多	qqu	30
+名	qkf	30
+色	qcb	30
+包	qnv	30
+尔	qiu	30
+负	qmu	30
+针	qfh	30
+句	qkd	30
+鱼	qgf	30
+氏	qav	30
+勾	qci	30
+旬	qjd	30
+兆	qii	30
+欠	qwu	30
+甸	qld	30
+找	ra	30
+朱	ri	30
+搭	ra	30
+拼	ru	30
+挡	ri	30
+摇	re	30
+授	re	30
+拥	re	30
+拜	rdf	30
+摄	rbc	30
+插	rtf	30
+搭	raw	30
+摸	raj	30
+拾	rwg	30
+挨	rct	30
+按	rpv	30
+拔	rdc	30
+把	rc	30
+白	rrr	30
+报	rb	30
+抱	rqn	30
+兵	rgw	30
+拨	rnt	30
+播	rto	30
+捕	rge	30
+刹	rsj	30
+拆	rry	30
+抄	rit	30
+撤	ryc	30
+撑	rip	30
+持	rff	30
+挫	rww	30
+打	rs	30
+担	rjg	30
+挡	riv	30
+的	r	30
+抵	rqa	30
+掉	rhj	30
+盾	rfh	30
+返	rcp	30
+氛	rnw	30
+扶	rfw	30
+抚	rfq	30
+搞	ryk	30
+瓜	rcy	30
+鬼	rqc	30
+后	rg	30
+护	ry	30
+换	rq	30
+挥	rpl	30
+挤	ryj	30
+技	rfc	30
+接	ruv	30
+揭	rjq	30
+捷	rgv	30
+斤	rtt	30
+近	rp	30
+拘	rqk	30
+拒	ran	30
+据	rnd	30
+捐	rke	30
+掘	rnb	30
+抗	ryw	30
+控	rpw	30
+扩	ro	30
+括	rtd	30
+拉	ru	30
+拦	rud	30
+揽	rjt	30
+捞	rap	30
+描	ral	30
+拟	rny	30
+年	rh	30
+扭	rnh	30
+排	rhd	30
+乓	rgy	30
+抛	rve	30
+捧	rdw	30
+批	rxx	30
+披	rhc	30
+拼	rua	30
+乒	rgt	30
+气	rn	30
+抢	rwb	30
+邱	rgb	30
+缺	rmn	30
+扰	rdn	30
+热	rv	30
+撒	rae	30
+擅	ryl	30
+失	rw	30
+逝	rrp	30
+手	rt	30
+授	rep	30
+摔	ryx	30
+损	rk	30
+抬	rck	30
+摊	rcw	30
+掏	rqr	30
+提	rj	30
+挑	rqi	30
+投	rwc	30
+托	rta	30
+拖	rtb	30
+握	rng	30
+舞	rlg	30
+希	rdm	30
+掀	rrq	30
+欣	rqw	30
+掩	rdj	30
+扬	rnr	30
+氧	rnu	30
+邀	ryt	30
+援	re	30
+抑	rqb	30
+殷	rvn	30
+拥	reh	30
+援	reg	30
+岳	rgm	30
+择	rcg	30
+招	rvk	30
+摸	ra	30
+折	rr	30
+哲	rrk	30
+振	rd	30
+挣	rqv	30
+执	rvy	30
+指	rx	30
+制	rm	30
+质	rf	30
+泉	ri	30
+撞	ruj	30
+捉	rkh	30
+把	rcn	30
+反	rci	30
+看	rhf	30
+打	rsh	30
+拉	rug	30
+近	rpk	30
+失	rwi	30
+找	ray	30
+扩	rot	30
+杀	rsu	30
+迫	rpd	30
+皇	rgf	30
+折	rrh	30
+朱	rii	30
+抽	rmg	30
+扎	rnn	30
+扫	rvg	30
+拍	rrg	30
+泉	riu	30
+扣	rkg	30
+斥	ryi	30
+扑	rhy	30
+凶	rbk	30
+丘	rgd	30
+押	rlh	30
+拓	rdg	30
+模	sa	30
+横	sa	30
+样	su	30
+框	sa	30
+栏	su	30
+杉	set	30
+榜	syu	30
+杯	sdh	30
+本	sg	30
+标	sfi	30
+彬	sse	30
+材	sft	30
+查	sj	30
+酬	sgy	30
+楚	ssn	30
+村	sf	30
+档	si	30
+顶	sd	30
+栋	sai	30
+覆	stt	30
+概	svc	30
+歌	sks	30
+格	st	30
+根	sv	30
+构	sq	30
+柜	san	30
+桂	sff	30
+杭	syw	30
+核	syn	30
+横	sam	30
+机	sw	30
+极	sby	30
+贾	sm	30
+检	swg	30
+椒	shg	30
+杰	so	30
+禁	ssf	30
+桔	sfk	30
+柯	ssk	30
+棵	sjs	30
+可	sk	30
+枯	sdg	30
+酷	sgt	30
+栏	sud	30
+李	sb	30
+林	ss	30
+柳	sqt	30
+楼	sov	30
+梅	stx	30
+梦	ssq	30
+棉	srm	30
+棋	sa	30
+攀	srr	30
+配	sgn	30
+棚	se	30
+棋	sad	30
+枪	swb	30
+桥	std	30
+权	sc	30
+森	sss	30
+枢	sar	30
+术	sy	30
+述	syp	30
+树	scf	30
+松	swc	30
+酸	sgc	30
+桃	sqi	30
+梯	sux	30
+桶	sce	30
+析	sr	30
+相	sh	30
+想	shn	30
+橡	sqk	30
+械	saa	30
+醒	sgj	30
+杨	sn	30
+梯	su	30
+要	s	30
+椅	sds	30
+枝	sfc	30
+株	sri	30
+柱	syg	30
+桩	sof	30
+要	svf	30
+可	skd	30
+机	swn	30
+权	scy	30
+术	syi	30
+林	ssy	30
+李	sbf	30
+村	sfy	30
+析	srh	30
+丁	sgh	30
+杆	sfh	30
+杜	sfg	30
+柏	srg	30
+朴	shy	30
+杠	sag	30
+杏	skf	30
+枚	sty	30
+贾	smu	30
+务	te	30
+长	ta	30
+科	tu	30
+乘	tu	30
+船	te	30
+秒	ti	30
+彻	ta	30
+简	tu	30
+升	ta	30
+程	tkg	30
+怎	thf	30
+智	tdk	30
+奥	tmo	30
+备	tl	30
+鼻	thl	30
+彼	thc	30
+笔	tt	30
+币	tmh	30
+秉	tgv	30
+舶	ter	30
+策	tgm	30
+称	tqi	30
+乘	tux	30
+处	th	30
+船	tew	30
+答	tw	30
+稻	tee	30
+得	tj	30
+德	tfl	30
+等	tf	30
+敌	tdt	30
+第	tx	30
+丢	tfc	30
+短	tdg	30
+番	tol	30
+逢	tdh	30
+符	twf	30
+复	tjt	30
+稿	tyk	30
+各	tk	30
+管	tp	30
+行	tgs	30
+航	tey	30
+和	t	30
+很	tv	30
+衡	tqd	30
+积	tkw	30
+籍	tdi	30
+简	tuj	30
+舰	tem	30
+箭	tue	30
+径	tca	30
+税	tu	30
+乐	tn	30
+梨	tjs	30
+黎	tqt	30
+笼	tdx	30
+乱	tdn	30
+律	tvg	30
+么	tc	30
+秘	tnt	30
+稍	ti	30
+敏	txt	30
+穆	tri	30
+盘	tel	30
+篇	tyn	30
+片	thg	30
+迁	tfp	30
+乔	tdj	30
+秋	to	30
+入	ty	30
+稍	tie	30
+射	tmd	30
+生	tg	30
+牲	ttg	30
+适	tdp	30
+释	toc	30
+税	tuk	30
+算	tha	30
+笋	tvt	30
+毯	tfn	30
+甜	tda	30
+条	ts	30
+艇	tet	30
+透	tbp	30
+往	tyg	30
+微	tmg	30
+魏	tvr	30
+稳	tqv	30
+午	tfj	30
+租	te	30
+物	tq	30
+息	thn	30
+悉	ton	30
+稀	tr	30
+系	txi	30
+先	tfq	30
+衔	tqg	30
+箱	tsh	30
+向	tm	30
+笑	ttd	30
+秀	tb	30
+徐	twg	30
+循	trf	30
+衍	tig	30
+移	tqq	30
+役	twc	30
+禹	tkm	30
+御	trh	30
+粤	tlo	30
+筑	ta	30
+征	tgh	30
+知	td	30
+种	tkh	30
+竹	tht	30
+筑	taw	30
+租	teg	30
+生	tgd	30
+自	thd	30
+各	tkf	30
+么	tcu	30
+利	tjh	30
+条	tsu	30
+入	tyi	30
+处	thi	30
+每	txu	30
+千	tfk	30
+备	tlf	30
+委	tvf	30
+升	tak	30
+血	tld	30
+秋	toy	30
+牛	tgk	30
+香	tjf	30
+私	tcy	30
+季	tbf	30
+冬	tuu	30
+秀	tbr	30
+牧	tty	30
+舟	tei	30
+乏	tpu	30
+牺	tsg	30
+牡	tfg	30
+颜	ute	30
+盗	uqw	30
+剪	uej	30
+美	ugd	30
+瓶	uag	30
+善	ugu	30
+癌	ukk	30
+北	ux	30
+背	uxe	30
+闭	uft	30
+弊	umi	30
+冰	ui	30
+并	ua	30
+病	ugm	30
+部	ukb	30
+曾	ulj	30
+差	uga	30
+产	u	30
+阐	uul	30
+冲	ukh	30
+次	uq	30
+凑	udw	30
+单	ul	30
+道	ut	30
+弟	uxh	30
+冻	uai	30
+斗	uf	30
+端	um	30
+冯	ucg	30
+盖	ugl	30
+音	ujf	30
+阁	utk	30
+痕	uve	30
+疾	utd	30
+冀	uxl	30
+间	uj	30
+兼	uv	30
+减	udg	30
+将	uqf	30
+浆	uqi	30
+奖	uqd	30
+净	uqv	30
+竞	ukq	30
+竟	ujq	30
+决	un	30
+竣	ucw	30
+阔	uit	30
+冷	uwy	30
+立	uu	30
+疗	ubk	30
+门	uy	30
+闹	uym	30
+凝	uxt	30
+疲	uhc	30
+剖	ukj	30
+普	uo	30
+前	ue	30
+亲	us	30
+拳	udr	30
+券	udv	30
+首	uth	30
+兽	ulg	30
+瘦	ueh	30
+送	udp	30
+塑	ubt	30
+遂	uep	30
+疼	utu	30
+痛	uc	30
+头	ud	30
+闻	ub	30
+问	uk	30
+翔	ugn	30
+新	usr	30
+阎	uqe	30
+养	ufw	30
+冶	uck	30
+疫	uwc	30
+益	uwl	30
+意	ujn	30
+毅	uew	30
+站	uh	30
+着	ug	30
+郑	udb	30
+症	ugh	30
+装	ufy	30
+状	udy	30
+准	uw	30
+兹	uxx	30
+总	ukn	30
+尊	usg	30
+关	udu	30
+间	ujd	30
+问	ukd	30
+并	uaj	30
+头	udi	30
+北	uxn	30
+斗	ufk	30
+半	ugk	30
+亲	usu	30
+兰	udf	30
+闻	ubd	30
+闪	uwi	30
+冰	uiy	30
+辛	ufj	30
+壮	ufg	30
+羊	ugj	30
+闲	usi	30
+闽	uji	30
+闸	ulk	30
+妆	uvg	30
+巢	vjs	30
+逮	vip	30
+刀	vn	30
+发	v	30
+妇	vv	30
+姑	vd	30
+好	vb	30
+婚	vq	30
+即	vc	30
+既	vca	30
+嫁	vp	30
+建	vg	30
+姐	veg	30
+九	vt	30
+君	vtk	30
+垦	vef	30
+恳	ven	30
+灵	vo	30
+录	vi	30
+妈	vcg	30
+媒	va	30
+妹	vfi	30
+妙	vit	30
+姆	vx	30
+娜	vng	30
+嫩	vgk	30
+娘	vy	30
+努	vce	30
+怒	vcn	30
+女	vvv	30
+忍	vyn	30
+如	vk	30
+邵	vkb	30
+始	vck	30
+肃	vij	30
+退	ve	30
+丸	vyi	30
+嫌	vu	30
+姓	vtg	30
+旭	vj	30
+寻	vf	30
+姚	vqi	30
+姻	vl	30
+杂	vs	30
+如	vkg	30
+好	vbg	30
+她	vbn	30
+杂	vsu	30
+灵	vou	30
+召	vkf	30
+录	viu	30
+刀	vnt	30
+妇	vvg	30
+姑	vdg	30
+奶	vbt	30
+隶	vii	30
+寻	vfu	30
+巡	vpv	30
+姆	vxy	30
+妨	vyt	30
+旭	vjd	30
+尹	vte	30
+们	wu	30
+代	wa	30
+伐	wa	30
+供	wa	30
+倍	wu	30
+堡	wks	30
+倡	wjj	30
+段	wdw	30
+您	wqi	30
+偷	wwg	30
+伟	wfn	30
+住	wyg	30
+八	wt	30
+爸	wrc	30
+保	wk	30
+倍	wuk	30
+便	wgj	30
+侧	wmj	30
+偿	wi	30
+储	wyf	30
+创	wbj	30
+从	ww	30
+促	wkh	30
+催	wmw	30
+借	wa	30
+但	wjg	30
+倒	wgc	30
+低	wqa	30
+俄	wtr	30
+分	wv	30
+份	wwv	30
+风	wr	30
+佛	wxj	30
+伏	wdy	30
+傅	wge	30
+个	wh	30
+公	wc	30
+供	waw	30
+估	wdg	30
+谷	wwk	30
+何	wsk	30
+侯	wnt	30
+候	whn	30
+华	wxf	30
+化	wx	30
+会	wf	30
+伙	wo	30
+货	wxm	30
+集	wys	30
+佳	wff	30
+假	wn	30
+价	wwj	30
+件	wtg	30
+剑	wgi	30
+健	wvg	30
+焦	wyo	30
+介	wj	30
+借	waj	30
+今	wyn	30
+俱	whw	30
+俊	wcw	30
+例	wgq	30
+令	wyc	30
+伦	wwx	30
+位	wu	30
+倪	weq	30
+你	wq	30
+偶	wjm	30
+盆	wvl	30
+贫	wvm	30
+侨	wtd	30
+侵	wvp	30
+倾	wxd	30
+全	wg	30
+人	w	30
+仁	wfg	30
+任	wtf	30
+儒	wfd	30
+伤	wte	30
+舍	wfk	30
+伸	wjh	30
+食	wyv	30
+使	wgk	30
+似	wny	30
+售	wyk	30
+颂	wcd	30
+他	wb	30
+体	ws	30
+翁	wcn	30
+仙	wm	30
+像	wqk	30
+信	wy	30
+修	wht	30
+仰	wqb	30
+爷	wrb	30
+伊	wvt	30
+依	wye	30
+仪	wyr	30
+优	wdn	30
+余	wgs	30
+仔	wbg	30
+债	wgm	30
+侦	whm	30
+众	www	30
+佐	wda	30
+坐	wwf	30
+做	wd	30
+个	whj	30
+他	wbn	30
+们	wun	30
+分	wvr	30
+化	wxn	30
+从	wwy	30
+全	wgf	30
+位	wug	30
+几	wtn	30
+什	wfh	30
+八	wty	30
+风	wri	30
+企	whf	30
+仅	wcy	30
+仍	wbt	30
+父	wru	30
+付	wfy	30
+凡	wyi	30
+伙	woy	30
+亿	wnn	30
+休	wsy	30
+伍	wgg	30
+仿	wyt	30
+伐	way	30
+凤	wci	30
+朵	wsu	30
+仙	wmh	30
+仆	why	30
+仑	wxb	30
+仓	wbb	30
+伯	wrg	30
+弱	xu	30
+缓	xeg	30
+绳	xkj	30
+比	xx	30
+毕	xxf	30
+编	xyn	30
+缠	xoj	30
+绸	xmf	30
+纯	xg	30
+弹	xul	30
+缔	xyu	30
+费	xj	30
+纷	xwv	30
+缚	xge	30
+纲	xm	30
+给	xw	30
+贯	xfm	30
+红	xa	30
+幻	xnn	30
+绘	xwf	30
+级	xb	30
+纪	xn	30
+继	xon	30
+继	xo	30
+绩	xgm	30
+缴	xr	30
+皆	xxr	30
+结	xfk	30
+经	x	30
+纠	xnh	30
+绝	xqc	30
+缆	xjt	30
+练	xan	30
+络	xtk	30
+绿	xv	30
+弥	xqi	30
+绵	xrm	30
+缅	xdm	30
+纳	xmw	30
+强	xk	30
+顷	xd	30
+绕	xat	30
+绒	xad	30
+弹	xu	30
+纱	xi	30
+绍	xvk	30
+丝	xxg	30
+缩	xp	30
+统	xy	30
+维	xwy	30
+细	xl	30
+纤	xtf	30
+线	xf	30
+绣	xtb	30
+绪	xft	30
+续	xfn	30
+疑	xtd	30
+引	xh	30
+约	xq	30
+张	xt	30
+织	xkw	30
+纸	xqa	30
+终	xtu	30
+综	xpf	30
+纵	xww	30
+组	xe	30
+比	xxn	30
+红	xag	30
+引	xhh	30
+细	xlg	30
+乡	xte	30
+纺	xyt	30
+纹	xyy	30
+幼	xet	30
+旨	xjf	30
+弗	xjk	30
+弘	xcy	30
+谋	ya	30
+变	yo	30
+谨	ya	30
+说	yu	30
+诺	ya	30
+恋	yo	30
+旁	yu	30
+谈	yo	30
+词	yng	30
+试	yaa	30
+忘	ynn	30
+旋	ytn	30
+文	yyg	30
+州	yty	30
+哀	yke	30
+亦	yo	30
+遍	ynm	30
+斌	yfh	30
+诚	yd	30
+充	yc	30
+畜	yxl	30
+诞	yth	30
+订	ys	30
+读	yfn	30
+方	yy	30
+房	yny	30
+放	yt	30
+高	ykm	30
+膏	ykp	30
+雇	ynw	30
+熟	ykb	30
+话	ytd	30
+计	yf	30
+记	yn	30
+迹	yop	30
+讲	yfj	30
+交	ywr	30
+谨	yak	30
+京	yki	30
+就	yk	30
+刻	ynt	30
+课	yjs	30
+朗	yvc	30
+离	yrb	30
+恋	yon	30
+良	yv	30
+谅	yyk	30
+刘	yj	30
+六	yw	30
+论	ywx	30
+旅	yte	30
+率	yx	30
+盲	ynh	30
+试	ya	30
+诺	yad	30
+旁	yup	30
+评	ygu	30
+谱	yuo	30
+启	ynk	30
+弃	yca	30
+谦	yuv	30
+请	yg	30
+让	yh	30
+商	yum	30
+设	ywc	30
+诗	yff	30
+施	ytb	30
+识	ykw	30
+市	ym	30
+详	yu	30
+诉	yry	30
+谈	yoo	30
+谭	ysj	30
+调	ymf	30
+弯	yox	30
+谓	yl	30
+误	ykg	30
+襄	ykk	30
+详	yug	30
+谐	yxx	30
+谢	ytm	30
+许	ytf	30
+询	yq	30
+讯	ynf	30
+言	yyy	30
+夜	ywt	30
+衣	ye	30
+义	yr	30
+议	yyr	30
+译	ycg	30
+永	yni	30
+语	ygk	30
+育	yce	30
+诊	ywe	30
+证	ygh	30
+诸	yft	30
+主	y	30
+族	ytt	30
+这	ypi	30
+主	ygd	30
+义	yri	30
+六	ywu	30
+认	ywy	30
+刘	yjh	30
+讨	yfy	30
+衣	yeu	30
+齐	yjj	30
+训	ykh	30
+户	yne	30
+访	yyt	30
+亦	you	30
+订	ysh	30
+亡	ynv	30
+亩	ylf	30

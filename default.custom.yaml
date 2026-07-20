@@ -1,0 +1,130 @@
+# default.custom.yaml 全局配置
+patch:
+  # 输入法切换列表（86/98/新世纪全部显示）
+  schema_list:
+    - schema: keke_wubi_86
+    - schema: keke_wubi_98
+    - schema: keke_wubi_nc
+
+  # 候选栏设置
+  menu:
+    page_size: 5
+  # 切换弹窗快捷键
+  switcher:
+    hotkeys:
+      - "Control+0"
+      - "Shift+Control+0"
+    abbreviate_options: true
+    caption: "【 输入法设置 】"
+    option_list_separator: "｜"
+
+  # 中英文切换规则
+  ascii_composer:
+    good_old_caps_lock: true
+    switch_key:
+      Caps_Lock: commit_code
+      Shift_L: commit_code
+      Shift_R: commit_code
+      Control_L: noop
+      Control_R: noop
+
+  # 自定义按键绑定
+  key_binder:
+    bindings:
+      - { when: has_menu, accept: semicolon, send: 2 }
+      - { when: has_menu, accept: apostrophe, send: 3 }
+      - { when: has_menu, accept: bracketleft, send: Page_Up }
+      - { when: has_menu, accept: bracketright, send: Page_Down }
+      - { when: has_menu, accept: Shift+Tab, send: Page_Up }
+      - { when: has_menu, accept: Tab, send: Page_Down }
+      - { when: composing, accept: Control+p, send: Up }
+      - { when: composing, accept: Control+n, send: Down }
+      - { when: composing, accept: Control+b, send: Left }
+      - { when: composing, accept: Control+f, send: Right }
+      - { when: composing, accept: Control+a, send: Home }
+      - { when: composing, accept: Control+e, send: End }
+      - { when: composing, accept: Control+d, send: Delete }
+      - { when: composing, accept: Control+k, send: Shift+Delete }
+      - { when: composing, accept: Control+h, send: BackSpace }
+      - { when: composing, accept: Control+g, send: Escape }
+      - { when: composing, accept: Control+bracketleft, send: Escape }
+      - { when: composing, accept: Alt+v, send: Page_Up }
+      - { when: composing, accept: Control+v, send: Page_Down }
+
+  # 全半角标点完整保留
+  punctuator:
+    full_shape:
+      " ": {commit: "　"}
+      "!": {commit: "！"}
+      "\"": {pair: ["“", "”"]}
+      "#": ["＃", "⌘"]
+      "$": "￥"
+      "%": "％"
+      "&": "＆"
+      "'": {pair: ["‘", "’"]}
+      "(": "（"
+      ")": "）"
+      "*": ["＊", "・", "×"]
+      "+": "＋"
+      ",": {commit: "，"}
+      "-": "－"
+      .: {commit: "。"}
+      "/": ["／", "÷"]
+      ":": {commit: "："}
+      ";": {commit: "；"}
+      "<": ["《", "〈", "«", "‹"]
+      "=": "＝"
+      ">": ["》", "〉", "»", "›"]
+      "?": {commit: "？"}
+      "@": "＠"
+      "[": ["「", "【", "〔", "［"]
+      "\\": ["、", "＼"]
+      "]": ["」", "【", "〕", "］"]
+      "^": {commit: "……"}
+      _: "——"
+      "`": "｀"
+      "{": ["『", "〖", "｛"]
+      "|": ["·", "｜", "§", "¦"]
+      "}": ["』", "〗", "｝"]
+      "~": "～"
+    half_shape:
+      "!": {commit: "！"}
+      "\"": {pair: ["“", "”"]}
+      "#": "#"
+      "$": "￥"
+      "%": ["%", "％", "°", "℃"]
+      "&": "&"
+      "'": {pair: ["‘", "’"]}
+      "(": "（"
+      ")": "）"
+      "*": "*"
+      "+": "+"
+      ",": {commit: "，"}
+      "-": {commit: "-"}
+      .: {commit: "。"}
+      "/": "/"
+      ":": {commit: "："}
+      ";": {commit: "；"}
+      "<": {commit: "《"}
+      "=": {commit: "="}
+      ">": {commit: "》"}
+      "?": {commit: "？"}
+      "@": "@"
+      "[": {commit: "【"}
+      "\\": {commit: "、"}
+      "]": {commit: "】"}
+      "^": {commit: "……"}
+      _: "——"
+      "`": "`"
+      "{": "「"
+      "|": "|"
+      "}": "」"
+      "~": "~"
+
+  # 自动识别邮箱/网址，不转中文
+  recognizer:
+    patterns:
+      email: "^[-_.0-9A-Za-z]+@.*$"
+      uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
+      url: "^(www[.]|https?:|ftp[.:]|mailto:|file:|localhost).*$"
+    # 命令识别仅方案内生效，全局移除全局command规则，避免拦截五笔
