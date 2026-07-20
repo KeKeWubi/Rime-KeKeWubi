@@ -43,7 +43,7 @@ switches:
     reset: 0
     states: [ 中, En ]
   - name: ascii_punct
-    reset: 1
+    reset: 0
     states: [ 中文标点, 英文标点 ]
 
 # 直接调用系统自带的标准标点库
