@@ -1,10 +1,18 @@
-About me
-↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓2026年7月20日↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+# About me
+
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓2026年7月20日↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓  
+
+可可五笔官网： https://keke.kim/  
+
+  
+初次使用GitHub，设计结构如下：  
+
+```tree
 Rime/
-├─ rime.lua          # Lua模块全局注册
-├─ default.custom.yaml  # 全局补丁
-├─ lua/              # lua文件夹
-│  └─ command_translator.lua  # 日期时间脚本
+├─ rime.lua                  # Lua模块全局注册
+├─ default.custom.yaml       # 全局补丁
+├─ lua/                      # lua文件夹
+│  └─ command_translator.lua # 日期时间脚本
 三套输入方案
 ├─ keke_wubi_86.schema.yaml
 ├─ keke_wubi_98.schema.yaml
@@ -23,9 +31,3 @@ Rime/
 ├─ keke_wubi_nc_rare.dict.yaml
 全局符号词库（待改进）
 └─ keke_wubi_global_symbols.dict.yaml
-↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑2026年7月20日↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
-
-
-↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓2026年7月19日↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
-2026年7月，计划把可可五笔移植到 Rime 。可可五笔官网： https://keke.kim/
-↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑2026年7月19日↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
