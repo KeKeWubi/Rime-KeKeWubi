@@ -3,8 +3,6 @@ schema:
   name: "可可五笔 - 98版五笔"
   version: "0.1"
 
-# 翻译器顺序：先五笔字库→符号→Lua命令（命令最后，不拦截正常五笔）
-
 engine:
   processors:
     - ascii_composer
@@ -25,41 +23,31 @@ engine:
     - punct_translator
     - reverse_lookup_translator
     - table_translator
-    - lua_translator@command_translator
   filters:
     - simplifier@tradition
-#    - lua_filter@*wubi86_jidian_single_char_first_filter # 单字优先
-#    - lua_filter@*wubi86_jidian_single_char_only # 纯单字
-# 主单字字库
+
 translator:
   dictionary: keke_wubi_98_common
   enable_charset_filter: true
   enable_sentence: false
   enable_completion: false
 
-
-# 五笔编码规则：最多4码，仅小写字母
 speller:
   alphabet: "abcdefghijklmnopqrstuvwxyz"
   initials: "abcdefghijklmnopqrstuvwxyz"
   auto_select: false
   max_length: 4
 
-# 简繁/全半角开关
 switches:
   - name: ascii_mode
     reset: 0
     states: [ 中, En ]
-  - name: zh_trad
-    reset: 0    # 初始状态为 0: 简 -> 简 1: 简 -> 繁
-    states: [ 简体, 繁体 ]
-  - name: full_shape
-    states: [ 半角, 全角 ]
-  - name: extended_charset
-    states: [ 常用, 扩展 ]
   - name: ascii_punct
-    states: [ 。，, ．， ]
-# 识别命令正则（仅本方案内生效，不干扰其他五笔）
-recognizer:
-  patterns:
-    command: "^(date|time|CMDdate|CMDtime|日期|时间)$"
+    reset: 1
+    states: [ 中文标点, 英文标点 ]
+
+# 直接调用系统自带的标准标点库
+punctuator:
+  import_preset: default
+  ascii_punct:
+    hotkey: "Control+period"
