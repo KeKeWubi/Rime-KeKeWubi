@@ -4,8 +4,7 @@
 
 可可五笔官网： https://keke.kim/  
 
-  
-初次使用GitHub，设计结构如下：  
+设计结构如下：  
 
 ```tree
 Rime/
