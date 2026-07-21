@@ -2,6 +2,8 @@ schema:
   schema_id: "keke_wubi_nc"
   name: "可可五笔 - 新世纪版"
   version: "0.1"
+  icon: "img/zh.ico"
+  ascii_icon: "img/en.ico"
   author:
     - 苏轲 <iSuke@msn.com>
   description: |
