@@ -2,6 +2,8 @@ schema:
   schema_id: "keke_wubi_98"
   name: "可可五笔 - 98版"
   version: "0.1"
+  icon: "img/zh.ico"
+  ascii_icon: "img/en.ico"
   author:
     - 苏轲 <iSuke@msn.com>
   description: |
