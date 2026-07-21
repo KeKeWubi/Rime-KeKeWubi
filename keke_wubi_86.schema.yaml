@@ -2,6 +2,10 @@ schema:
   schema_id: "keke_wubi_86"
   name: "可可五笔 - 86版"
   version: "0.1"
+  author:
+    - 苏轲 <iSuke@msn.com>
+  description: |
+    可可五笔<https://keke.kim/>移植
 
 engine:
   processors:
