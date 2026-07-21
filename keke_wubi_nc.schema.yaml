@@ -30,7 +30,7 @@ translator:
   dictionary: keke_wubi_nc_common
   enable_charset_filter: true
   enable_sentence: false
-  enable_completion: false
+  enable_completion: true
 
 speller:
   alphabet: "abcdefghijklmnopqrstuvwxyz"
