@@ -3,8 +3,9 @@ local function translator(input, seg)
 
     local function num_to_rmb(num_str)
         local digit = {'零','壹','贰','叁','肆','伍','陆','柒','捌','玖'}
-        local unit_int = {'','拾','佰','仟','万','拾','佰','仟','亿','拾','佰','仟','兆','拾','佰','仟'}
+        local inner_unit = {"", "拾", "佰", "仟"}
         local unit_dec = {'角','分'}
+        
         local dot = num_str:find("%.")
         local integer_part, decimal_part
         if dot then
@@ -23,23 +24,60 @@ local function translator(input, seg)
         local jiao_num = tonumber(decimal_part:sub(1,1))
         local fen_num = tonumber(decimal_part:sub(2,2))
 
-        local rmb = ""
-        local int_len = #integer_part
-        for i=1,int_len do
-            local n = tonumber(integer_part:sub(i,i))
-            local pos = int_len - i + 1
-            if pos <= #unit_int then
-                if n ~= 0 then
-                    rmb = rmb .. digit[n+1] .. unit_int[pos]
+        local int_rev = integer_part:reverse()
+        local group_list = {}
+        for i = 1, #int_rev, 4 do
+            local block = int_rev:sub(i, i+3):reverse()
+            table.insert(group_list, block)
+        end
+
+        local rmb_int = ""
+        local last_was_zero = false
+
+        for g_idx = #group_list, 1, -1 do
+            local block = group_list[g_idx]
+            local block_buf = ""
+            local block_has_num = false
+            local blen = #block
+
+            for d_idx = 1, blen do
+                local n = tonumber(block:sub(d_idx, d_idx))
+                local iu = inner_unit[blen - d_idx + 1]
+                if n > 0 then
+                    block_buf = block_buf .. digit[n+1] .. iu
+                    block_has_num = true
+                    last_was_zero = false
                 else
-                    if rmb ~= "" and rmb:sub(-1) ~= "零" then
-                        rmb = rmb .. "零"
+                    if block_buf ~= "" and block_buf:sub(-1) ~= "零" then
+                        block_buf = block_buf .. "零"
                     end
                 end
             end
+            block_buf = block_buf:gsub("零+$", "")
+
+            local suffix = ""
+            local level = g_idx - 1
+            local yi_count = math.floor(level / 2)
+            if level % 2 == 1 then
+                suffix = "万"
+            end
+            suffix = suffix .. string.rep("亿", yi_count)
+
+            if block_has_num then
+                rmb_int = rmb_int .. block_buf .. suffix
+                last_was_zero = false
+            else
+                if rmb_int ~= "" and not last_was_zero then
+                    rmb_int = rmb_int .. "零"
+                    last_was_zero = true
+                end
+            end
         end
-        rmb = rmb:gsub("零+$","")
-        rmb = rmb .. "元"
+
+        if rmb_int == "" then
+            rmb_int = "零"
+        end
+        local rmb = rmb_int .. "元"
 
         if jiao_num > 0 then
             rmb = rmb .. digit[jiao_num+1] .. unit_dec[1]
@@ -97,8 +135,6 @@ local function translator(input, seg)
     if num_part then
         local dot_cnt = select(2, num_part:gsub("%.", ""))
         if dot_cnt > 1 then return end
-        local int_check = num_part:match("^(%d+)")
-        if int_check and #int_check > 24 then return end
         
         local rmb_str = num_to_rmb(num_part)
         yield(Candidate("cmd", seg.start, seg._end, rmb_str, "人民币大写"))
