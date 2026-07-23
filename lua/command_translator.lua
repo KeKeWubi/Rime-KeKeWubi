@@ -1,9 +1,9 @@
--- 可可五笔 命令翻译器（PC+iOS仓输入法兼容修复版）
+-- 可可五笔 命令翻译器
 local function translator(input, seg)
 
     local function num_to_rmb(num_str)
         local digit = {'零','壹','贰','叁','肆','伍','陆','柒','捌','玖'}
-        local unit_int = {'','拾','佰','仟','万','拾','佰','仟','亿','拾','佰','仟'}
+        local unit_int = {'','拾','佰','仟','万','拾','佰','仟','亿','拾','佰','仟','兆','拾','佰','仟'}
         local unit_dec = {'角','分'}
         local dot = num_str:find("%.")
         local integer_part, decimal_part
@@ -28,14 +28,17 @@ local function translator(input, seg)
         for i=1,int_len do
             local n = tonumber(integer_part:sub(i,i))
             local pos = int_len - i + 1
-            if n ~= 0 then
-                rmb = rmb .. digit[n+1] .. unit_int[pos]
-            else
-                if rmb ~= "" and rmb:sub(-1) ~= "零" then
-                    rmb = rmb .. "零"
+            if pos <= #unit_int then
+                if n ~= 0 then
+                    rmb = rmb .. digit[n+1] .. unit_int[pos]
+                else
+                    if rmb ~= "" and rmb:sub(-1) ~= "零" then
+                        rmb = rmb .. "零"
+                    end
                 end
             end
         end
+        rmb = rmb:gsub("零+$","")
         rmb = rmb .. "元"
 
         if jiao_num > 0 then
@@ -95,7 +98,7 @@ local function translator(input, seg)
         local dot_cnt = select(2, num_part:gsub("%.", ""))
         if dot_cnt > 1 then return end
         local int_check = num_part:match("^(%d+)")
-        if int_check and #int_check > 15 then return end
+        if int_check and #int_check > 24 then return end
         
         local rmb_str = num_to_rmb(num_part)
         yield(Candidate("cmd", seg.start, seg._end, rmb_str, "人民币大写"))
