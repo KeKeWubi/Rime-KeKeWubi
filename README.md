@@ -14,7 +14,7 @@
 * 文件结构如下：
 
 ```tree
-    Rime/                                      # 所有平台都是这个目录
+    Rime/                                      # 所有平台都是这个配置目录
         ├─ default.custom.yaml                 # 全局补丁
         ├─ lua/                                # lua文件夹
            └─ command_translator.lua           # 日期时间星期命令脚本
