@@ -17,7 +17,7 @@
     Rime/                                      # 所有平台都是这个配置目录
         ├─ default.custom.yaml                 # 全局补丁
         ├─ lua/                                # lua文件夹
-           └─ command_translator.lua           # 日期时间星期命令脚本
+           └─ command_translator.lua           # 命令翻译器，支持输入：rmb888.88 输出：捌佰捌拾捌元捌角捌分；还支持直接输入 help、time、date、week等
            └─ rime.lua                         #全局注册lua
         ├─ img/                                # windows平台有效的图标
            └─ en.ico                           # 英文状态图标
@@ -44,4 +44,4 @@
         ├─ keke_wubi_nc_user.dict.yaml
         全局词库
         └─ keke_wubi_global_symbols.dict.yaml       # 可可特殊符号
-        └─ keke_wubi_global_pinyin.dict.yaml        # 可可临时拼音词库
+        └─ keke_wubi_global_pinyin.dict.yaml        # 可可临时拼音词库，先按字母 z 进入临时拼音模式
