@@ -1,7 +1,7 @@
 schema:
   schema_id: "keke_wubi_86"
   name: "可可五笔 - 86版"
-  version: "0.1"
+  version: "1.0"
   icon: "img/zh.ico"
   ascii_icon: "img/en.ico"
   author:
