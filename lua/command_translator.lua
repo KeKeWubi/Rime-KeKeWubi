@@ -59,11 +59,11 @@ local function translator(input, seg)
     end
 
     if input == "help" then
-        yield(Candidate("cmd", seg.start, seg._end, "请前往可可五笔官网：keke.kim", os.date("")))
+        yield(Candidate("cmd", seg._end, seg.start, "请前往可可五笔官网：keke.kim", os.date("")))
     end
 
     if input == "conf" or input == "conv" then
-        yield(Candidate("cmd", seg.start, seg._end, "请按Ctrl+0", os.date("")))
+        yield(Candidate("cmd", seg._end, seg.start, "请按 Ctrl+0（数字零）", os.date("")))
     end
     
     if input == "date" then
