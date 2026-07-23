@@ -17,7 +17,7 @@
 Rime/                                        # 所有平台都是这个配置目录
     ├─ default.custom.yaml                   # 全局补丁
     ├─ lua/                                  # lua文件夹
-       └─ keke_wubi_command_translator.lua   # 命令翻译器，输入 rmb888.88 输出 捌佰捌拾捌元捌角捌分；或直接输入 help、time、date、week等
+       └─ keke_wubi_command_translator.lua   # 命令翻译器，输入 rmb888.88 输出 捌佰捌拾捌元捌角捌分；或 help、time、date、week等
        └─ rime.lua                           #全局注册lua
     ├─ img/                                  # windows平台有效的图标
        └─ en.ico                             # 英文状态图标
