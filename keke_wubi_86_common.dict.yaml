@@ -1,7 +1,7 @@
 #keke_wubi_86_common.dict.yaml
 ---
 name: keke_wubi_86_common
-version: "0.1"
+version: "1.0"
 sort: by_weight
 import_tables:
   - keke_wubi_86_system
