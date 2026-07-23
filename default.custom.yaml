@@ -47,3 +47,4 @@ patch:
       email: "^[-_.0-9A-Za-z]+@.*$"
       uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
       url: "^(?:www\\.|mailto:|file:|ftp[:./]|localhost)[a-zA-Z0-9_\\-./%&=?#~+@]*$"
+      phrase: "^'" 
