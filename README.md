@@ -6,7 +6,7 @@
 
 提示：
 * 使用时，只需要把全部文件拷贝到各RIME前端的用户文件夹（名字都叫“ Rime”），重新部署即可使用可可
-* 不同平台Rime前端名称：windows：小狼毫；Macos：鼠须管；ios：iRime；安卓：同文；Linux：ibus-rime
+* 不同平台Rime前端名称：windows：小狼毫；MacOS：鼠须管；ios：iRime；安卓：同文；Linux：ibus-rime
 * 文件结构如下：
 
 ```tree
