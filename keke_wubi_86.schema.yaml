@@ -29,7 +29,7 @@ engine:
     - punct_translator
     - reverse_lookup_translator
     - table_translator
-    - lua_translator@*command_translator
+    - lua_translator@*keke_wubi_command_translator
   filters:
     - simplifier@tradition
 
