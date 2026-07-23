@@ -35,6 +35,10 @@ Rime/
 ├─ keke_wubi_nc_common.dict.yaml
 ├─ keke_wubi_nc_system.dict.yaml
 ├─ keke_wubi_nc_rare.dict.yaml
+用户自己的词库（建议修改以下文件，不要动其它文件）
+├─ keke_wubi_86_user.dict.yaml
+├─ keke_wubi_98_user.dict.yaml
+├─ keke_wubi_nc_user.dict.yaml
 全局词库
 └─ keke_wubi_global_symbols.dict.yaml # 可可特殊符号
 └─ keke_wubi_global_pinyin.dict.yaml  # 可可临时拼音词库
