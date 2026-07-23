@@ -1,4 +1,4 @@
--- 可可五笔 命令翻译器
+-- 可可五笔 命令翻译器（PC+iOS仓输入法兼容修复版）
 local function translator(input, seg)
 
     local function num_to_rmb(num_str)
@@ -10,7 +10,6 @@ local function translator(input, seg)
         if dot then
             integer_part = num_str:sub(1, dot-1)
             decimal_part = num_str:sub(dot+1):sub(1,2)
-            -- 小数不足两位末尾补0
             if #decimal_part == 1 then
                 decimal_part = decimal_part .. "0"
             end
@@ -18,11 +17,9 @@ local function translator(input, seg)
             integer_part = num_str
             decimal_part = "00"
         end
-        -- 清除整数前导零
         integer_part = integer_part:gsub("^0+","")
         if integer_part == "" then integer_part = "0" end
 
-        -- 拆分角、分数字
         local jiao_num = tonumber(decimal_part:sub(1,1))
         local fen_num = tonumber(decimal_part:sub(2,2))
 
@@ -41,11 +38,9 @@ local function translator(input, seg)
         end
         rmb = rmb .. "元"
 
-        -- 拼接角
         if jiao_num > 0 then
             rmb = rmb .. digit[jiao_num+1] .. unit_dec[1]
         end
-        -- 拼接分，分存在才输出
         if fen_num > 0 then
             if jiao_num == 0 then
                 rmb = rmb .. "零"
@@ -53,7 +48,6 @@ local function translator(input, seg)
             rmb = rmb .. digit[fen_num+1] .. unit_dec[2]
         end
 
-        -- 只有整数、无角分时加「整」；有角/分不加整
         if decimal_part == "00" then
             rmb = rmb .. "整"
         end
@@ -98,6 +92,11 @@ local function translator(input, seg)
     
     local num_part = input:match("^rmb([0-9%.]+)$")
     if num_part then
+        local dot_cnt = select(2, num_part:gsub("%.", ""))
+        if dot_cnt > 1 then return end
+        local int_check = num_part:match("^(%d+)")
+        if int_check and #int_check > 15 then return end
+        
         local rmb_str = num_to_rmb(num_part)
         yield(Candidate("cmd", seg.start, seg._end, rmb_str, "人民币大写"))
     end
