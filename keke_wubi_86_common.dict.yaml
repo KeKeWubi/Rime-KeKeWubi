@@ -6,6 +6,7 @@ sort: by_weight
 import_tables:
   - keke_wubi_86_system
   - keke_wubi_86_rare
+  - keke_wubi_86_user
   - keke_wubi_global_symbols
   - keke_wubi_global_pinyin
 use_preset_vocabulary: false

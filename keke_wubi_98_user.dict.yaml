@@ -1,0 +1,9 @@
+---
+name: keke_wubi_98_user
+version: "0.2"
+sort: original
+...
+#词条格式（跟可可五笔一致）： 词条 tab 编码
+#下面一行是示例，用户可以自己添加，每行一个词条
+可可五笔	ssgt
+
