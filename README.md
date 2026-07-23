@@ -15,10 +15,10 @@
 
 ```tree
 Rime/
-├─ rime.lua                  # Lua模块全局注册
 ├─ default.custom.yaml       # 全局补丁
 ├─ lua/                      # lua文件夹
-│  └─ command_translator.lua # 日期时间脚本
+│  └─ command_translator.lua # 日期时间星期命令脚本
+│  └─ rime.lua               #全局注册lua
 ├─ img/                      # windows平台有效的图标
 │  └─ en.ico                 # 英文状态图标
 │  └─ zh.ico                 # 中文状态图标
