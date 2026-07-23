@@ -24,6 +24,8 @@ patch:
       Shift_R: commit_code
       Control_L: noop
       Control_R: noop
+    inline_ascii: true
+
 
   key_binder:
     bindings:
