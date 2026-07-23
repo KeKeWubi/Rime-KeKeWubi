@@ -3,7 +3,7 @@ name: "keke_wubi_global_symbols"
 version: "0.1"
 sort: by_weight
 use_preset_vocabulary: false
----
+...
 ？	zbd	100
 …	zbd	100
 《	zbd	100
@@ -1479,7 +1479,8 @@ m	zlm	100
 💝	zbq	100
 💞	zbq	100
 💟	zbq	100
-❣🌿	zbq	100
+❣	zbq	100
+🌿	zbq	100
 🚧	zbq	100
 💒	zbq	100
 ☎	zbq	100
@@ -1779,4 +1780,4 @@ m	zlm	100
 🙎	zbq	100
 🙍	zbq	100
 🈵	zbq	100
-# End of keke_wubi_symbols.dict.yaml
+# End of keke_wubi_global_symbols
