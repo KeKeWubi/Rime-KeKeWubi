@@ -10,12 +10,21 @@ local function translator(input, seg)
         if dot then
             integer_part = num_str:sub(1, dot-1)
             decimal_part = num_str:sub(dot+1):sub(1,2)
+            -- 小数不足两位末尾补0
+            if #decimal_part == 1 then
+                decimal_part = decimal_part .. "0"
+            end
         else
             integer_part = num_str
-            decimal_part = ""
+            decimal_part = "00"
         end
+        -- 清除整数前导零
         integer_part = integer_part:gsub("^0+","")
         if integer_part == "" then integer_part = "0" end
+
+        -- 拆分角、分数字
+        local jiao_num = tonumber(decimal_part:sub(1,1))
+        local fen_num = tonumber(decimal_part:sub(2,2))
 
         local rmb = ""
         local int_len = #integer_part
@@ -25,35 +34,39 @@ local function translator(input, seg)
             if n ~= 0 then
                 rmb = rmb .. digit[n+1] .. unit_int[pos]
             else
-                if rmb:sub(-1) ~= "零" and #rmb > 0 then
+                if rmb ~= "" and rmb:sub(-1) ~= "零" then
                     rmb = rmb .. "零"
                 end
             end
         end
         rmb = rmb .. "元"
 
-        if decimal_part ~= "" then
-            local jiao = tonumber(decimal_part:sub(1,1))
-            local fen = tonumber(decimal_part:sub(2,2) or "0")
-            if jiao > 0 then
-                rmb = rmb .. digit[jiao+1] .. unit_dec[1]
+        -- 拼接角
+        if jiao_num > 0 then
+            rmb = rmb .. digit[jiao_num+1] .. unit_dec[1]
+        end
+        -- 拼接分，分存在才输出
+        if fen_num > 0 then
+            if jiao_num == 0 then
+                rmb = rmb .. "零"
             end
-            if fen > 0 then
-                if jiao == 0 then rmb = rmb .. "零" end
-                rmb = rmb .. digit[fen+1] .. unit_dec[2]
-            end
-        else
+            rmb = rmb .. digit[fen_num+1] .. unit_dec[2]
+        end
+
+        -- 只有整数、无角分时加「整」；有角/分不加整
+        if decimal_part == "00" then
             rmb = rmb .. "整"
         end
+
         return rmb
     end
 
     if input == "help" then
-        yield(Candidate("cmd", seg._end, seg.start, "请前往可可五笔官网：keke.kim", os.date("")))
+        yield(Candidate("cmd", seg.start, seg._end, "请前往可可五笔官网：keke.kim", os.date("")))
     end
 
     if input == "conf" or input == "conv" then
-        yield(Candidate("cmd", seg._end, seg.start, "请按Ctrl+0", os.date("")))
+        yield(Candidate("cmd", seg.start, seg._end, "请按Ctrl+0", os.date("")))
     end
     
     if input == "date" then
@@ -85,7 +98,8 @@ local function translator(input, seg)
     
     local num_part = input:match("^rmb([0-9%.]+)$")
     if num_part then
-        yield(Candidate("cmd", seg.start, seg._end, num_to_rmb(num_part), "人民币大写"))
+        local rmb_str = num_to_rmb(num_part)
+        yield(Candidate("cmd", seg.start, seg._end, rmb_str, "人民币大写"))
     end
     
 end
