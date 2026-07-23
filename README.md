@@ -14,34 +14,34 @@
 * 文件结构如下：
 
 ```tree
-    Rime/                                      # 所有平台都是这个配置目录
-        ├─ default.custom.yaml                 # 全局补丁
-        ├─ lua/                                # lua文件夹
-           └─ command_translator.lua           # 命令翻译器，支持输入：rmb888.88 输出：捌佰捌拾捌元捌角捌分；还支持直接输入 help、time、date、week等
-           └─ rime.lua                         #全局注册lua
-        ├─ img/                                # windows平台有效的图标
-           └─ en.ico                           # 英文状态图标
-           └─ zh.ico                           # 中文状态图标
+    Rime/                                # 所有平台都是这个配置目录
+        ├─ default.custom.yaml           # 全局补丁
+        ├─ lua/                          # lua文件夹
+           └─ command_translator.lua     # 命令翻译器，支持输入：rmb888.88 输出：捌佰捌拾捌元捌角捌分；还支持直接输入 help、time、date、week等
+           └─ rime.lua                   #全局注册lua
+        ├─ img/                          # windows平台有效的图标
+           └─ en.ico                     # 英文状态图标
+           └─ zh.ico                     # 中文状态图标
         三套输入方案
-        ├─ keke_wubi_86.schema.yaml            #86版五笔方案
-        ├─ keke_wubi_98.schema.yaml            #98版五笔方案
-        ├─ keke_wubi_nc.schema.yaml            #新世纪版五笔方案
+        ├─ keke_wubi_86.schema.yaml      #86版五笔方案
+        ├─ keke_wubi_98.schema.yaml      #98版五笔方案
+        ├─ keke_wubi_nc.schema.yaml      #新世纪版五笔方案
         可可五笔86版
-        ├─ keke_wubi_86_common.dict.yaml       #86版五笔常用字
-        ├─ keke_wubi_86_system.dict.yaml       #86版五笔系统字词
-        ├─ keke_wubi_86_rare.dict.yaml         #86版五笔生僻字
+        ├─ keke_wubi_86_common.dict.yaml #86版五笔常用字
+        ├─ keke_wubi_86_system.dict.yaml #86版五笔系统字词
+        ├─ keke_wubi_86_rare.dict.yaml   #86版五笔生僻字
         可可五笔98版
-        ├─ keke_wubi_98_common.dict.yaml        #98版五笔常用字
-        ├─ keke_wubi_98_system.dict.yaml        #98版五笔系统字词
-        ├─ keke_wubi_98_rare.dict.yaml          #98版五笔生僻字
+        ├─ keke_wubi_98_common.dict.yaml #98版五笔常用字
+        ├─ keke_wubi_98_system.dict.yaml #98版五笔系统字词
+        ├─ keke_wubi_98_rare.dict.yaml   #98版五笔生僻字
         可可五笔新世纪版
-        ├─ keke_wubi_nc_common.dict.yaml        #新世纪版五笔常用字
-        ├─ keke_wubi_nc_system.dict.yaml        #新世纪版五笔系统字词
-        ├─ keke_wubi_nc_rare.dict.yaml          #新世纪版五笔生僻字
+        ├─ keke_wubi_nc_common.dict.yaml #新世纪版五笔常用字
+        ├─ keke_wubi_nc_system.dict.yaml #新世纪版五笔系统字词
+        ├─ keke_wubi_nc_rare.dict.yaml   #新世纪版五笔生僻字
         用户自己的词库（建议通过以下文件维护自己的词库，不要动其它文件）
         ├─ keke_wubi_86_user.dict.yaml
         ├─ keke_wubi_98_user.dict.yaml
         ├─ keke_wubi_nc_user.dict.yaml
         全局词库
-        └─ keke_wubi_global_symbols.dict.yaml       # 可可特殊符号
-        └─ keke_wubi_global_pinyin.dict.yaml        # 可可临时拼音词库，先按字母 z 进入临时拼音模式
+        └─ keke_wubi_global_symbols.dict.yaml # 可可特殊符号
+        └─ keke_wubi_global_pinyin.dict.yaml  # 可可临时拼音词库，先按字母 z 进入临时拼音模式
