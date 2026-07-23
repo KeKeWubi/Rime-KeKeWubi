@@ -16,7 +16,6 @@ patch:
     caption: "【 输入法设置 】"
     option_list_separator: "｜"
 
-  # 只有在中英文切换时才修改状态
   ascii_composer:
     good_old_caps_lock: true
     switch_key:
@@ -26,7 +25,21 @@ patch:
       Control_L: noop
       Control_R: noop
 
-  # 识别规则
+  key_binder:
+    bindings:
+      - when:   has_menu
+        accept: semicolon
+        send:    2 
+      - when:   has_menu
+        accept: apostrophe
+        send:    3 
+      - when:   paging
+        accept: comma
+        send:   Page_Up
+      - when:   has_menu
+        accept: period
+        send:   Page_Down
+        
   recognizer:
     patterns:
       email: "^[-_.0-9A-Za-z]+@.*$"
