@@ -48,3 +48,4 @@ patch:
       uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
       url: "^(?:www\\.|mailto:|file:|ftp[:./]|localhost)[a-zA-Z0-9_\\-./%&=?#~+@]*$"
       phrase: "^'" 
+      rmb: "^rmb[0-9.]+$"
