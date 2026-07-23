@@ -43,5 +43,5 @@
         ├─ keke_wubi_98_user.dict.yaml
         ├─ keke_wubi_nc_user.dict.yaml
         全局词库
-        └─ keke_wubi_global_symbols.dict.yaml # 可可特殊符号
-        └─ keke_wubi_global_pinyin.dict.yaml  # 可可临时拼音词库，先按字母 z 进入临时拼音模式
+        └─ keke_wubi_global_symbols.dict.yaml #可可特殊符号
+        └─ keke_wubi_global_pinyin.dict.yaml  #可可临时拼音词库，先按字母 z 进入临时拼音模式
