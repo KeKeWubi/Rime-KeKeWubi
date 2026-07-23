@@ -9,7 +9,6 @@ local function translator(input, seg)
         yield(Candidate("cmd", seg._end, seg.start, "请按Ctrl+0", os.date("")))
     end
 	
-
     if input == "date" then
         yield(Candidate("cmd", seg.start, seg._end, os.date("%Y年%m月%d日"), ""))
         yield(Candidate("cmd", seg.start, seg._end, os.date("%Y%m%d"), ""))
