@@ -52,8 +52,13 @@ switches:
     reset: 0
     states: [ 中文标点, 英文标点 ]
 
-# 直接调用系统自带的标准标点库
 punctuator:
   import_preset: default
   ascii_punct:
     hotkey: "Control+period"
+
+key_binder:
+  import_preset: default
+
+recognizer:
+  import_preset: default
