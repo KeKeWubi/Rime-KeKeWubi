@@ -39,18 +39,21 @@ local function translator(input, seg)
             local block_buf = ""
             local block_has_num = false
             local blen = #block
+            local pending_zero = false
 
             for d_idx = 1, blen do
                 local n = tonumber(block:sub(d_idx, d_idx))
                 local iu = inner_unit[blen - d_idx + 1]
                 if n > 0 then
+                    if pending_zero then
+                        block_buf = block_buf .. "零"
+                        pending_zero = false
+                    end
                     block_buf = block_buf .. digit[n+1] .. iu
                     block_has_num = true
                     last_was_zero = false
                 else
-                    if block_buf ~= "" and block_buf:sub(-1) ~= "零" then
-                        block_buf = block_buf .. "零"
-                    end
+                    pending_zero = true
                 end
             end
             block_buf = block_buf:gsub("零+$", "")
@@ -64,11 +67,13 @@ local function translator(input, seg)
             suffix = suffix .. string.rep("亿", yi_count)
 
             if block_has_num then
+                if last_was_zero then
+                    rmb_int = rmb_int .. "零"
+                end
                 rmb_int = rmb_int .. block_buf .. suffix
                 last_was_zero = false
             else
-                if rmb_int ~= "" and not last_was_zero then
-                    rmb_int = rmb_int .. "零"
+                if not last_was_zero and rmb_int ~= "" then
                     last_was_zero = true
                 end
             end
@@ -77,6 +82,7 @@ local function translator(input, seg)
         if rmb_int == "" then
             rmb_int = "零"
         end
+        rmb_int = rmb_int:gsub("零+", "零")
         local rmb = rmb_int .. "元"
 
         if jiao_num > 0 then
