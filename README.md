@@ -6,7 +6,7 @@
 
 提示：
 * 使用时，只需要把全部文件拷贝到各RIME前端的用户文件夹，重新部署即可使用
-* 不同平台Rime前端名称：windows：小狼毫；MacOS：鼠须管；iOS：iRime；安卓：同文；Linux：ibus-rime
+* 不同平台Rime前端名称：（windows：小狼毫）；（MacOS：鼠须管）；（iOS：Hamster 仓输入法）；（安卓：同文）；（Linux：ibus-rime）
 * 建议使用windows版本的可可五笔生成自己的词库（支持只导入词条，能自动生成编码）导出后复制到 keke_wubi_XX_user.dict.yaml 重新部署即可
 * 关于在线加词，自己的词库慢慢维护，能导入即可
 * 关于跨平台，因为各平台功能有差异，比如在手机端不支持左右shift，所以RIME移植版的可可不支持英文词典
