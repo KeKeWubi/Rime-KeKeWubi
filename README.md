@@ -16,7 +16,7 @@
 ```tree
 Rime/									# 所有平台都是这个配置目录
 ├─ default.custom.yaml					# 全局补丁
-├─ lua/									# lua目录
+├─ lua/									# lua脚本目录（新Rime版本的脚本都放在此处）
 	└─ keke_wubi_command_translator.lua	# 命令翻译器，输入 rmb888.88 输出 捌佰捌拾捌元捌角捌分；或 help、time、date、week等
 	└─ keke_wubi_fuzzy_z.lua			# 万能键 Z 脚本。性能为王的原则，所以：一，默认关闭，Ctrl+0 可打开；二，仅查寻五笔单字。
 三套输入方案
@@ -43,7 +43,7 @@ Rime/									# 所有平台都是这个配置目录
 └─ keke_wubi_global_symbols.dict.yaml	#可可特殊符号，z引导，如：zbd：常用标点；zys：圆圈数字等等
 └─ keke_wubi_global_pinyin.dict.yaml	#可可临时拼音，z引导，如：zkeke，输出 可可
 脚本和图标
-└─ rime.lua								#需要全局注册的脚本通过本文件注册
+└─ rime.lua								#早期Rime需要全局注册的脚本通过本文件注册（现已弃用）
 ├─ img/									# 备用图标（目前仅windows平台可用）
 	└─ en.ico							# 英文状态图标
 	└─ zh.ico							# 中文状态图标
