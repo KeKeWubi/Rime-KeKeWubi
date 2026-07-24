@@ -30,7 +30,7 @@ engine:
     - reverse_lookup_translator
     - table_translator
     - lua_translator@*keke_wubi_command_translator
-    - lua_translator@keke_wubi_fuzzy_z
+    - lua_translator@*keke_wubi_fuzzy_z
 
   filters:
     - simplifier@tradition
