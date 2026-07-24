@@ -30,6 +30,8 @@ engine:
     - reverse_lookup_translator
     - table_translator
     - lua_translator@*keke_wubi_command_translator
+    - lua_translator@*keke_wubi_command_translator
+
   filters:
     - simplifier@tradition
 
@@ -46,9 +48,9 @@ speller:
   max_length: 4
 
 switches:
-  - name: ascii_mode
+  - name: fuzzy_z
     reset: 0
-    states: [ 中, En ]
+    states: [ 禁用万能Z, 开启万能Z ]
   - name: ascii_punct
     reset: 0
     states: [ 中文标点, 英文标点 ]
