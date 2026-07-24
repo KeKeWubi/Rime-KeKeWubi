@@ -44,7 +44,7 @@ Rime/									# 所有平台都是这个配置目录
 └─ keke_wubi_global_pinyin.dict.yaml	#可可临时拼音词库，先按字母 z 进入临时拼音模式
 脚本和图标
 └─ rime.lua								#需要全局注册的脚本存放目录
-├─ img/									# windows平台有效的图标
+├─ img/									# 备用图标（目前仅windows平台可用）
 	└─ en.ico							# 英文状态图标
 	└─ zh.ico							# 中文状态图标
 	└─ en.png							# 英文状态图标
