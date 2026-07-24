@@ -23,15 +23,15 @@ Rime/									# 所有平台都是这个配置目录
 ├─ keke_wubi_86.schema.yaml				#86版五笔方案
 ├─ keke_wubi_98.schema.yaml				#98版五笔方案
 ├─ keke_wubi_nc.schema.yaml				#新世纪版五笔方案
-可可五笔86版
+可可五笔86版词典
 ├─ keke_wubi_86_common.dict.yaml		#86版五笔常用字
 ├─ keke_wubi_86_system.dict.yaml		#86版五笔系统字词
 ├─ keke_wubi_86_rare.dict.yaml			#86版五笔生僻字
-可可五笔98版
+可可五笔98版词典
 ├─ keke_wubi_98_common.dict.yaml		#98版五笔常用字
 ├─ keke_wubi_98_system.dict.yaml		#98版五笔系统字词
 ├─ keke_wubi_98_rare.dict.yaml			#98版五笔生僻字
-可可五笔新世纪版
+可可五笔新世纪版词典
 ├─ keke_wubi_nc_common.dict.yaml		#新世纪版五笔常用字
 ├─ keke_wubi_nc_system.dict.yaml		#新世纪版五笔系统字词
 ├─ keke_wubi_nc_rare.dict.yaml			#新世纪版五笔生僻字
