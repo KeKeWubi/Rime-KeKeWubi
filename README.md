@@ -16,12 +16,8 @@
 ```tree
 Rime/									# 所有平台都是这个配置目录
 ├─ default.custom.yaml					# 全局补丁
-├─ lua/									# lua文件夹
+├─ lua/									# lua目录
 	└─ keke_wubi_command_translator.lua	# 命令翻译器，输入 rmb888.88 输出 捌佰捌拾捌元捌角捌分；或 help、time、date、week等
-	└─ rime.lua							#全局注册lua
-├─ img/									# windows平台有效的图标
-	└─ en.ico							# 英文状态图标
-	└─ zh.ico							# 中文状态图标
 三套输入方案
 ├─ keke_wubi_86.schema.yaml				#86版五笔方案
 ├─ keke_wubi_98.schema.yaml				#98版五笔方案
@@ -44,4 +40,11 @@ Rime/									# 所有平台都是这个配置目录
 ├─ keke_wubi_nc_user.dict.yaml
 全局词库
 └─ keke_wubi_global_symbols.dict.yaml		#可可特殊符号
-	└─ keke_wubi_global_pinyin.dict.yaml	#可可临时拼音词库，先按字母 z 进入临时拼音模式
+└─ keke_wubi_global_pinyin.dict.yaml	#可可临时拼音词库，先按字母 z 进入临时拼音模式
+脚本和图标
+└─ rime.lua									#全局注册lua
+├─ img/									# windows平台有效的图标
+	└─ en.ico							# 英文状态图标
+	└─ zh.ico							# 中文状态图标
+	└─ en.png							# 英文状态图标
+	└─ zh.png							# 中文状态图标
