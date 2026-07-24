@@ -41,7 +41,7 @@ Rime/									# 所有平台都是这个配置目录
 ├─ keke_wubi_nc_user.dict.yaml
 全局词库
 └─ keke_wubi_global_symbols.dict.yaml	#可可特殊符号，z引导，如：zbd：常用标点；zys：圆圈数字等等
-└─ keke_wubi_global_pinyin.dict.yaml	#可可临时拼音词库，先按字母 z 进入临时拼音模式
+└─ keke_wubi_global_pinyin.dict.yaml	#可可临时拼音，z引导，如：zkeke，输出 可可
 脚本和图标
 └─ rime.lua								#需要全局注册的脚本存放目录
 ├─ img/									# 备用图标（目前仅windows平台可用）
