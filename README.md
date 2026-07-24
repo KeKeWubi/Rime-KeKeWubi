@@ -5,7 +5,7 @@
 可可五笔官网： https://keke.kim/  
 
 提示：
-* 使用时，只需要把全部文件拷贝到各RIME前端的用户文件夹，重新部署即可使用
+* 使用时，只需要把全部文件拷贝到各RIME前端的用户文件夹（所有可用平台都叫 “Rime”），重新部署即可使用
 * 不同平台Rime前端名称：（windows：小狼毫）；（MacOS：鼠须管）；（iOS：Hamster 仓输入法）；（安卓：同文）；（Linux：ibus-rime）
 * 建议使用windows版本的可可五笔生成自己的词库（支持只导入词条，能自动生成编码）导出后复制到 keke_wubi_XX_user.dict.yaml 重新部署即可
 * 关于在线加词，自己的词库慢慢维护，能导入即可
@@ -43,7 +43,7 @@ Rime/									# 所有平台都是这个配置目录
 └─ keke_wubi_global_symbols.dict.yaml	#可可特殊符号，z引导，如：zbd：常用标点；zys：圆圈数字等等
 └─ keke_wubi_global_pinyin.dict.yaml	#可可临时拼音，z引导，如：zkeke，输出 可可
 脚本和图标
-└─ rime.lua								#需要全局注册的脚本存放目录
+└─ rime.lua								#需要全局注册的脚本通过本文件注册
 ├─ img/									# 备用图标（目前仅windows平台可用）
 	└─ en.ico							# 英文状态图标
 	└─ zh.ico							# 中文状态图标
