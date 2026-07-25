@@ -1,3 +1,3 @@
 -- rime.lua
--- 老版本Rime写法 需要全局注册，要保证等号两端名字完全一致如：
+-- 老版本Rime的脚本需要全局注册，要保证等号两端名字完全一致，如：
 -- XXX_XXX_XXX = require("XXX_XXX_XXX")
