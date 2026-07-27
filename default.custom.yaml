@@ -42,6 +42,47 @@ patch:
         accept: period
         send:   Page_Down
         
+      # 当处于编码输入状态（composing）时，将小键盘数字追加到输入框，不参与选词也不直接上屏
+      - when: composing
+        accept: KP_0
+        send: 0
+      - when: composing
+        accept: KP_1
+        send: 1
+      - when: composing
+        accept: KP_2
+        send: 2
+      - when: composing
+        accept: KP_3
+        send: 3
+      - when: composing
+        accept: KP_4
+        send: 4
+      - when: composing
+        accept: KP_5
+        send: 5
+      - when: composing
+        accept: KP_6
+        send: 6
+      - when: composing
+        accept: KP_7
+        send: 7
+      - when: composing
+        accept: KP_8
+        send: 8
+      - when: composing
+        accept: KP_9
+        send: 9
+      - when: composing
+        accept: KP_Decimal
+        send: period
+      - when: composing
+        accept: KP_DECIMAL
+        send: period
+      - when: has_menu
+        accept: KP_Enter
+        send: space
+        
   recognizer:
     patterns:
       email: "^[-_.0-9A-Za-z]+@.*$"
