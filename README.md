@@ -23,6 +23,8 @@ Rime/									# 所有可用平台都是这个配置目录
 ├─ lua/									# lua脚本目录（新Rime版本的脚本都放在此处）
 	└─ keke_wubi_command_translator.lua	# 命令翻译器，输入 rmb888.88 输出 捌佰捌拾捌元捌角捌分；或 help、time、date、week等
 	└─ keke_wubi_fuzzy_z.lua			# 万能键 Z 脚本。性能为王的原则，所以：一，默认禁用，Ctrl+0 打开；二，仅查寻五笔单字
+	└─ keke_wubi_char_prior.lua			#单字在前脚本，修选框里“单字在前”
+	└─ keke_wubi_char_only.lua			#仅单字脚本，修选框里“仅单字”，单字派用这个功能
 三套输入方案
 ├─ keke_wubi_86.schema.yaml				#86版五笔方案
 ├─ keke_wubi_98.schema.yaml				#98版五笔方案
