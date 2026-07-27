@@ -27,13 +27,11 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
-#    - reverse_lookup_translator
     - table_translator
     - lua_translator@*keke_wubi_command_translator
     - lua_translator@*keke_wubi_fuzzy_z
 
   filters:
-#    - simplifier@tradition
     - lua_filter@*keke_wubi_length_filter
 #     以下两项设置，是对“单字”的处理，需要相应功能就把最前面的 # 去掉，重新部署。注：存在覆盖，应该二选一，不要都用！
 #    - lua_filter@*keke_wubi_char_prior     #候选框里“单字在前”
