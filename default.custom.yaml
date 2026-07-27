@@ -42,7 +42,7 @@ patch:
         accept: period
         send:   Page_Down
         
-      # 当处于编码输入状态（composing）时，将小键盘数字追加到输入框，不参与选词也不直接上屏
+      # 数字小键盘参与编码，注：小键盘的回车可以使候选上屏，主键的回车是编码上屏
       - when: composing
         accept: KP_0
         send: 0
