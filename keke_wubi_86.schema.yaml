@@ -42,7 +42,7 @@ translator:
   dictionary: keke_wubi_86_common
   enable_charset_filter: true
   enable_sentence: false
-  enable_completion: true
+  enable_completion: false
 
 speller:
   alphabet: "abcdefghijklmnopqrstuvwxyz"
