@@ -40,7 +40,10 @@ engine:
 # 以下有 true 或 false 的设置项，用户可以手动切换
 translator:
   dictionary: keke_wubi_86_common
+#  prefer_full_match: true      # 完整编码词条提升匹配分c
+#  full_match_min_length: 4
   enable_charset_filter: true
+  enable_user_dict: false
   enable_sentence: false		#整句输入
   enable_completion: false		#自动补全，手机上建议改为 true
 
