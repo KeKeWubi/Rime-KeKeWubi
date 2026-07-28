@@ -34,7 +34,7 @@ encoder:
 若	ad
 苏	ae
 散	ae
-菜	ae
+菜	ae	3000000
 著	af
 勒	af
 鞋	af
@@ -1470,7 +1470,7 @@ encoder:
 革	af	3000000
 葛	ajq	3000000
 七	a	3000000
-功	ae	300
+功	ae
 攻	at	3000000
 共	aw	3000000
 贡	am	3000000
