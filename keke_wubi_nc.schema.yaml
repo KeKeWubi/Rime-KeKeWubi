@@ -49,7 +49,7 @@ speller:
   initials: "abcdefghijklmnopqrstuvwxyz"
   auto_select: false			#唯一时上屏
   max_length: 4
-  min_code_length_for_completion: 3			#此处设置第几码开始在候选框里提示后续编码
+  min_code_length_for_completion: 3			#此处设置第几码开始在候选框里提示后续编码（本功能待完善）
 
 switches:
   - name: fuzzy_z
