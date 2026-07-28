@@ -1,4 +1,4 @@
---- 单字脚本
+--- “仅输出单字”脚本
 local function keke_wubi_char_only(input)
     for entry in input:iter() do
         if (utf8.len(entry.text) == 1) then
