@@ -41,13 +41,13 @@ engine:
 translator:
   dictionary: keke_wubi_nc_common
   enable_charset_filter: true
-  enable_sentence: false
-  enable_completion: false
+  enable_sentence: false		#整句输入
+  enable_completion: false		#自动补全，手机上建议改为 true
 
 speller:
   alphabet: "abcdefghijklmnopqrstuvwxyz"
   initials: "abcdefghijklmnopqrstuvwxyz"
-  auto_select: false
+  auto_select: false			#唯一时上屏
   max_length: 4
   min_code_length_for_completion: 3			#此处设置第几码开始在候选框里提示后续编码
 
