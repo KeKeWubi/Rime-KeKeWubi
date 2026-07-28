@@ -47,7 +47,7 @@ translator:
 speller:
   alphabet: "abcdefghijklmnopqrstuvwxyz"
   initials: "abcdefghijklmnopqrstuvwxyz"
-  auto_select: false			#唯一时上屏
+  auto_select: false			#唯一时上屏，如果不是“单字派”，慎选此项
   max_length: 4
   min_code_length_for_completion: 3			#此处设置第几码开始在候选框里提示后续编码（本功能待完善）
 
