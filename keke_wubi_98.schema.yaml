@@ -37,10 +37,10 @@ engine:
 #    - lua_filter@*keke_wubi_char_prior     #候选框里“单字在前”
 #    - lua_filter@*keke_wubi_char_only      #候选框里“只显示单字”，此功能会把“单字在前覆盖”，慎选！
 
-# 以下有 true 或 false 的设置项，用户可以手动切换
 translator:
   dictionary: keke_wubi_98_common
   enable_charset_filter: true
+  enable_user_dict: false
   enable_sentence: false		#整句输入
   enable_completion: false		#自动补全，手机上建议改为 true
 
