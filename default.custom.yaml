@@ -7,7 +7,7 @@ patch:
 
   # 菜单与界面
   menu:
-    page_size: 5
+    page_size: 6
   switcher:
     hotkeys:
       - "Control+0"
