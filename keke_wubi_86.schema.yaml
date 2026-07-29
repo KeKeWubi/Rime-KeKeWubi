@@ -57,9 +57,8 @@ switches:
   - name: fuzzy_z
     reset: 0
     states: [ 禁用万能Z, 开启万能Z ]
-  - name: ascii_punct
-    reset: 0
-    states: [ 中文标点, 英文标点 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
 
 punctuator:
   import_preset: default
