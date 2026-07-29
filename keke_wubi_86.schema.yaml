@@ -4,6 +4,8 @@ schema:
   version: "1.0"
   icon: "img/zh.ico"
   ascii_icon: "img/en.ico"
+  half_icon: "img/ban.ico"
+  full_icon: "img/quan.ico"
   author:
     - 苏轲 <iSuke@msn.com>
   description: |
