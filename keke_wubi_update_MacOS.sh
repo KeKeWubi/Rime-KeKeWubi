@@ -1,65 +1,96 @@
 #!/bin/zsh
+export LANG=en_US.UTF-8
 clear
+
 echo "=============================================="
-echo "      可可五笔 Rime 在线一键部署工具"
-echo "代码仓库：https://github.com/KeKeWubi/Rime-KeKeWubi"
+echo "        可可五笔 Rime Mac 一键部署更新工具"
 echo "=============================================="
 echo ""
 
-# 区分系统Rime目录
-if [[ "$(uname)" == "Darwin" ]]; then
-    RIME目录="$HOME/Library/Rime"
-else
-    RIME目录="$HOME/.config/rime"
+# ====================== 词库备份确认逻辑 ======================
+echo "⚠️ 重要提醒！更新会覆盖 Rime 目录配置文件"
+echo ""
+echo "  若你修改过个人词库（例如，86版五笔：keke_wubi_86_user.dict.yaml）"
+echo "  请先手动进入目录备份词库文件："
+echo "  ~/Library/Rime"
+echo ""
+echo "  确认已完成词库备份，按回车键继续；直接关闭窗口可退出更新"
+echo ""
+read "?按回车确认备份完毕..."
+echo ""
+echo "已确认备份完成，开始执行更新流程..."
+echo ""
+# ==============================================================
+
+# 基础路径配置
+RIME="$HOME/Library/Rime"
+ZIP_RAW="https://github.com/KeKeWubi/Rime-KeKeWubi/archive/refs/heads/main.zip"
+ZIP_MIRROR="https://mirror.ghproxy.com/$ZIP_RAW"
+DOWNLOAD_ZIP="$RIME/KeKeWubi.zip"
+TMP_DIR="$RIME/tmp_keke"
+
+# 不存在则创建Rime配置目录
+mkdir -p "$RIME"
+
+echo "1. 清理历史临时缓存文件"
+rm -rf "$TMP_DIR" 2>/dev/null
+rm -f "$DOWNLOAD_ZIP" 2>/dev/null
+
+echo "2. 优先使用GH镜像下载源码包..."
+curl -fsSL --insecure -o "$DOWNLOAD_ZIP" "$ZIP_MIRROR"
+if [ $? -eq 0 ]; then
+    goto CHECK_ZIP
 fi
 
-仓库直链="https://github.com/KeKeWubi/Rime-KeKeWubi/archive/refs/heads/main.zip"
-镜像加速链接="https://mirror.ghproxy.com/$仓库直链"
-压缩包="${RIME目录}/可可五笔安装包.zip"
-临时解压目录="${RIME目录}/临时缓存文件夹"
-
-mkdir -p "${RIME目录}"
-
-echo "1. 清理旧缓存文件"
-rm -rf "${临时解压目录}" "${压缩包}"
-
-echo "2. 使用国内镜像下载源码"
-curl -fsSL --insecure -o "${压缩包}" "${镜像加速链接}"
+echo "镜像连接超时，切换原生GitHub直链重试..."
+rm -f "$DOWNLOAD_ZIP" 2>/dev/null
+curl -fsSL --insecure -o "$DOWNLOAD_ZIP" "$ZIP_RAW"
 if [ $? -ne 0 ]; then
-    echo "镜像超时，切换原始链接下载"
-    rm -rf "${压缩包}"
-    curl -fsSL --insecure -o "${压缩包}" "${仓库直链}"
-    if [ $? -ne 0 ]; then
-        echo "❌ 下载全部失败，请更换网络重试"
-        exit 1
-    fi
-fi
-
-# 校验文件不为空
-if [ ! -f "${压缩包}" ] || [ ! -s "${压缩包}" ]; then
-    echo "❌ 下载文件为空，网络异常"
-    rm -rf "${压缩包}"
+    echo "❌ 镜像与原生地址均下载失败，请检查网络或切换手机热点重试"
+    read "?按回车关闭窗口"
     exit 1
 fi
 
-echo "3. 解压源码包"
-unzip -q "${压缩包}" -d "${临时解压目录}"
-if [ ! -d "${临时解压目录}/Rime-KeKeWubi-main" ]; then
+:CHECK_ZIP
+# 校验压缩包存在且不为空
+if [ ! -f "$DOWNLOAD_ZIP" ]; then
+    echo "❌ 未生成压缩包，下载失败"
+    read "?按回车关闭窗口"
+    exit 1
+fi
+ZIP_SIZE=$(du -s "$DOWNLOAD_ZIP" | awk '{print $1}')
+if [ "$ZIP_SIZE" -eq 0 ]; then
+    echo "❌ 下载得到空文件，网络中断，请重试"
+    rm -f "$DOWNLOAD_ZIP"
+    read "?按回车关闭窗口"
+    exit 1
+fi
+
+echo "3. 解压压缩包至临时目录"
+unzip -q -o "$DOWNLOAD_ZIP" -d "$TMP_DIR"
+if [ ! -d "$TMP_DIR/Rime-KeKeWubi-main" ]; then
     echo "❌ 压缩包损坏，解压失败"
-    rm -rf "${临时解压目录}" "${压缩包}"
+    rm -f "$DOWNLOAD_ZIP"
+    rm -rf "$TMP_DIR" 2>/dev/null
+    read "?按回车关闭窗口"
     exit 1
 fi
 
-echo "4. 复制全部方案文件到Rime根目录"
-cp -r "${临时解压目录}/Rime-KeKeWubi-main/"* "${RIME目录}/"
+echo "4. 将仓库全部文件复制到Rime根目录（覆盖旧文件）"
+cp -R "$TMP_DIR/Rime-KeKeWubi-main/"* "$RIME/"
 
-echo "5. 清理临时文件"
-rm -rf "${临时解压目录}" "${压缩包}"
+echo "5. 清理临时文件夹与压缩包"
+rm -rf "$TMP_DIR"
+rm -f "$DOWNLOAD_ZIP"
 
 echo ""
 echo "=============================================="
-echo "✅ 可可五笔配置文件已拷贝到本地的 Rime 根目录！"
-echo "目录路径：~/Library/Rime"
-echo "请打开鼠须管，执行重新部署生效方案"
+echo "✅ 可可五笔配置文件已拷贝至本地 Rime 目录！"
+echo "目录路径：$HOME/Library/Rime"
+echo "操作提示：点击顶部菜单栏鼠须管图标 → 重新部署 生效配置"
 echo "=============================================="
-open "${RIME目录}"
+echo ""
+
+read "?按回车打开Rime配置目录"
+open "$RIME"
+exit 0
