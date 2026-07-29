@@ -3,9 +3,24 @@ chcp 65001 >nul
 title 可可五笔 Rime 全自动安装更新器
 echo ==============================================
 echo        可可五笔 Rime 在线一键部署工具
-echo "GitHub仓库：https://github.com/KeKeWubi/Rime-KeKeWubi"
 echo ==============================================
 echo.
+
+:: ====================== 新增：词库备份确认逻辑 ======================
+echo ⚠️ 重要提醒！更新会覆盖Rime目录配置文件
+echo.
+echo  若你修改过个人词库（例如，86版五笔是：keke_wubi_86_user.dict.yaml），请先手动进入
+echo  目录路径：%appdata%\rime
+echo  备份你的词库文件！
+echo.
+echo  确认已完成词库备份，再按任意键继续；
+echo  不想更新直接关闭窗口退出。
+echo.
+pause >nul
+echo.
+echo  已确认备份完成，开始执行更新流程...
+echo.
+:: ==================================================================
 
 :: 基础路径配置
 set "RIME=%APPDATA%\Rime"
