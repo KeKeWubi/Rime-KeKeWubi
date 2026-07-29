@@ -10,7 +10,7 @@ echo ""
 # ====================== 词库备份确认逻辑 ======================
 echo "⚠️ 重要提醒！更新会覆盖 Rime 目录配置文件"
 echo ""
-echo "  若你修改过个人词库（例如，86版五笔：keke_wubi_86_user.dict.yaml）"
+echo "  若你修改过个人词库（例如，可可五笔86版是：keke_wubi_86_user.dict.yaml）"
 echo "  请先手动进入目录备份词库文件："
 echo "  ~/Library/Rime"
 echo ""
