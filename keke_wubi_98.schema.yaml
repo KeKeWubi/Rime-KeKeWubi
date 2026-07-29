@@ -60,7 +60,6 @@ switches:
   - name: full_shape
     states: [ 半角, 全角 ]
   - name: ascii_punct
-    reset: 0
     states: [ 中文标点, 英文标点 ]
 
 punctuator:
