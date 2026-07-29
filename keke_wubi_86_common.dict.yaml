@@ -644,7 +644,6 @@ encoder:
 路	kht
 唯	kwy
 呈	kgf
-轲	l
 四	l
 轰	lc
 罪	ld
@@ -1537,7 +1536,6 @@ encoder:
 世	an	999
 艺	an	999
 鞋	aff	999
-苏	a	300
 莎	aii	999
 式	aa	999
 节	ab	999
@@ -1650,7 +1648,8 @@ encoder:
 戒	aak	999
 艾	aqu	999
 昔	ajf	999
-七	a	300
+七	a
+苏	a
 阴	be	999
 阻	be	999
 孙	bi	999
