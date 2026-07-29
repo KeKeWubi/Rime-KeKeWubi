@@ -610,7 +610,6 @@ encoder:
 咬	kur
 车	l
 四	l
-轲	l
 轰	lc
 恩	ld
 固	ld
@@ -1439,7 +1438,6 @@ encoder:
 记	ynn
 认	ywy
 工	a	999
-苏	a	300
 东	ai	999
 范	ai	999
 艺	an	999
@@ -1469,7 +1467,8 @@ encoder:
 芬	awv	999
 革	af	999
 葛	ajq	999
-七	a	300
+七	a
+苏	a
 功	ae
 攻	at	999
 共	aw	999
