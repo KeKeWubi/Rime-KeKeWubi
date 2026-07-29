@@ -9,7 +9,7 @@ echo.
 :: ====================== 新增：词库备份确认逻辑 ======================
 echo ⚠️ 重要提醒！更新会覆盖Rime目录配置文件
 echo.
-echo  若你修改过个人词库（例如，86版五笔是：keke_wubi_86_user.dict.yaml），请先手动进入
+echo  若你修改过个人词库（例如，可可五笔86版是：keke_wubi_86_user.dict.yaml），请先手动进入
 echo  目录路径：%appdata%\rime
 echo  备份你的词库文件！
 echo.
