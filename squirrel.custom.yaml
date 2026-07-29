@@ -1,0 +1,4 @@
+patch:
+  custom_menu:
+    - label: 更新可可五笔
+      command: "${user_data_dir}/keke_wubi_update_MacOS.sh"
