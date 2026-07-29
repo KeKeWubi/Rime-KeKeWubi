@@ -59,7 +59,7 @@ Rime/									# 所有可用平台都是这个配置目录
 └─ weasel.custom.yaml					#Windows平台
 脚本和图标
 └─ rime.lua								#早期Rime需要全局注册的脚本通过本文件注册（现已弃用）
-├─ img/									# 备用图标（目前仅windows平台可用）
+├─ img/									# 自定义图标（目前仅windows平台可用）
 	└─ en.ico							# 英文状态图标
 	└─ zh.ico							# 中文状态图标
 	└─ ban.ico							# 半角标点图标
