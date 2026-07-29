@@ -652,7 +652,6 @@ encoder:
 辑	lk
 甲	lh
 轿	lt
-轲	l
 轲	ls
 辆	lg
 轮	lw
@@ -1517,7 +1516,6 @@ encoder:
 世	an	999
 工	a	999
 莎	ai	999
-苏	a	300
 艺	an	999
 戈	agn	999
 散	aet	999
@@ -1542,7 +1540,8 @@ encoder:
 芬	awv	999
 革	akf	999
 葛	ajq	999
-七	a	30
+七	a
+苏	a
 功	ae	300
 攻	at	999
 共	aw	999
