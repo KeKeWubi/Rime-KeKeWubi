@@ -7,7 +7,7 @@ patch:
 
   # 菜单与界面
   menu:
-    page_size: 6
+    page_size: 6		#设置每页候选显示的词条数量
   switcher:
     hotkeys:
       - "Control+0"
