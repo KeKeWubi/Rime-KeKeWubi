@@ -36,10 +36,10 @@ patch:
         accept: apostrophe
         send:    3 
       - when:   paging
-        accept: comma		#逗号在可以上翻页的时候上翻页，若想改为 - 号，用单词 minus
+        accept: minus		#上翻页键： - 号，用单词 minus ；逗号用 comma
         send:   Page_Up
       - when:   has_menu
-        accept: period		#句号在可以下翻页的时候下翻页，若想改为 = 号，用单词 equal
+        accept: equal		#下翻页键： = 号，用单词 equal ；句号用 period
         send:   Page_Down
         
       # 数字小键盘参与编码，注：小键盘的回车可以使候选上屏，主键的回车是编码上屏
