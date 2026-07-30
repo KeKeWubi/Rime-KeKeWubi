@@ -3,51 +3,51 @@ export LANG=en_US.UTF-8
 clear
 
 echo "=============================================="
-echo "        可可五笔 Rime Mac 一键部署更新工具"
+echo "        可可五笔 Rime Mac 在线一键部署工具"
 echo "=============================================="
 echo ""
 
-# ====================== 词库备份确认 ======================
-echo "⚠️ 重要提醒！更新会覆盖 Rime 目录配置文件"
+# 基础路径
+RIME="$HOME/Library/Rime"
+
+# ====================== 词库备份确认逻辑 ======================
+echo "⚠️ 重要提醒！更新会覆盖Rime目录配置文件"
 echo ""
-echo "  若你修改过个人词库（例如，86版五笔：keke_wubi_86_user.dict.yaml）"
-echo "  请先手动进入目录备份词库文件："
-echo "  ~/Library/Rime"
+echo " 注意：若修改了“用户文件夹”的位置，本程序下载完毕后，需要手动把所有文件从："
 echo ""
-echo "  确认已完成词库备份，按回车键继续；直接关闭窗口可退出更新"
+echo " 目录路径：~/Library/Rime"
+echo ""
+echo " 复制到你指定的位置！"
+echo ""
+echo " 若你修改过个人词库（例如，可可五笔86版是：keke_wubi_86_user.dict.yaml），请务必备份你的词库文件！"
+echo ""
+echo " 如果准备好更新，按回车键继续；"
+echo " 不想更新直接关闭窗口退出。"
 echo ""
 read "?按回车确认备份完毕..."
 echo ""
 echo "已确认备份完成，开始执行更新流程..."
 echo ""
-# ==========================================================
+# ==============================================================
 
-# 路径配置
-RIME="$HOME/Library/Rime"
 ZIP_RAW="https://github.com/KeKeWubi/Rime-KeKeWubi/archive/refs/heads/main.zip"
-ZIP_MIRROR="https://mirror.ghproxy.com/$ZIP_RAW"
 DOWNLOAD_ZIP="$RIME/KeKeWubi.zip"
 TMP_DIR="$RIME/tmp_keke"
 
-# 创建Rime文件夹
+# 不存在则创建Rime目录
 mkdir -p "$RIME"
 
 echo "1. 清理历史临时缓存文件"
 rm -rf "$TMP_DIR" 2>/dev/null
 rm -f "$DOWNLOAD_ZIP" 2>/dev/null
 
-echo "2. 优先使用GH镜像下载源码包..."
-curl -fsSL --insecure -o "$DOWNLOAD_ZIP" "$ZIP_MIRROR"
-# 替代goto，用if判断下载结果
+echo "2. 开始从GitHub下载源码包..."
+curl --connect-timeout 15 --retry 2 -fsSL --insecure -o "$DOWNLOAD_ZIP" "$ZIP_RAW"
 if [ $? -ne 0 ]; then
-    echo "镜像连接超时，切换原生GitHub直链重试..."
-    rm -f "$DOWNLOAD_ZIP" 2>/dev/null
-    curl -fsSL --insecure -o "$DOWNLOAD_ZIP" "$ZIP_RAW"
-    if [ $? -ne 0 ]; then
-        echo "❌ 镜像与原生地址均下载失败，请检查网络或切换手机热点重试"
-        read "?按回车关闭窗口"
-        exit 1
-    fi
+    echo "❌ GitHub直链下载失败，请切换手机热点或手动下载更新包"
+    echo "手动下载地址：$ZIP_RAW"
+    read "?按回车关闭窗口"
+    exit 1
 fi
 
 # 校验压缩包存在且不为空
@@ -84,9 +84,12 @@ rm -f "$DOWNLOAD_ZIP"
 
 echo ""
 echo "=============================================="
-echo "✅ 可可五笔配置文件已拷贝至本地 Rime 目录！"
-echo "目录路径：$HOME/Library/Rime"
-echo "操作提示：点击顶部菜单栏鼠须管图标 → 重新部署 生效配置"
+echo "✅ 可可五笔配置文件已拷贝到本地临时目录！"
+echo ""
+echo "临时目录路径：~/Library/Rime"
+echo ""
+echo "如果你改过Rime自定义用户目录，请手动把这里全部文件复制到你自定义文件夹；"
+echo "未修改目录则点击顶部菜单栏鼠须管图标 → 重新部署 生效方案"
 echo "=============================================="
 echo ""
 
