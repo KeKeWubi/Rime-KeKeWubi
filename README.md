@@ -23,7 +23,7 @@
 ```tree
 Rime/									# 所有可用平台都是这个配置目录
 ├─ default.custom.yaml					# 全局补丁
-├─keke_wubi_update_MacOS.command		#可可五笔Macos自动更新脚本
+├─keke_wubi_update_MacOS.command		#可可五笔MacOS自动更新脚本
 ├─keke_wubi_update_Windows.bat			#可可五笔Windows自动更新脚本
 ├─ lua/									# lua脚本目录（新Rime版本的脚本都放在此处）
 	└─ keke_wubi_command_translator.lua	# 命令翻译器，输入 rmb888.88 输出 捌佰捌拾捌元捌角捌分；或 help、time、date、week等
