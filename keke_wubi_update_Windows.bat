@@ -1,20 +1,24 @@
 @echo off
 chcp 65001 >nul
-title 可可五笔 Rime 全自动安装更新器
+title 可可五笔 Rime 全自动更新器
 echo ==============================================
-echo        可可五笔 Rime 在线一键部署工具
+echo        可可五笔 Rime 一键更新工具
 echo ==============================================
 echo.
 
-:: 基础路径配置
+:: 路径配置：全部临时文件移至系统缓存，不在Rime文件夹内
 set "RIMENEW=%APPDATA%\Rime"
+set "ZIP_TEMP=%temp%\KeKeWubi.zip"
+set "TMP_DIR=%temp%\tmp_keke"
 
 :: ====================== 词库备份确认逻辑 ======================
-echo 重要提醒！更新会覆盖Rime目录配置文件
+echo 重要提醒！更新会清空Rime目录全部旧配置文件
 echo.
-echo  ⚠️若修改了“用户文件夹”的位置，本程序下载完毕后，需要手动把所有文件从目录：%appdata%\rime 复制到你指定的位置！
+echo  ⚠️ 若修改了“用户文件夹”的位置，本程序部署完成后，需要手动把所有文件从目录：%appdata%\Rime 复制到你指定的位置！
 echo.
-echo  ⚠️若修改过个人词库（例如，可可五笔86版是：keke_wubi_86_user.dict.yaml），请务必备份个人词库文件！
+echo  ⚠️ 若修改过个人词库（例如，可可五笔86版是：keke_wubi_86_user.dict.yaml），请务必备份个人词库文件！
+echo.
+echo  ⚠️ 项目若下载成功且校验通过后，会清空Rime全部旧内容，确认已备份再继续！
 echo.
 echo  如果准备好更新，按任意键继续；不想更新直接关闭窗口退出。
 echo.
@@ -25,18 +29,16 @@ echo.
 :: ==================================================================
 
 set "ZIP_RAW=https://github.com/KeKeWubi/Rime-KeKeWubi/archive/refs/heads/main.zip"
-set "DOWNLOAD_ZIP=%RIMENEW%\KeKeWubi.zip"
-set "TMP_DIR=%RIMENEW%\tmp_keke"
 
 :: 创建Rime文件夹（不存在则新建）
 if not exist "%RIMENEW%" md "%RIMENEW%"
 
-echo 1. 清理临时缓存文件
+echo 1. 清理系统缓存内旧临时文件
 rmdir /s /q "%TMP_DIR%" 2>nul
-del /f /q "%DOWNLOAD_ZIP%" 2>nul
+del /f /q "%ZIP_TEMP%" 2>nul
 
-echo 2. 开始从GitHub下载源码包...
-curl -fsSL --insecure -o "%DOWNLOAD_ZIP%" "%ZIP_RAW%"
+echo 2. 开始从GitHub下载源码包至系统临时目录...
+curl -fsSL --insecure -o "%ZIP_TEMP%" "%ZIP_RAW%"
 if %errorlevel% neq 0 (
     echo ❌ GitHub直链下载失败，请切换手机热点或手动下载更新包
     echo 手动下载地址：%ZIP_RAW%
@@ -46,34 +48,46 @@ if %errorlevel% neq 0 (
 
 :CHECK_ZIP
 :: 校验文件存在且非空
-if not exist "%DOWNLOAD_ZIP%" (
+if not exist "%ZIP_TEMP%" (
     echo ❌ 未生成压缩包，下载失败
     pause
     exit /b 1
 )
-for %%f in ("%DOWNLOAD_ZIP%") do if %%~zf equ 0 (
+for %%f in ("%ZIP_TEMP%") do if %%~zf equ 0 (
     echo ❌ 下载得到空文件，网络中断，请重试
-    del "%DOWNLOAD_ZIP%"
+    del "%ZIP_TEMP%"
     pause
     exit /b 1
 )
 
-echo 3. 解压压缩包到临时目录
-powershell Expand-Archive -Path "%DOWNLOAD_ZIP%" -DestinationPath "%TMP_DIR%" -Force
+echo 3. 校验压缩包完好，清空Rime目录全部原有内容（仅保留当前运行脚本）
+:: 删除Rime下所有子文件夹
+for /d %%d in ("%RIMENEW%\*") do rmdir /s /q "%%d" 2>nul
+:: 删除Rime下所有文件，仅保留当前bat脚本自身
+for %%f in ("%RIMENEW%\*.*") do (
+    setlocal enabledelayedexpansion
+    if /i not "%%~nxf"=="%~nx0" del /f /q "%%f" 2>nul
+    endlocal
+)
+echo    Rime旧文件清理完成，目录干净无残留
+echo.
+
+echo 4. 在系统缓存目录解压压缩包
+powershell Expand-Archive -Path "%ZIP_TEMP%" -DestinationPath "%TMP_DIR%" -Force
 if not exist "%TMP_DIR%\Rime-KeKeWubi-main" (
     echo ❌ 压缩包损坏，解压失败
-    del "%DOWNLOAD_ZIP%"
+    del "%ZIP_TEMP%"
     rmdir /s /q "%TMP_DIR%" 2>nul
     pause
     exit /b 1
 )
 
-echo 4. 将仓库内所有文件直接复制到Rime根目录（不嵌套文件夹）
+echo 5. 将仓库内所有文件直接复制到Rime根目录
 xcopy "%TMP_DIR%\Rime-KeKeWubi-main\*" "%RIMENEW%\" /e /h /y
 
-echo 5. 清理临时文件与压缩包
+echo 6. 清理系统全部临时文件
 rmdir /s /q "%TMP_DIR%"
-del /f /q "%DOWNLOAD_ZIP%"
+del /f /q "%ZIP_TEMP%"
 
 echo.
 echo ==============================================
