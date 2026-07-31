@@ -44,7 +44,7 @@ translator:
   enable_charset_filter: true
   enable_user_dict: false
   enable_sentence: false		#整句输入
-  enable_completion: false		#自动补全，手机上建议改为 true
+  enable_completion: false		#候选框编码自动补全，手机上建议改为 true
 
 speller:
   alphabet: "abcdefghijklmnopqrstuvwxyz"
