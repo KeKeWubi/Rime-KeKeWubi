@@ -1,4 +1,4 @@
----
+﻿---
 name: "keke_wubi_86_system"
 version: "1.0"
 sort: by_weight
@@ -9284,7 +9284,6 @@ sort: original
 厮杀	daqs
 泰语	dwyg
 故作	dtwt
-太累	dylx
 尤文图斯	dyla
 大板	ddsr
 有别	dekl
@@ -9955,7 +9954,6 @@ sort: original
 耗油	diim
 压痛	dfuc
 厅局级	dnxe
-太累了	dlbn
 历险	dlbw
 三阳	dgbj
 百老汇	dfia
@@ -10810,6 +10808,7 @@ sort: original
 砸到	dagc
 大开眼界	dghl
 原想	drsh
+春花秋月	date
 右端	dkum
 砍头	dqud
 套取	ddbc
@@ -12664,6 +12663,9 @@ sort: original
 大疆	ddxf
 百世快递	danu
 大模型	dsga
+太累了	dlbn
+太累	dylx
+大师兄	djkq
 膜	eajd
 腊	eajg
 服	ebcy
@@ -19528,6 +19530,8 @@ sort: original
 老苏	ftal
 云存储	fdwy
 云平台	fgck
+二哥	fgsk
+二师兄	fjkq
 邢	gabh
 形	gaet
 武	gahd
@@ -20321,8 +20325,6 @@ sort: original
 不许	giyt
 一统天下	gxgg
 顿时	gbjf
-屯里	gbjf
-还行	gitf
 天河	gdis
 青海省	giit
 不锈钢	gqqm
@@ -25074,6 +25076,8 @@ sort: original
 一阳	ggbj
 五谷杂粮	gwvo
 豆包	gkqn
+屯里	gbjf
+还行	gitf
 瞄	halg
 彪	hame
 虎	hamv
@@ -27198,7 +27202,6 @@ sort: original
 水厂	iidg
 光荣	iqap
 省时	itjf
-省里	itjf
 涌出	icbm
 法官	ifph
 法官	ifpn
@@ -32025,6 +32028,7 @@ sort: original
 沈琪	ipga
 沈琦	ipgd
 深度求索	iyff
+省里	itjf
 暴	jawi
 最	jbcu
 坚	jcff
@@ -34805,7 +34809,6 @@ sort: original
 中共	khaw
 哪些	kvhx
 顺利	kdtj
-顺顺利利	kktt
 别人	klww
 吸引	kexh
 哪里	kvjf
@@ -34845,7 +34848,7 @@ sort: original
 只需	kwfd
 别墅	kljf
 只好	kwvb
-哈哈	kwkw	999
+哈哈	kwkw
 中文版	kyth
 听取	krbc
 路上	khhh
@@ -37670,6 +37673,9 @@ sort: original
 嗞	kuxx
 噂	kusf
 嗯嗯	klkl
+顺顺利利	kktt
+路南	khfm
+路北	khux
 轰	lccu
 罪	ldjd
 恩	ldnu
@@ -37718,7 +37724,6 @@ sort: original
 国家	lgpe
 软件	lqwr
 国际	lgbf
-车险	lgbw
 加入	lkty
 图片	ltth
 加强	lkxk
@@ -40292,6 +40297,7 @@ sort: original
 辒	ljlg
 畤	lffy
 辀	ltey
+车险	lgbw
 典	mawu
 峻	mcwt
 贿	mdeg
@@ -45756,7 +45762,6 @@ sort: original
 迷宫	oppk
 断电	onjn
 粗暴	oeja
-火绒杀毒	oxqg
 粉红色	oxqc
 烧毁	oava
 炮兵	oqrg
@@ -45770,7 +45775,6 @@ sort: original
 粗略	oelt
 粉尘	owif
 火线	ooxg
-火绒	ooxa
 业务量	otjg
 火电	oojn
 熄灭	otgo
@@ -47059,6 +47063,8 @@ sort: original
 煴	ojlg
 庤	offi
 火神山	opmm
+火绒	ooxa
+火绒杀毒	oxqg
 宽	pamq
 宏	pdcu
 割	pdhj
@@ -56440,7 +56446,6 @@ sort: original
 手提电脑	rrje
 抛下	rvgh
 握紧	rnjc
-所里	rnjf
 投鼠忌器	rvnk
 插进	rtfj
 报信	rbwy
@@ -60037,6 +60042,7 @@ sort: original
 插排	rtrd
 插线板	rxsr
 打卤面	rhdm
+所里	rnjf
 棋	sadw
 框	sagg
 模	sajd
@@ -60681,7 +60687,6 @@ sort: original
 极低	sewq
 杰作	sowt
 木质	ssrf
-禁手	ssrt
 杠杆	sasf
 橱柜	sdsa
 西城	sgfd
@@ -60691,7 +60696,6 @@ sort: original
 桃源	siid
 相关性	sunt
 极富	sepg
-极客	sept
 格调	stym
 要命	svwg
 相撞	shru
@@ -63249,6 +63253,8 @@ sort: original
 飘飘	sfsf
 朴朴	shsh
 极兔	seqk
+禁手	ssrt
+极客	sept
 筑	tamy
 彻	tavn
 长	tayi
@@ -64544,7 +64550,6 @@ sort: original
 短讯	tdyn
 箱子	tsbb
 自建	thvf
-我是	trjg
 选择题	trjg
 自控	thrp
 舰队	tebw
@@ -68810,6 +68815,7 @@ sort: original
 德邦快递	tdnu
 千问	tfuk
 科大讯飞	tdyn
+我是	trjg
 瓶	uagn
 瓶	uagy
 冻	uaiy
@@ -73455,6 +73461,7 @@ sort: original
 新冠疫苗	upua
 斗智斗勇	utuc
 闪付	uwwf
+单字派	upir
 媒	vafs
 毁	vamc
 暨	vcag
@@ -82981,7 +82988,6 @@ sort: original
 请	ygeg
 评	yguh
 店	yhkd
-就在	yidh
 就	yidn
 剂	yjjh
 课	yjsy
@@ -87590,6 +87596,7 @@ sort: original
 文心一言	yngy
 讯飞	ynnu
 讯飞星火	ynjo
+就在	yidh
 劳	aplb	999
 苏	alwu	999
 匪	adjd	999

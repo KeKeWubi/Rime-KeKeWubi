@@ -1,4 +1,4 @@
----
+﻿---
 name: "keke_wubi_nc_system"
 version: "1.0"
 sort: by_weight
@@ -7909,7 +7909,6 @@ sort: original
 确定	dqpg
 成果	dnjs
 原因	drld
-还行	dhtg
 不得	dhtj
 存在	dhdh
 友情	dcng
@@ -9422,7 +9421,6 @@ sort: original
 不以为然	dnyq
 泰语	dwyg
 故作	dtwt
-太累	dylx
 尤文图斯	dyla
 不服气	dern
 大板	ddsr
@@ -9601,7 +9599,6 @@ sort: original
 有待于	dtgf
 不眠	dhhn
 古道热肠	dure
-太累了	dlbn
 胡思乱想	dlts
 大人物	dwtq
 砂石	didg
@@ -11076,6 +11073,7 @@ sort: original
 砸到	dagc
 大开眼界	dghl
 原想	drsh
+春花秋月	date
 右端	dkum
 砍头	dqud
 套取	ddbc
@@ -12990,6 +12988,10 @@ sort: original
 大疆	ddxf
 百世快递	danu
 大模型	dsga
+还行	dhtg
+太累了	dlbn
+太累	dylx
+大师兄	djkq
 爱	epdc
 胞	eqnn
 脆	eqdb
@@ -19950,6 +19952,8 @@ sort: original
 老苏	ftae
 云存储	fdwy
 云平台	fgck
+二哥	fgsk
+二师兄	fjkq
 班	gytg
 丙	gmwi
 玻	ghcy
@@ -20583,7 +20587,6 @@ sort: original
 迈出	gqbm
 一统天下	gxgg
 顿时	gbjf
-屯里	gbjf
 天河	gdis
 青海省	giit
 到会	gcwf
@@ -24887,6 +24890,7 @@ sort: original
 一阳	ggbj
 五谷杂粮	gwvo
 豆包	gkqn
+屯里	gbjf
 彪	hawe
 餐	hqce
 柴	hxsu
@@ -27013,7 +27017,6 @@ sort: original
 水厂	iidg
 光荣	igap
 省时	itjf
-省里	itjf
 涌出	icbm
 法官	ifph
 沧海	iwit
@@ -31683,6 +31686,7 @@ sort: original
 沈琪	ipga
 沈琦	ipgd
 深度求索	iogf
+省里	itjf
 览	jtyq
 景	jyki
 昂	jqbj
@@ -34402,7 +34406,6 @@ sort: original
 中共	khaw
 哪些	knhx
 顺利	kdtj
-顺顺利利	kktt
 别人	keww
 吸引	kbxh
 哪里	knjf
@@ -34442,7 +34445,7 @@ sort: original
 只需	kwfd
 别墅	kejf
 只好	kwvb
-哈哈	kwkw	999
+哈哈	kwkw
 中文版	kyth
 听取	krbc
 路上	khhg
@@ -37217,6 +37220,9 @@ sort: original
 啫	kftj
 跱	khff
 嗯嗯	klkl
+顺顺利利	kktt
+路南	khfm
+路北	khux
 轲	lskg
 罢	lfcu
 恩	ldnu
@@ -37261,7 +37267,6 @@ sort: original
 国家	lgpg
 软件	lqwt
 国际	lgbf
-车险	lgbw
 图片	ltth
 辆	lgmw
 因为	ldyt
@@ -39484,6 +39489,7 @@ sort: original
 圙	lwdd
 辌	lyki
 畖	lrcy
+车险	lgbw
 贬	mtpy
 财	mftt
 崇	mpfi
@@ -44762,7 +44768,6 @@ sort: original
 粗略	oelt
 粉尘	owif
 火线	ooxf
-火绒	ooxa
 磨难	oscw
 业务量	otjg
 废话	onyt
@@ -44815,7 +44820,6 @@ sort: original
 麒麟	onon
 烘干	oafg
 康乃馨	obfn
-火线杀毒	oxrg
 庇护	oxry
 粘土	ohff
 迷惘	opnm
@@ -46600,6 +46604,8 @@ sort: original
 焞	oykb
 麀	onjx
 火神山	opmm
+火绒	ooxa
+火绒杀毒	oxrg
 宰	pufj
 案	pvsu
 宝	pgyu
@@ -55533,7 +55539,6 @@ sort: original
 手提电脑	rrje
 抛下	rvgh
 握紧	rnjc
-所里	rnjf
 投鼠忌器	renk
 插进	rtfj
 报信	rbwy
@@ -59049,6 +59054,7 @@ sort: original
 插排	rtrh
 插线板	rxsr
 打卤面	rhdm
+所里	rnjf
 样	sugh
 板	srcy
 榜	syuy
@@ -59594,7 +59600,6 @@ sort: original
 哥伦比亚	swxg
 歌坛	skff
 李宁	sbps
-极客	sbpt
 相见	shmq
 本条	sgts
 树林	scss
@@ -59679,7 +59684,6 @@ sort: original
 西城	sgfd
 相隔	shbg
 木板	sssr
-禁手	ssrt
 桃源	sqid
 要不是	sdjg
 相关性	sunt
@@ -62202,6 +62206,8 @@ sort: original
 飘飘	sfsf
 朴朴	shsh
 极兔	sbqk
+禁手	ssrt
+极客	sbpt
 篇	tyna
 悉	tonu
 奥	tmod
@@ -63471,7 +63477,6 @@ sort: original
 箱子	tsbb
 自建	thvg
 选择题	trjg
-我是	trjg
 自控	thrp
 舰队	tebw
 往常	tyip
@@ -67832,6 +67837,7 @@ sort: original
 德邦快递	tdnu
 千问	tfuk
 科大讯飞	tdyn
+我是	trjg
 辩	udyf
 竞	ukqb
 癌	ukkm
@@ -72109,6 +72115,7 @@ sort: original
 新冠疫苗	upua
 斗智斗勇	utuc
 闪付	uwwf
+单字派	upir
 剥	vijh
 巢	vjsu
 婚	vqaj
@@ -82054,7 +82061,6 @@ sort: original
 证件	ygwt
 交界	ywlw
 毫不	ykdh
-就在	ykdh
 充实	ycpu
 旅客	ytpt
 就很	yktv
@@ -85841,6 +85847,7 @@ sort: original
 文心一言	yngy
 讯飞	ynnu
 讯飞星火	ynjo
+就在	ykdh
 薄	aigf	999
 巩	awyy	999
 莞	apfq	999
