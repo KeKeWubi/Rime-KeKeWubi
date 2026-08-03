@@ -43,13 +43,13 @@ translator:
   dictionary: keke_wubi_98_common
   enable_charset_filter: true
   enable_user_dict: false
-  enable_sentence: false		  #整句输入
-  enable_completion: false		#候选框编码自动补全，手机上建议改为 true
+  enable_sentence: false			#整句输入
+  enable_completion: false			#候选框编码自动补全，手机上建议改为 true
 
 speller:
   alphabet: "abcdefghijklmnopqrstuvwxyz"
   initials: "abcdefghijklmnopqrstuvwxyz"
-  auto_select: false						        #唯一时上屏，如果不是“单字派”，慎改此项
+  auto_select: false						#唯一时上屏，如果不是“单字派”，慎改此项
   max_length: 4
   min_code_length_for_completion: 3			#此处设置第几码开始在候选框里提示后续编码
 
