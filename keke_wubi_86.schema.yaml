@@ -34,7 +34,7 @@ engine:
     - lua_translator@*keke_wubi_fuzzy_z
 
   filters:
-    - lua_filter@*keke_wubi_length_filter	#编码提示的“总开关”
+    - lua_filter@*keke_wubi_length_filter	  #编码提示的“总开关”
 #     以下两项设置，是对“单字”的处理，需要相应功能就把最前面的 # 去掉，重新部署。注：存在覆盖，应该二选一，不要都用！
 #    - lua_filter@*keke_wubi_char_prior     #候选框里“单字在前”
 #    - lua_filter@*keke_wubi_char_only      #候选框里“只显示单字”，此功能会把“单字在前覆盖”，慎选！
