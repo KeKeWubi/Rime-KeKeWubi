@@ -1,105 +1,132 @@
-#!/bin/zsh
-# 可可五笔 Rime MacOS 全自动更新器
+#!/bin/bash
+# 可可五笔 Rime - MacOS 全自动更新工具
+# 对应Windows批处理完整逻辑移植
+
+clear
 echo "=============================================="
-echo "        可可五笔 Rime 一键更新工具"
+echo "        可可五笔 Rime - MacOS全自动更新工具"
 echo "=============================================="
 echo ""
 
-# 路径配置：临时文件全部存放系统/tmp缓存，不污染Rime目录
+# ====================== 路径配置 ======================
 RIMENEW="$HOME/Library/Rime"
-ZIP_TEMP="/tmp/KeKeWubi.zip"
-TMP_DIR="/tmp/tmp_keke"
+ZIP_TEMP="${TMPDIR}KeKeWubi.zip"
+TMP_DIR="${TMPDIR}tmp_keke"
+UA="Chrome/120.0.0.0 MacOS/14.0"
 
-# ====================== 词库备份确认提示 ======================
+# ====================== 备份提醒 ======================
 echo "重要提醒！更新会清空Rime目录全部旧配置文件"
 echo ""
-echo " ⚠️ 若修改了「用户文件夹」位置，部署完成后需要手动把所有文件从 $RIMENEW 复制到你自定义目录！"
+echo " ⚠️ 若修改了鼠须管「用户文件夹」位置，更新完成后需要手动把文件复制到自定义目录！"
 echo ""
-echo " ⚠️ 若修改过个人词库（例如可可五笔86版：keke_wubi_86_user.dict.yaml），请务必备份个人词库文件！"
+echo " ⚠️ 个人词库文件（如 keke_wubi_86_user.dict.yaml）请提前备份！"
 echo ""
-echo " ⚠️ 压缩包下载成功且校验通过后，会清空Rime全部旧内容，确认已备份再继续！"
+echo " ⚠️ 下载校验通过后会清空全部旧Rime文件，确认已备份再继续！"
 echo ""
-echo " 准备好更新按回车键继续；不想更新直接关闭窗口退出。"
+echo "按回车键继续更新；直接关闭窗口退出"
 read -r
 echo ""
-echo " 已确认。开始执行更新流程..."
+echo "已确认，开始执行更新流程..."
 echo ""
-# ==================================================================
 
-ZIP_RAW="https://github.com/KeKeWubi/Rime-KeKeWubi/archive/refs/heads/main.zip"
+# ====================== 双下载源（同一个zip文件） ======================
+ZIP_GITHUB="https://github.com/KeKeWubi/Rime-KeKeWubi/archive/refs/heads/main.zip"
+ZIP_OFFICIAL="https://keke.kim/DownLoad/Rime-KeKeWubi-main.zip"
 
-# Rime目录不存在则创建
-[ ! -d "$RIMENEW" ] && mkdir -p "$RIMENEW"
+# 新建Rime目录（不存在则创建）
+mkdir -p "$RIMENEW"
 
-echo "1. 清理系统缓存内旧临时文件"
+echo "1. 清理系统缓存旧临时文件"
 rm -rf "$TMP_DIR" 2>/dev/null
 rm -f "$ZIP_TEMP" 2>/dev/null
 
-echo "2. 开始从GitHub下载源码包至系统临时目录..."
-curl -fsSL --insecure -o "$ZIP_TEMP" "$ZIP_RAW"
+echo "2. 优先从GitHub下载源码包至系统临时目录..."
+# curl 下载，携带UA
+curl -fsSL --insecure -A "$UA" -o "$ZIP_TEMP" "$ZIP_GITHUB"
 if [ $? -ne 0 ]; then
-    echo "❌ GitHub直链下载失败，请切换手机热点或手动下载更新包"
-    echo "手动下载地址：$ZIP_RAW"
-    read -r
-    exit 1
-fi
+    echo "警告：GitHub下载失败，自动切换可可五笔官网备用通道..."
+    rm -f "$ZIP_TEMP" 2>/dev/null
+    curl -fsSL --insecure -A "$UA" -o "$ZIP_TEMP" "$ZIP_OFFICIAL"
 
-# 校验压缩包存在且非空
-if [ ! -f "$ZIP_TEMP" ]; then
-    echo "❌ 未生成压缩包，下载失败"
-    read -r
-    exit 1
-fi
-ZIP_SIZE=$(stat -f%z "$ZIP_TEMP")
-if [ "$ZIP_SIZE" -eq 0 ]; then
-    echo "❌ 下载得到空文件，网络中断，请重试"
-    rm -f "$ZIP_TEMP"
-    read -r
-    exit 1
-fi
-
-echo "3. 校验压缩包完好，清空Rime目录全部原有内容（仅保留当前运行脚本）"
-# 删除Rime下所有子文件夹
-find "$RIMENEW" -mindepth 1 -maxdepth 1 -type d -exec rm -rf {} \; 2>/dev/null
-# 删除Rime下所有文件，过滤保留当前command脚本
-SCRIPT_NAME=$(basename "$0")
-find "$RIMENEW" -mindepth 1 -maxdepth 1 -type f | while read -r file; do
-    FILENAME=$(basename "$file")
-    if [ "$FILENAME" != "$SCRIPT_NAME" ]; then
-        rm -f "$file" 2>/dev/null
+    # 校验官网下载文件存在且大于0字节
+    if [ -f "$ZIP_TEMP" ]; then
+        FILESIZE=$(stat -f%z "$ZIP_TEMP")
+        if [ "$FILESIZE" -gt 0 ]; then
+            echo "可可五笔官网通道下载成功"
+        else
+            echo "错误：官网下载得到空文件，网络异常"
+            echo "手动下载地址：$ZIP_OFFICIAL"
+            read -p "按回车退出..."
+            exit 1
+        fi
+    else
+        echo "错误：官网下载失败，未生成压缩包"
+        echo "GitHub源：$ZIP_GITHUB"
+        echo "官网源：$ZIP_OFFICIAL"
+        read -p "按回车退出..."
+        exit 1
     fi
-done
+else
+    echo "GitHub下载成功"
+fi
+
+# ====================== 压缩包校验 ======================
+echo ""
+echo "3. 校验压缩包完整性"
+if [ ! -f "$ZIP_TEMP" ]; then
+    echo "错误：压缩包丢失，下载异常"
+    read -p "按回车退出..."
+    exit 1
+fi
+FILESIZE=$(stat -f%z "$ZIP_TEMP")
+if [ "$FILESIZE" -eq 0 ]; then
+    echo "错误：压缩包为空，下载中断"
+    rm -f "$ZIP_TEMP"
+    read -p "按回车退出..."
+    exit 1
+fi
+
+# ====================== 清空原有Rime目录 ======================
+echo "校验通过，清空Rime目录全部原有内容"
+find "$RIMENEW" -mindepth 1 -delete
 echo "   Rime旧文件清理完成，目录干净无残留"
 echo ""
 
+# ====================== 解压压缩包 ======================
 echo "4. 在系统缓存目录解压压缩包"
+rm -rf "$TMP_DIR" 2>/dev/null
+mkdir -p "$TMP_DIR"
 unzip -q "$ZIP_TEMP" -d "$TMP_DIR"
+
+# 校验解压后的目录结构（固定Rime-KeKeWubi-main文件夹）
 if [ ! -d "$TMP_DIR/Rime-KeKeWubi-main" ]; then
-    echo "❌ 压缩包损坏，解压失败"
+    echo "错误：压缩包损坏，解压失败"
     rm -f "$ZIP_TEMP"
     rm -rf "$TMP_DIR"
-    read -r
+    read -p "按回车退出..."
     exit 1
 fi
 
-echo "5. 将仓库内所有文件直接复制到Rime根目录（不嵌套文件夹）"
-cp -R "$TMP_DIR/Rime-KeKeWubi-main/"* "$RIMENEW"/
+# ====================== 复制文件到Rime ======================
+echo "5. 将全部配置文件复制到Rime根目录"
+cp -R "$TMP_DIR/Rime-KeKeWubi-main/"* "$RIMENEW/"
 
+# ====================== 清理临时文件 ======================
 echo "6. 清理系统全部临时文件"
 rm -rf "$TMP_DIR"
 rm -f "$ZIP_TEMP"
 
+# ====================== 完成提示 ======================
 echo ""
 echo "=============================================="
-echo "✅ 可可五笔配置文件已拷贝到目录：$RIMENEW"
+echo "✅ 可可五笔配置文件已部署至目录：$RIMENEW"
 echo ""
-echo "按下回车会自动打开此目录。"
+echo "按回车键自动打开Rime配置文件夹"
 echo ""
-echo "如果你改过Rime默认用户目录，手动把全部文件复制到你自定义文件夹；"
-echo ""
-echo "未修改目录则右键鼠须管菜单栏图标 → 重新部署 生效方案"
+echo "修改过自定义用户目录的，手动复制全部文件到自定义文件夹；"
+echo "未修改目录：打开鼠须管（Squirrel）托盘 → 重新部署 即可生效"
 echo "=============================================="
 echo ""
 read -r
 open "$RIMENEW"
-exit
+exit 0
