@@ -1,17 +1,30 @@
--- lua/keke_wubi_length_filter.lua
+-- keke_wubi_length_filter.lua，设置在第几码时，“候选框”开始编码提示的脚本
 local function filter(input, env)
-    -- 获取配置的最小提示码长，默认值为 3
-    local min_length = env.engine.schema.config:get_int("speller/min_code_length_for_completion") or 3
-    local context = env.engine.context
-    local code_len = string.len(context.input)
+    local context = env and env.engine and env.engine.context
+    local input_str = (context and context.input) or ""
+
+    if string.find(input_str, "z") or string.find(input_str, "Z") then
+        for cand in input:iter() do
+            yield(cand)
+        end
+        return
+    end
+
+    local min_length = 3
+    if env and env.engine and env.engine.schema and env.engine.schema.config then
+        min_length = env.engine.schema.config:get_int("speller/min_code_length_for_completion") or 3
+    end
+
+    local code_len = #input_str
 
     for cand in input:iter() do
-        -- 1. 达到设定码长（如 >=3 码），放行所有候选（包括补全提示）
+        local ctype = ""
+        pcall(function() ctype = cand.type end)
+
         if code_len >= min_length then
             yield(cand)
-        -- 2. 未达到设定码长（如 1、2 码），只保留精确匹配项，拦截长词提示，防止卡死
         else
-            if cand.type ~= "completion" then
+            if ctype ~= "completion" then
                 yield(cand)
             end
         end
