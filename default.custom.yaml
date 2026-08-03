@@ -76,9 +76,6 @@ patch:
       - when: composing
         accept: KP_Decimal
         send: period
-      - when: composing
-        accept: KP_DECIMAL
-        send: period
       - when: has_menu
         accept: KP_Enter
         send: space
