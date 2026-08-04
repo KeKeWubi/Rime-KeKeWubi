@@ -1,34 +1,33 @@
 -- keke_wubi_length_filter.lua，设置在第几码时，“候选框”开始编码提示的脚本
-local function filter(input, env)
-    local context = env and env.engine and env.engine.context
-    local input_str = (context and context.input) or ""
+local str_find = string.find
 
-    if string.find(input_str, "z") or string.find(input_str, "Z") then
+local function filter(input, env)
+    local ctx = env.engine.context
+    local input_str = ctx.input
+    -- 提前判断含z直接放行，不进入循环内分支
+    if str_find(input_str, "z") then
         for cand in input:iter() do
             yield(cand)
         end
         return
     end
 
-    local min_length = 3
-    if env and env.engine and env.engine.schema and env.engine.schema.config then
-        min_length = env.engine.schema.config:get_int("speller/min_code_length_for_completion") or 3
-    end
-
+    -- 配置读取一次
+    local cfg = env.engine.schema.config
+    local min_length = cfg:get_int("speller/min_code_length_for_completion") or 3
     local code_len = #input_str
+    local cand_type
 
     for cand in input:iter() do
-        local ctype = ""
-        pcall(function() ctype = cand.type end)
-
         if code_len >= min_length then
             yield(cand)
         else
-            if ctype ~= "completion" then
+            cand_type = nil
+            pcall(function() cand_type = cand.type end)
+            if cand_type ~= "completion" then
                 yield(cand)
             end
         end
     end
 end
-
 return filter
