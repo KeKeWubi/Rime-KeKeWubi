@@ -51,7 +51,7 @@ speller:
   initials: "abcdefghijklmnopqrstuvwxyz"
   auto_select: false						        #唯一时上屏，如果不是“单字派”，慎改此项
   max_length: 4
-  min_code_length_for_completion: 3			#此处设置第几码开始在候选框里提示后续编码
+  min_code_length_for_completion: 3			#此处设置第几码开始在候选框里提示后续编码，手机上建议为 1
 
 switches:
   - name: fuzzy_z
