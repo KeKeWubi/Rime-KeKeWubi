@@ -54,13 +54,15 @@ speller:
   min_code_length_for_completion: 3			#此处设置第几码开始在候选框里提示后续编码，手机上建议为 1
 
 switches:
+  - name: extended_charset
+    states: [ 常用字词, 生僻字词 ]
+  - name: full_shape
+    states: [ 半角符号, 全角符号 ]
+  - name: ascii_punct
+    states: [ 中文标点, 英文标点 ]
   - name: fuzzy_z
     reset: 0
     states: [ 禁用万能Z, 开启万能Z ]
-  - name: full_shape
-    states: [ 半角, 全角 ]
-  - name: ascii_punct
-    states: [ 中文标点, 英文标点 ]
 
 punctuator:
   import_preset: default
