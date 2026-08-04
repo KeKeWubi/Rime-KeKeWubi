@@ -13,7 +13,7 @@ patch:
       - "Control+0"
       - "Shift+Control+0"
     abbreviate_options: true
-    caption: "【 输入法设置 】"
+    caption: "【 可可五笔设置 】"
     option_list_separator: "｜"
 
   ascii_composer:
