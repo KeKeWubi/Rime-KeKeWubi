@@ -55,7 +55,7 @@ speller:
 
 switches:
   - name: extended_charset
-    states: [ 常用字词, 生僻字词 ]
+    states: [ 常用字词, 扩展字词 ]
   - name: full_shape
     states: [ 半角符号, 全角符号 ]
   - name: ascii_punct
