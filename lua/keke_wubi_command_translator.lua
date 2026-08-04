@@ -1,4 +1,4 @@
--- 可可五笔 命令翻译器
+-- 可可五笔 命令翻译器 
 local function translator(input, seg)
 
     local function num_to_rmb(num_str)
