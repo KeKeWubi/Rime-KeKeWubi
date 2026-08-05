@@ -4,7 +4,6 @@ local str_find = string.find
 local function filter(input, env)
     local ctx = env.engine.context
     local input_str = ctx.input
-    -- 提前判断含z直接放行，不进入循环内分支
     if str_find(input_str, "z") then
         for cand in input:iter() do
             yield(cand)
@@ -12,7 +11,6 @@ local function filter(input, env)
         return
     end
 
-    -- 配置读取一次
     local cfg = env.engine.schema.config
     local min_length = cfg:get_int("speller/min_code_length_for_completion") or 3
     local code_len = #input_str
