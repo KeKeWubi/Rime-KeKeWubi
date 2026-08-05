@@ -2,7 +2,6 @@
 local utf8_len = utf8.len
 local utf8_codepoint = utf8.codepoint
 
--- 常量预定义，仅加载一次
 local RADICAL_S = 0x2E80
 local RADICAL_E1 = 0x2EFF
 local RADICAL_S2 = 0x2F00
@@ -13,7 +12,6 @@ local FW_PUNC_S = 0xFF00
 local FW_PUNC_E = 0xFFEF
 
 local function keke_wubi_charset_filter(input, env)
-    -- 配置只读取一次，不在循环内重复调用
     local ctx = env.engine.context
     local is_extended = ctx:get_option("extended_charset")
     local text, code, is_radical, is_basic_punct, is_fullwidth_punct, is_common_hanzi
@@ -25,7 +23,6 @@ local function keke_wubi_charset_filter(input, env)
         end
 
         text = entry.text
-        -- 多字词直接放行，不做字区间判断
         if utf8_len(text) > 1 then
             yield(entry)
             goto continue
