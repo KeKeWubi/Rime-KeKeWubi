@@ -10,6 +10,9 @@ patch:
     page_size: 5		#设置每页候选显示的词条数量
   switcher:
     hotkeys:
+      - "Control+grave"
+      - "Control+Shift+grave"
+      - "F4"
       - "Control+0"
       - "Shift+Control+0"
     abbreviate_options: true
