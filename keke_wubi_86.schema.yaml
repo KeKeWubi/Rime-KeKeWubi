@@ -34,7 +34,7 @@ engine:
     - lua_translator@*keke_wubi_fuzzy_z
 
   filters:
-    - lua_filter@*keke_wubi_charset_filter	#常用规范汉字8105字脚本
+    - lua_filter@*keke_wubi_charset_filter	#通用规范汉字表8105字脚本
     - lua_filter@*keke_wubi_length_filter	#第几码开始在候选框里提示后续编码的脚本
 #     以下两项设置，是对“单字”的处理，需要相应功能就把最前面的 # 去掉，重新部署。注：存在覆盖，应该二选一，不要都用！
 #    - lua_filter@*keke_wubi_char_prior     #候选框里“单字在前”
