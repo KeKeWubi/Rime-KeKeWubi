@@ -1,5 +1,4 @@
 -- keke_wubi_fuzzy_z.lua
--- ====================== 新增顶层缓存，无业务改动 ======================
 local str_sub = string.sub
 local str_find = string.find
 local str_match = string.match
@@ -12,11 +11,9 @@ local ipairs = ipairs
 local tonumber = tonumber
 local table_insert = table.insert
 
--- 全局静态缓存：脚本生命周期仅加载一次词库，不再重复读盘
 local static_global_dict = nil
 local dict_already_loaded = false
 
--- ====================== 下面所有原有函数、逻辑完全原样保留，仅微调少量性能点 ======================
 local M = {}
 local function is_single_char(str)
     if utf8 and utf8_len then
@@ -92,13 +89,11 @@ local function unload_dict(env)
     if env.loaded then
         env.dict_map = nil
         env.loaded = false
-        -- 删掉原版暴力全量GC，改用轻量分步回收
         collectgarbage("step", 80)
     end
 end
 
 local function ensure_dict_loaded(env)
-    -- 优先复用全局一次性加载的词库，不再重复读文件
     if dict_already_loaded then
         env.dict_map = static_global_dict
         env.loaded = true
@@ -115,7 +110,6 @@ local function ensure_dict_loaded(env)
     load_single_dict(prefix .. "_system", 2, dict_map)
     load_single_dict(prefix .. "_rare",   3, dict_map)
     
-    -- 存入全局静态缓存，永久复用
     static_global_dict = dict_map
     dict_already_loaded = true
     env.dict_map = dict_map
@@ -123,9 +117,8 @@ local function ensure_dict_loaded(env)
     collectgarbage("step", 120)
 end
 
--- 原版expand_z递归逻辑完全不动，仅增加结果上限防爆炸
 local function expand_z(pos_list, index, current_code, results)
-    if #results > 300 then return end -- 新增上限，不改动原有递归逻辑
+    if #results > 300 then return end
     if index > #pos_list then
         table_insert(results, current_code)
         return
@@ -146,7 +139,6 @@ local function get_expanded_codes(code_str)
             table_insert(pos_list, i)
         end
     end
-    -- z超过3个直接返回空，避免上万次循环，原有逻辑不变
     if #pos_list > 3 then return {} end
     local results = {}
     expand_z(pos_list, 1, code_str, results)
@@ -200,7 +192,6 @@ function M.func(input, seg, env)
             end
         end
     end
-    -- 原版排序逻辑完全保留，一行未改
     table.sort(matches, function(a, b)
         if a.is_exact ~= b.is_exact then
             return a.is_exact
@@ -216,7 +207,6 @@ function M.func(input, seg, env)
     for _, item in ipairs(matches) do
         yield(Candidate("table", seg.start, seg._end, item.word, "[" .. item.code .. "]"))
     end
-    -- 轻量GC，不阻塞打字
     collectgarbage("step", 60)
 end
 return M
