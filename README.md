@@ -31,6 +31,7 @@ Rime/									# 所有可用平台都是这个配置目录
 	└─ keke_wubi_char_prior.lua			#单字在前脚本，修选框里“单字在前”
 	└─ keke_wubi_char_only.lua			#仅单字脚本，修选框里“仅单字”，单字派用这个功能
 	└─ keke_wubi_length_filter.lua		#设置第几码开始提示后续编码的脚本
+	└─ keke_wubi_charset_filter.lua		#过滤规范汉字表8105字的脚本
 三套输入方案
 ├─ keke_wubi_86.schema.yaml				#86版五笔方案
 ├─ keke_wubi_98.schema.yaml				#98版五笔方案
