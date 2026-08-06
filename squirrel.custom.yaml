@@ -13,7 +13,7 @@ patch:
       name: 可可五笔默认
       author: 苏轲
       candidate_format: "%c. %@        "
-      back_color: 0x030D16
+      back_color: 0x000000
       border_color: 0xFF420016
       shadow_color: 0x000000
       text_color: 0xFFFFFF
