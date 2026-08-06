@@ -8,6 +8,7 @@ patch:
       back_color: 0x000000
       shadow_color: 0x000000
       border_color: 0x160042FF
+      shadow_color: 0x000000
       text_color: 0xFFFFFF
       hilited_text_color: 0xFFFFFF
       hilited_back_color: 0x000000
