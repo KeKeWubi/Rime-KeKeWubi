@@ -55,6 +55,9 @@ Rime/									# 所有可用平台都是这个配置目录
 全局词库
 └─ keke_wubi_global_symbols.dict.yaml	#可可特殊符号，z引导，如：zbd：常用标点；zys：圆圈数字等等
 └─ keke_wubi_global_pinyin.dict.yaml	#可可临时拼音，z引导，如：zkeke，输出 可可
+配色方案
+└─ weasel.custom.yaml					#Windows默认配色方案，近似复刻可可皮肤
+└─ squirrel.custom.yaml					#MacOS默认配色方案，近似复刻可可皮肤
 图标
 ├─ img/									# 自定义图标（目前仅windows平台可用）
 	└─ en.ico							# 英文状态图标
