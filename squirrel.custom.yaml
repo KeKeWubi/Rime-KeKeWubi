@@ -1,11 +1,18 @@
+# 默认启用 Knight 可可五笔 皮肤，追加到系统配色，不影响系统自带的配色方案
 patch:
-  # 默认启用 Knight 可可五笔 皮肤，追加到系统配色，不影响系统自带的配色方案
   style:
+    # 设置候选字大小（单位：点）：
+    font_point: 18
+    # 编码串字号（可选，不指定则跟随 font_point）：
+    label_font_point: 16
+    # 注释字号（可选，不指定则跟随 font_point）：
+    comment_font_point: 16
     border_width: 16
     border_height: 10
     corner_radius: 10
     layout:
       min_width: 480
+      
   style/color_scheme: KeKe
 
   preset_color_schemes/+:
