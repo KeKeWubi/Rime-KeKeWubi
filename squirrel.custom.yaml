@@ -21,7 +21,7 @@ patch:
       author: 苏轲
       candidate_format: "%c. %@        "
       back_color: 0x000000
-      border_color: 0xFF420016
+      border_color: 0x160042FF
       shadow_color: 0x000000
       text_color: 0xFFFFFF
       hilited_text_color: 0xFFFFFF
