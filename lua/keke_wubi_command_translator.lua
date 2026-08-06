@@ -107,7 +107,7 @@ local function translator(input, seg)
     end
 
     if input == "conf" or input == "conv" then
-        yield(Candidate("cmd", seg._end, seg.start, "请按 Ctrl+0（数字零）", os.date("")))
+        yield(Candidate("cmd", seg._end, seg.start, "请按 F4 或 Ctrl+0（数字零）", os.date("")))
     end
     
     if input == "date" then
