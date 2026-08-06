@@ -7,7 +7,7 @@ patch:
 
   # 菜单与界面
   menu:
-    page_size: 5		#设置每页候选显示的词条数量
+    page_size: 6		#设置每页候选显示的词条数量,可设 1~10,若大于10,影响使用数字键字选择
   switcher:
     hotkeys:
       - "Control+grave"
