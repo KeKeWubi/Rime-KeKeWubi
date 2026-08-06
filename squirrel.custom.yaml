@@ -1,13 +1,21 @@
 patch:
   # 默认启用 Knight 可可五笔 皮肤，追加到系统配色，不影响系统自带的配色方案
+  style:
+    border_width: 16
+    border_height: 10
+    corner_radius: 10
+    layout:
+      min_width: 480
   style/color_scheme: KeKe
+
   preset_color_schemes/+:
     KeKe:
       name: 可可五笔默认
       author: 苏轲
+      candidate_format: "%c. %@        "
       back_color: 0x030D16
+      border_color: 0xFF420016
       shadow_color: 0x000000
-      border_color: 0x160042FF
       text_color: 0xFFFFFF
       hilited_text_color: 0xFFFFFF
       hilited_back_color: 0x000000
