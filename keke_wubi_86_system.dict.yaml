@@ -6106,6 +6106,7 @@ sort: original
 陈慧琳	bdgs
 陈绍	baxv
 也得	bntj
+子词元	byfq
 驱	caqy
 骤	cbci
 预	cbdm
@@ -7924,6 +7925,8 @@ sort: original
 对啊	cfkb
 马凯	cnmn
 观看了	crbn
+通证	ceyg
+预制菜	crae
 感	dgkn
 砸	damh
 顾	dbdm
@@ -12677,6 +12680,7 @@ sort: original
 三鹿	dgyn
 非主流	dyiy
 达到了	dgbn
+大语言模型	dyyg
 膜	eajd
 腊	eajg
 服	ebcy
@@ -14566,6 +14570,7 @@ sort: original
 腾讯元宝	eyfp
 腾讯混元	eyif
 脑梗	eysg
+及时止损	ejhr
 堪	fadn
 霸	fafe
 载	fald
@@ -32058,6 +32063,10 @@ sort: original
 汤水	inii
 港汇	iaia
 学学	ipip
+活人感	iwdg
+小趴菜	ikae
+消费降级	ixbx
+泼天富贵	igpk
 暴	jawi
 最	jbcu
 坚	jcff
@@ -34744,6 +34753,7 @@ sort: original
 蠋	jlqj
 晫	jhjf
 师风	jgmq
+显眼包	jhqn
 呀	kaht
 哄	kawy
 啊	kbsk
@@ -37708,6 +37718,7 @@ sort: original
 顺风车	kmlg
 哈啰	kwkl
 中选	khtf
+吃瓜	ktrc
 轰	lccu
 罪	ldjd
 恩	ldnu
@@ -40332,6 +40343,8 @@ sort: original
 车险	lgbw
 国际舆论	lbvy
 转达了	ldbn
+边界感	lldg
+回旋镖	lyqs
 典	mawu
 峻	mcwt
 贿	mdeg
@@ -42528,6 +42541,7 @@ sort: original
 购买力	mnln
 幽默风趣	mlmf
 周立波	muih
+财富自由	mptm
 展	naei
 殿	nawc
 屈	nbmk
@@ -45612,6 +45626,7 @@ sort: original
 以太币	ndtm
 心梗	nysg
 尽全力	nwln
+情绪耗	nxdi
 煤	oafs
 炬	oang
 炼	oanw
@@ -50259,6 +50274,7 @@ sort: original
 社会舆论	pwvy
 实为	puyl
 补选	putf
+社交恐	puam
 昏	qajf
 怨	qbnu
 迎	qbpk
@@ -54324,6 +54340,8 @@ sort: original
 留下了	qgbn
 金牌奖	qtuq
 刨子	qnbb
+多模态	qsdy
+外耗	qhdi
 摸	rajd
 捞	rapl
 搭	rawk
@@ -60118,6 +60136,10 @@ sort: original
 年度报告	ryrt
 插片	rtth
 擦亮眼睛	ryhh
+提示词	rfyn
+搭子	rabb
+摸鱼	raqg
+反向内耗	rtmd
 棋	sadw
 框	sagg
 模	sajd
@@ -63357,6 +63379,7 @@ sort: original
 本次会议	suwy
 极端主义	suyy
 检查器	sskk
+松弛感	sxdg
 筑	tamy
 彻	tavn
 长	tayi
@@ -69023,6 +69046,10 @@ sort: original
 科技交流	trui
 每人每年	twtr
 知识更新	tygu
+智能体	tcws
+长文本	tysg
+算力池	tlib
+智商税	tutu
 瓶	uagn
 瓶	uagy
 冻	uaiy
@@ -73723,6 +73750,7 @@ sort: original
 交流信息	uiwt
 交易市场	ujyf
 旁系血亲	uttu
+兖州	ucyt
 媒	vafs
 毁	vamc
 暨	vcag
@@ -75752,6 +75780,7 @@ sort: original
 灵活多样	viqs
 建国以来	vlng
 女女	vvvv
+灵活就业	viyo
 借	wajg
 贷	wamu
 袋	waye
@@ -80866,6 +80895,8 @@ sort: original
 个人得失	wwtr
 任何人	wwww
 会计制度	wyry
+人生奥德赛	wttp
+人设	wwym
 绒	xadt
 练	xanw
 绕	xatq
@@ -88059,6 +88090,18 @@ sort: original
 主要问题	ysuj
 诉诸武力	yygl
 语言文字	yyyp
+词元	ynfq
+词元化	yfwx
+词元切分	yfaw
+词元切分器	yfak
+词元器	yfkk
+词元消耗量	yfij
+词元计数	yfyo
+词元额度	yfpy
+词元经济	yfxi
+词元词表	yfyg
+文本文档	ysys
+恋爱脑	yeey
 劳	aplb	999
 苏	alwu	999
 匪	adjd	999
