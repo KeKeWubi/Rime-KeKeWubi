@@ -1,9 +1,8 @@
-﻿---
+---
 name: "keke_wubi_nc_system"
 version: "1.0"
 sort: by_weight
 use_preset_vocabulary: false
-sort: original
 ...
 臣	ahnh
 获	aqty
