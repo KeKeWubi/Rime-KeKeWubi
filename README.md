@@ -68,7 +68,7 @@ Rime/	                              #所有可用平台都是这个配置目录
    └─ gen_fuzzy_idx.bat             #Win一键脚本
    └─ gen_fuzzy_idx.ps1             #Win一键脚本
    └─ gen_fuzzy_idx.py              #Mac或Linux的Python脚本
-   └─ 用Python做索引的命令.txt       #各平台用Python脚本的命令
+   └─ IdxPythonCommand.txt       #各平台用Python脚本的命令
 图标
 ├─ img/                             #自定义图标（目前仅windows平台可用）
    └─ en.ico                        #英文状态图标
