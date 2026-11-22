@@ -41,17 +41,17 @@ Rime/	                              # 所有可用平台都是这个配置目录
 ├─ keke_wubi_98.schema.yaml            #98版五笔方案
 ├─ keke_wubi_nc.schema.yaml            #新世纪版五笔方案
 可可五笔86版词典
-├─ keke_wubi_86_common.dict.yaml		#86版五笔常用字
-├─ keke_wubi_86_system.dict.yaml		#86版五笔系统字词
-├─ keke_wubi_86_rare.dict.yaml			#86版五笔生僻字
+├─ keke_wubi_86_common.dict.yaml       #86版五笔常用字
+├─ keke_wubi_86_system.dict.yaml       #86版五笔系统字词
+├─ keke_wubi_86_rare.dict.yaml         #86版五笔生僻字
 可可五笔98版词典
-├─ keke_wubi_98_common.dict.yaml		#98版五笔常用字
-├─ keke_wubi_98_system.dict.yaml		#98版五笔系统字词
-├─ keke_wubi_98_rare.dict.yaml			#98版五笔生僻字
+├─ keke_wubi_98_common.dict.yaml       #98版五笔常用字
+├─ keke_wubi_98_system.dict.yaml       #98版五笔系统字词
+├─ keke_wubi_98_rare.dict.yaml         #98版五笔生僻字
 可可五笔新世纪版词典
-├─ keke_wubi_nc_common.dict.yaml		#新世纪版五笔常用字
-├─ keke_wubi_nc_system.dict.yaml		#新世纪版五笔系统字词
-├─ keke_wubi_nc_rare.dict.yaml			#新世纪版五笔生僻字
+├─ keke_wubi_nc_common.dict.yaml       #新世纪版五笔常用字
+├─ keke_wubi_nc_system.dict.yaml       #新世纪版五笔系统字词
+├─ keke_wubi_nc_rare.dict.yaml         #新世纪版五笔生僻字
 用户自己的词库（建议通过以下文件维护自己的词库，不要动其它文件）
 ├─ keke_wubi_86_user.dict.yaml
 ├─ keke_wubi_98_user.dict.yaml
