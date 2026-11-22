@@ -32,10 +32,10 @@ Rime/	                              # 所有可用平台都是这个配置目录
    ├─ keke_fuzzy_z_86.idx              # 86万能 Z 的二进制索引
    ├─ keke_fuzzy_z_98.idx              # 98万能 Z 的二进制索引
    ├─ keke_fuzzy_z_nc.idx              # 新世纪万能 Z 的二进制索引	
-   ├─ keke_wubi_char_prior.lua			#单字在前脚本，修选框里“单字在前”
+   ├─ keke_wubi_char_prior.lua         #单字在前脚本，修选框里“单字在前”
    ├─ keke_wubi_char_only.lua          #仅单字脚本，修选框里“仅单字”，单字派用这个功能
-   ├─ keke_wubi_length_filter.lua		#设置第几码开始提示后续编码的脚本
-   ├─ keke_wubi_charset_filter.lua		#过滤通用规范汉字表8105字的脚本
+   ├─ keke_wubi_length_filter.lua      #设置第几码开始提示后续编码的脚本
+   ├─ keke_wubi_charset_filter.lua     #过滤通用规范汉字表8105字的脚本
 三套输入方案
 ├─ keke_wubi_86.schema.yaml				#86版五笔方案
 ├─ keke_wubi_98.schema.yaml				#98版五笔方案
@@ -60,16 +60,16 @@ Rime/	                              # 所有可用平台都是这个配置目录
 └─ keke_wubi_global_symbols.dict.yaml	#可可特殊符号，z引导，如：zbd：常用标点；zys：圆圈数字等等
 └─ keke_wubi_global_pinyin.dict.yaml	#可可临时拼音，z引导，如：zkeke，输出 可可
 配色方案
-└─ weasel.custom.yaml					#Windows默认配色方案，近似复刻可可皮肤
-└─ squirrel.custom.yaml					#MacOS默认配色方案，近似复刻可可皮肤
+└─ weasel.custom.yaml               #Windows默认配色方案，近似复刻可可皮肤
+└─ squirrel.custom.yaml             #MacOS默认配色方案，近似复刻可可皮肤
 工具
 ├─ tools/			# 用户在本地修改任何一个 dict.yaml 之后要重新制作索引文件而使用的脚本（记得重新部署）
-   └─ gen_fuzzy_idx.bat				# Win一键脚本
-   └─ gen_fuzzy_idx.ps1				# Win一键脚本
-   └─ gen_fuzzy_idx.py				# Mac或Linux的Python脚本
+   └─ gen_fuzzy_idx.bat             # Win一键脚本
+   └─ gen_fuzzy_idx.ps1             # Win一键脚本
+   └─ gen_fuzzy_idx.py              # Mac或Linux的Python脚本
 图标
-├─ img/								# 自定义图标（目前仅windows平台可用）
-   └─ en.ico						# 英文状态图标
-   └─ zh.ico						# 中文状态图标
-   └─ ban.ico						# 半角标点图标
-   └─ quan.ico						# 全角标点图标
+├─ img/                             #自定义图标（目前仅windows平台可用）
+   └─ en.ico                        #英文状态图标
+   └─ zh.ico                        #中文状态图标
+   └─ ban.ico                       #半角标点图标
+   └─ quan.ico                      #全角标点图标
