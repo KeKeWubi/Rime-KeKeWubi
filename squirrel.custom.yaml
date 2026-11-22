@@ -1,7 +1,7 @@
 # 默认启用 Knight 可可五笔 皮肤，追加到系统配色，不影响系统自带的配色方案
 patch:
   style:
-    font_face: "可可(CJK扩展C-G), 可可(CJK扩展A-B), PingFang SC"
+    font_face: "PingFang SC, 可可(CJK扩展C-G), 可可(CJK扩展A-B)"
     # 设置候选字大小（单位：点）：
     font_point: 18
     # 编码串字号（可选，不指定则跟随 font_point）：
