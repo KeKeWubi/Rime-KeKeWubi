@@ -64,7 +64,7 @@ Rime/	                              #所有可用平台都是这个配置目录
    ├─ keke_wubi_length_filter.lua      #设置第几码开始提示后续编码的脚本
    ├─ keke_wubi_charset_filter.lua     #过滤通用规范汉字表8105字的脚本
 工具
-├─ tools/			#用户在本地修改任何一个 dict.yaml 之后要重新制作索引文件而使用的脚本（记得重新部署）
+├─ tools/      #用户在本地修改除三个 user.dict.yaml 之外的任何一个 dict.yaml 之后都要重新制作索引文件而使用的脚本（记得重新部署）
    └─ gen_fuzzy_idx.bat             #Win一键脚本
    └─ gen_fuzzy_idx.ps1             #Win一键脚本
    └─ gen_fuzzy_idx.py              #Mac或Linux的Python脚本
