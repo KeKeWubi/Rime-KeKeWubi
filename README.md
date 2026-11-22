@@ -64,12 +64,12 @@ Rime/									# 所有可用平台都是这个配置目录
 └─ squirrel.custom.yaml					#MacOS默认配色方案，近似复刻可可皮肤
 工具
 ├─ tools/			# 用户在本地修改任何一个 dict.yaml 之后要重新制作索引文件而使用的脚本（记得重新部署）
-	└─ gen_fuzzy_idx.bat				# Win一键脚本
-	└─ gen_fuzzy_idx.ps1				# Win一键脚本
-	└─ gen_fuzzy_idx.py					# Mac或Linux的Python脚本
+   └─ gen_fuzzy_idx.bat				# Win一键脚本
+   └─ gen_fuzzy_idx.ps1				# Win一键脚本
+   └─ gen_fuzzy_idx.py				# Mac或Linux的Python脚本
 图标
-├─ img/									# 自定义图标（目前仅windows平台可用）
-	└─ en.ico							# 英文状态图标
-	└─ zh.ico							# 中文状态图标
-	└─ ban.ico							# 半角标点图标
-	└─ quan.ico							# 全角标点图标
+├─ img/								# 自定义图标（目前仅windows平台可用）
+   └─ en.ico						# 英文状态图标
+   └─ zh.ico						# 中文状态图标
+   └─ ban.ico						# 半角标点图标
+   └─ quan.ico						# 全角标点图标
