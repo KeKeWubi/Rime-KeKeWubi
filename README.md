@@ -28,7 +28,7 @@ Rime/	                              #所有可用平台都是这个配置目录
    ├─ keke_wubi_english_hint.lua       #英文提示模式的翻译器
    ├─ keke_en_dict.lua                 #英文词表共享模块（上面两个脚本共用）
    ├─ keke_wubi_en_mode_filter.lua     #英文模式下隐藏中文候选
-   ├─ keke_wubi_fuzzy_z.lua            #万能 Z：默认禁用，F4 打开；配合下面的 .idx
+   ├─ keke_wubi_fuzzy_z.lua            #万能 Z：默认禁用，F4 打开；配合下面的 .idx 索引
    ├─ keke_fuzzy_z_86.idx              #86万能 Z 的二进制索引
    ├─ keke_fuzzy_z_98.idx              #98万能 Z 的二进制索引
    ├─ keke_fuzzy_z_nc.idx              #新世纪万能 Z 的二进制索引	
