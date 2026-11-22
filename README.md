@@ -37,9 +37,9 @@ Rime/	                              # 所有可用平台都是这个配置目录
    ├─ keke_wubi_length_filter.lua      #设置第几码开始提示后续编码的脚本
    ├─ keke_wubi_charset_filter.lua     #过滤通用规范汉字表8105字的脚本
 三套输入方案
-├─ keke_wubi_86.schema.yaml				#86版五笔方案
-├─ keke_wubi_98.schema.yaml				#98版五笔方案
-├─ keke_wubi_nc.schema.yaml				#新世纪版五笔方案
+├─ keke_wubi_86.schema.yaml            #86版五笔方案
+├─ keke_wubi_98.schema.yaml            #98版五笔方案
+├─ keke_wubi_nc.schema.yaml            #新世纪版五笔方案
 可可五笔86版词典
 ├─ keke_wubi_86_common.dict.yaml		#86版五笔常用字
 ├─ keke_wubi_86_system.dict.yaml		#86版五笔系统字词
