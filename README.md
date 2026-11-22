@@ -18,20 +18,20 @@
 * 文件结构及主要功能解释如下：
 
 ```tree
-Rime/	                              # 所有可用平台都是这个配置目录
-├─ default.custom.yaml              # 全局补丁
+Rime/	                              #所有可用平台都是这个配置目录
+├─ default.custom.yaml              #全局补丁
 ├─keke_wubi_update_MacOS.command    #可可五笔MacOS自动更新脚本，可自动下载本仓库里的所有文件到Rime目录，下同
 ├─keke_wubi_update_Windows.bat      #可可五笔Windows自动更新脚本
 ├─ lua/                             #lua脚本目录（新Rime版本的脚本都放在此处）
-   ├─keke_wubi_command_translator.lua	# 命令翻译器，输入 rmb888.88 输出 捌佰捌拾捌元捌角捌分；或 help、time、date、week等
-   ├─ keke_wubi_shift_modes.lua        # 左右 Shift 双模式：左=单字母上屏，右=英文提示
-   ├─ keke_wubi_english_hint.lua       # 英文提示模式的翻译器
-   ├─ keke_en_dict.lua                 # 英文词表共享模块（上面两个脚本共用）
-   ├─ keke_wubi_en_mode_filter.lua     # 英文模式下隐藏中文候选
-   ├─ keke_wubi_fuzzy_z.lua            # 万能 Z：默认禁用，F4 打开；配合下面的 .idx
-   ├─ keke_fuzzy_z_86.idx              # 86万能 Z 的二进制索引
-   ├─ keke_fuzzy_z_98.idx              # 98万能 Z 的二进制索引
-   ├─ keke_fuzzy_z_nc.idx              # 新世纪万能 Z 的二进制索引	
+   ├─keke_wubi_command_translator.lua	#命令翻译器，输入 rmb888.88 输出 捌佰捌拾捌元捌角捌分；或 help、time、date、week等
+   ├─ keke_wubi_shift_modes.lua        #左右 Shift 双模式：左=单字母上屏，右=英文提示
+   ├─ keke_wubi_english_hint.lua       #英文提示模式的翻译器
+   ├─ keke_en_dict.lua                 #英文词表共享模块（上面两个脚本共用）
+   ├─ keke_wubi_en_mode_filter.lua     #英文模式下隐藏中文候选
+   ├─ keke_wubi_fuzzy_z.lua            #万能 Z：默认禁用，F4 打开；配合下面的 .idx
+   ├─ keke_fuzzy_z_86.idx              #86万能 Z 的二进制索引
+   ├─ keke_fuzzy_z_98.idx              #98万能 Z 的二进制索引
+   ├─ keke_fuzzy_z_nc.idx              #新世纪万能 Z 的二进制索引	
    ├─ keke_wubi_char_prior.lua         #单字在前脚本，修选框里“单字在前”
    ├─ keke_wubi_char_only.lua          #仅单字脚本，修选框里“仅单字”，单字派用这个功能
    ├─ keke_wubi_length_filter.lua      #设置第几码开始提示后续编码的脚本
@@ -63,10 +63,11 @@ Rime/	                              # 所有可用平台都是这个配置目录
 └─ weasel.custom.yaml               #Windows默认配色方案，近似复刻可可皮肤
 └─ squirrel.custom.yaml             #MacOS默认配色方案，近似复刻可可皮肤
 工具
-├─ tools/			# 用户在本地修改任何一个 dict.yaml 之后要重新制作索引文件而使用的脚本（记得重新部署）
-   └─ gen_fuzzy_idx.bat             # Win一键脚本
-   └─ gen_fuzzy_idx.ps1             # Win一键脚本
-   └─ gen_fuzzy_idx.py              # Mac或Linux的Python脚本
+├─ tools/			#用户在本地修改任何一个 dict.yaml 之后要重新制作索引文件而使用的脚本（记得重新部署）
+   └─ gen_fuzzy_idx.bat             #Win一键脚本
+   └─ gen_fuzzy_idx.ps1             #Win一键脚本
+   └─ gen_fuzzy_idx.py              #Mac或Linux的Python脚本
+   └─ 用Python做索引的命令.txt       #各平台用Python脚本的命令
 图标
 ├─ img/                             #自定义图标（目前仅windows平台可用）
    └─ en.ico                        #英文状态图标
