@@ -1,68 +1,66 @@
 @echo off
-chcp 65001 >nul
-title 重新生成万能Z索引（改了词库后必须运行）
-echo ==========================================================
-echo   重新生成 keke_fuzzy_z_86 / 98 / nc .idx
-echo.
-echo   什么时候用：只要改过 keke_wubi_XX_common/system/rare.dict.yaml
-echo   里的任何一个字，都要重做对应方案的索引，否则万能Z会
-echo   查不到新词、删掉的词还在（而且不会报任何错误）。
-echo.
-echo   运行条件：本 bat 放在 Rime 目录的 tools 文件夹里，
-echo   使用 Windows 自带 PowerShell，无需安装 Python。
-echo ==========================================================
-echo.
+rem ----------------------------------------------------------------
+rem  Rebuild keke_fuzzy_z_86/98/nc.idx after editing dict.yaml files
+rem  ASCII-only on purpose: cmd.exe can parse this file correctly
+rem  no matter which code page (936 / 65001) is active.
+rem
+rem  Layout required:
+rem    Rime\tools\gen_fuzzy_idx.bat   (this file)
+rem    Rime\tools\gen_fuzzy_idx.ps1   (does the actual work)
+rem    Rime\lua\                      (output goes here)
+rem ----------------------------------------------------------------
 
-:: Rime 目录 = 本 bat 的上一级目录（自动识别，无需修改）
-for %%i in ("%~dp0..") do set "HERE=%%~fi\"
+rem Normalize paths WITHOUT trailing backslash:
+rem a trailing "\" inside quotes breaks powershell.exe argument parsing
+rem ("...Rime\" becomes an escaped quote, hence "illegal characters in path")
+for %%i in ("%~dp0.")  do set "TOOLDIR=%%~fi"
+for %%i in ("%~dp0..") do set "RIMEDIR=%%~fi"
 
-if not exist "%~dp0gen_fuzzy_idx.ps1" (
-    echo 错误：没找到 "%~dp0gen_fuzzy_idx.ps1"
-    echo 请保持目录结构：Rime\tools\ 里同时有本 bat 和 gen_fuzzy_idx.ps1
+if not exist "%TOOLDIR%\gen_fuzzy_idx.ps1" (
+    echo [ERROR] gen_fuzzy_idx.ps1 not found in: %TOOLDIR%
+    echo gen_fuzzy_idx.bat and gen_fuzzy_idx.ps1 must stay together in Rime\tools\
     pause
     exit /b 1
 )
-if not exist "%HERE%lua" (
-    echo 错误：没找到 "%HERE%lua" 文件夹
-    echo 本 bat 应放在 Rime 用户目录的 tools 文件夹里运行，
-    echo 也就是和 lua 文件夹的上级目录（Rime 目录）相邻。
+if not exist "%RIMEDIR%\lua" (
+    echo [ERROR] "lua" folder not found in: %RIMEDIR%
+    echo This .bat must stay in the tools folder inside your Rime user directory.
     pause
     exit /b 1
 )
 
-echo Rime 目录：%HERE%
+echo Rime directory: %RIMEDIR%
 echo.
-
-echo [1/3] 86 版
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0gen_fuzzy_idx.ps1" "%HERE%" 86 "%HERE%lua\keke_fuzzy_z_86.idx"
+echo [1/3] 86
+powershell -NoProfile -ExecutionPolicy Bypass -File "%TOOLDIR%\gen_fuzzy_idx.ps1" "%RIMEDIR%" 86 "%RIMEDIR%\lua\keke_fuzzy_z_86.idx"
 if errorlevel 1 goto :FAIL
 
 echo.
-echo [2/3] 98 版
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0gen_fuzzy_idx.ps1" "%HERE%" 98 "%HERE%lua\keke_fuzzy_z_98.idx"
+echo [2/3] 98
+powershell -NoProfile -ExecutionPolicy Bypass -File "%TOOLDIR%\gen_fuzzy_idx.ps1" "%RIMEDIR%" 98 "%RIMEDIR%\lua\keke_fuzzy_z_98.idx"
 if errorlevel 1 goto :FAIL
 
 echo.
-echo [3/3] 新世纪版
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0gen_fuzzy_idx.ps1" "%HERE%" nc "%HERE%lua\keke_fuzzy_z_nc.idx"
+echo [3/3] nc
+powershell -NoProfile -ExecutionPolicy Bypass -File "%TOOLDIR%\gen_fuzzy_idx.ps1" "%RIMEDIR%" nc "%RIMEDIR%\lua\keke_fuzzy_z_nc.idx"
 if errorlevel 1 goto :FAIL
 
 echo.
 echo ==========================================================
-echo   三套索引全部生成完成。
-echo.
-echo   接下来必须做两步：
-echo   1) 右键小狼毫托盘图标 - 重新部署（输入法才会重新读 idx）
-echo   2) 按 F4 打开万能Z，打 z 或 zzz 验证正常
+echo   All three indexes rebuilt.
+echo   Next steps:
+echo   1) Right-click the Weasel tray icon, choose "Redeploy"
+echo      (the IME caches the idx until you redeploy)
+echo   2) Press F4, turn on fuzzy-Z, type z or zzz to verify
 echo ==========================================================
 pause
 exit /b 0
 
 :FAIL
 echo.
-echo 生成失败。常见原因：
-echo   1. tools 文件夹没有和 lua 文件夹放在同一个 Rime 目录里
-echo   2. 三本 keke_wubi_XX_*.dict.yaml 不在上面显示的目录里
-echo   3. 公司电脑策略禁止运行 PowerShell 脚本（换台电脑或联系管理员）
+echo [ERROR] Rebuild failed. Common causes:
+echo   1. The "lua" folder is not next to the "tools" folder
+echo   2. keke_wubi_XX_common/system/rare.dict.yaml missing in the Rime directory shown above
+echo   3. PowerShell script execution blocked by policy
 pause
 exit /b 1
