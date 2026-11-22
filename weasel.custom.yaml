@@ -1,4 +1,5 @@
 patch:
+  style/font_face: "Microsoft YaHei, 可可(CJK扩展C-G), 可可(CJK扩展A-B)"
   # 默认启用 Knight 可可五笔 皮肤，追加到系统配色，不影响系统自带的配色方案
   style/color_scheme: KeKe
   preset_color_schemes/+:
