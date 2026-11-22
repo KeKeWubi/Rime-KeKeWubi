@@ -8,6 +8,11 @@
 """
 import sys, struct, os
 
+if len(sys.argv) != 4 or sys.argv[2] not in ("86", "98", "nc"):
+    print("用法: python3 gen_fuzzy_idx.py <Rime目录> <86|98|nc> <输出.idx>")
+    print("示例: python3 gen_fuzzy_idx.py ~/Library/Rime 86 ~/Library/Rime/lua/keke_fuzzy_z_86.idx")
+    sys.exit(1)
+
 RIME = sys.argv[1]
 VER = sys.argv[2]                      # 86 / 98 / nc
 OUT = sys.argv[3]
