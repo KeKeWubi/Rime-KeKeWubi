@@ -56,7 +56,7 @@ Rime/									# 所有可用平台都是这个配置目录
 └─ weasel.custom.yaml					#Windows默认配色方案，近似复刻可可皮肤
 └─ squirrel.custom.yaml					#MacOS默认配色方案，近似复刻可可皮肤
 工具
-├─ tools/								# 用户在本地修改任何一个 dict.yaml 之后要重新制作索引文件而使用的脚本
+├─ tools/			# 用户在本地修改任何一个 dict.yaml 之后要重新制作索引文件而使用的脚本（记得重新部署）
 	└─ gen_fuzzy_idx.bat				# Win一键脚本
 	└─ gen_fuzzy_idx.ps1				# Win一键脚本
 	└─ gen_fuzzy_idx.py					# Mac或Linux的Python脚本
