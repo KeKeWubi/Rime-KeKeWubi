@@ -1,0 +1,17 @@
+Windows用Python做索引：
+cd /d "%APPDATA%\Rime\tools"
+python gen_fuzzy_idx.py "%APPDATA%\Rime" 86 "%APPDATA%\Rime\lua\keke_fuzzy_z_86.idx"
+python gen_fuzzy_idx.py "%APPDATA%\Rime" 98 "%APPDATA%\Rime\lua\keke_fuzzy_z_98.idx"
+python gen_fuzzy_idx.py "%APPDATA%\Rime" nc "%APPDATA%\Rime\lua\keke_fuzzy_z_nc.idx"
+
+Mac用Python做索引：
+cd ~/Library/Rime
+python3 tools/gen_fuzzy_idx.py ~/Library/Rime 86 ~/Library/Rime/lua/keke_fuzzy_z_86.idx
+python3 tools/gen_fuzzy_idx.py ~/Library/Rime 98 ~/Library/Rime/lua/keke_fuzzy_z_98.idx
+python3 tools/gen_fuzzy_idx.py ~/Library/Rime nc ~/Library/Rime/lua/keke_fuzzy_z_nc.idx
+
+Linux用Python做索引：
+cd ~/.config/ibus/rime
+python3 tools/gen_fuzzy_idx.py ~/.config/ibus/rime 86 ~/.config/ibus/rime/lua/keke_fuzzy_z_86.idx
+python3 tools/gen_fuzzy_idx.py ~/.config/ibus/rime 98 ~/.config/ibus/rime/lua/keke_fuzzy_z_98.idx
+python3 tools/gen_fuzzy_idx.py ~/.config/ibus/rime nc ~/.config/ibus/rime/lua/keke_fuzzy_z_nc.idx
