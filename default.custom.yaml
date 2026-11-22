@@ -7,7 +7,7 @@ patch:
 
   # 菜单与界面
   menu:
-    page_size: 6		#设置每页候选显示的词条数量,可设 1~10,若大于10,影响使用数字键字选择
+    page_size: 6    #设置每页候选显示的词条数量,可设 1~10,若大于10,影响使用数字键字选择
   switcher:
     hotkeys:
       - "Control+grave"
@@ -23,8 +23,8 @@ patch:
     good_old_caps_lock: true
     switch_key:
       Caps_Lock: commit_code
-      Shift_L: commit_code
-      Shift_R: commit_code
+      Shift_L: noop      #左Shift交给 lua_processor@*keke_wubi_shift_modes（单字母上屏模式）
+      Shift_R: noop      #右Shift交给 lua_processor@*keke_wubi_shift_modes 处理（英文提示模式）
       Control_L: noop
       Control_R: noop
     inline_ascii: true
@@ -39,10 +39,10 @@ patch:
         accept: apostrophe
         send:    3 
       - when:   paging
-        accept: minus		#上翻页键： - 号，用单词 minus ；逗号用 comma
+        accept: minus    #上翻页键： - 号，用单词 minus ；逗号用 comma
         send:   Page_Up
       - when:   has_menu
-        accept: equal		#下翻页键： = 号，用单词 equal ；句号用 period
+        accept: equal    #下翻页键： = 号，用单词 equal ；句号用 period
         send:   Page_Down
         
       # 数字小键盘参与编码，注：小键盘的回车可以使候选上屏，主键的回车是编码上屏

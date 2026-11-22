@@ -13,6 +13,7 @@ schema:
 
 engine:
   processors:
+    - lua_processor@*keke_wubi_shift_modes  #Shift英文双模式：左Shift单字母上屏 / 右Shift英文提示
     - ascii_composer
     - recognizer
     - key_binder
@@ -32,10 +33,12 @@ engine:
     - table_translator
     - lua_translator@*keke_wubi_command_translator
     - lua_translator@*keke_wubi_fuzzy_z
+    - lua_translator@*keke_wubi_english_hint  #英文提示模式（右Shift开启，词典 english_words.txt）
 
   filters:
-    - lua_filter@*keke_wubi_charset_filter	#通用规范汉字表8105字脚本
-    - lua_filter@*keke_wubi_length_filter	#第几码开始在候选框里提示后续编码的脚本
+    - lua_filter@*keke_wubi_en_mode_filter  #英文提示模式：开启时隐藏中文候选
+    - lua_filter@*keke_wubi_charset_filter  #通用规范汉字表8105字脚本
+    - lua_filter@*keke_wubi_length_filter  #第几码开始在候选框里提示后续编码的脚本
 #     以下两项设置，是对“单字”的处理，需要相应功能就把最前面的 # 去掉，重新部署。注：存在覆盖，应该二选一，不要都用！
 #    - lua_filter@*keke_wubi_char_prior     #候选框里“单字在前”
 #    - lua_filter@*keke_wubi_char_only      #候选框里“只显示单字”，此功能会把“单字在前覆盖”，慎选！
@@ -44,15 +47,15 @@ translator:
   dictionary: keke_wubi_98_common
   enable_charset_filter: true
   enable_user_dict: false
-  enable_sentence: false			#整句输入
-  enable_completion: true			#候选框编码提示的“总开关”，手机上建议为 true
+  enable_sentence: false      #整句输入
+  enable_completion: true      #候选框编码提示的“总开关”，手机上建议为 true
 
 speller:
   alphabet: "abcdefghijklmnopqrstuvwxyz"
   initials: "abcdefghijklmnopqrstuvwxyz"
-  auto_select: false						#唯一时上屏，如果喜欢打词，慎改此项
+  auto_select: false            #唯一时上屏，如果喜欢打词，慎改此项
   max_length: 4
-  min_code_length_for_completion: 3			#此处设置第几码开始在候选框里提示后续编码，手机上建议为 1
+  min_code_length_for_completion: 3      #此处设置第几码开始在候选框里提示后续编码，手机上建议为 1
 
 switches:
   - name: extended_charset
