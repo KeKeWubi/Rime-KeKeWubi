@@ -1,122 +1,173 @@
 @echo off
-chcp 65001 >nul
-title å¯å¯äº”ç¬” Rime - Windowså…¨è‡ªåŠ¨æ›´æ–°å·¥å…·
-echo ==============================================
-echo.
-echo        å¯å¯äº”ç¬” Rime - Windowså…¨è‡ªåŠ¨æ›´æ–°å·¥å…·
-echo.
-echo ==============================================
-echo.
+chcp 936 >nul 2>&1
+title ¿É¿ÉÎå±Ê Rime - Windows È«×Ô¶¯¸üÐÂ¹¤¾ß
 
-:: è·¯å¾„é…ç½®ï¼šå…¨éƒ¨ä¸´æ—¶æ–‡ä»¶ç§»è‡³ç³»ç»Ÿç¼“å­˜ï¼Œä¸åœ¨Rimeæ–‡ä»¶å¤¹å†…
+rem ============================================================
+rem  Keke Wubi Rime - Windows auto updater
+rem  Encoding: GBK (cp936). Comments: ASCII only.
+rem  Why GBK: a UTF-8 batch file plus "chcp 65001" makes cmd.exe
+rem  mis-read itself and run half of a comment line as a command.
+rem  Why the TEMP relaunch: the copy sitting in Rime\tools gets
+rem  deleted and overwritten during the update, and a batch file
+rem  must never delete or rewrite itself while cmd.exe is reading it.
+rem ============================================================
+
+set "RUNBAT=%TEMP%\keke_wubi_upd_run.bat"
+if /i "%~1"=="__KEKERUN" goto :MAIN
+copy /y "%~f0" "%RUNBAT%" >nul 2>&1
+if not exist "%RUNBAT%" goto :MAIN
+(
+  call "%RUNBAT%" __KEKERUN
+  del /f /q "%RUNBAT%" >nul 2>&1
+  exit /b
+)
+
+:MAIN
+setlocal
 set "RIMENEW=%APPDATA%\Rime"
-set "ZIP_TEMP=%temp%\KeKeWubi.zip"
-set "TMP_DIR=%temp%\tmp_keke"
+set "ZIP_TEMP=%TEMP%\KeKeWubi.zip"
+set "TMP_DIR=%TEMP%\tmp_keke"
 set "UA=Chrome/120.0.0.0 Windows/10.0"
 
-:: ====================== è¯åº“å¤‡ä»½ç¡®è®¤é€»è¾‘ ======================
-echo é‡è¦æé†’ï¼æ›´æ–°ä¼šæ¸…ç©ºRimeç›®å½•å…¨éƒ¨æ—§é…ç½®æ–‡ä»¶
+if not defined APPDATA goto :NO_APPDATA
+if not exist "%RIMENEW%" md "%RIMENEW%" >nul 2>&1
+
+echo ==============================================================
+echo   ¿É¿ÉÎå±Ê Rime - Windows È«×Ô¶¯¸üÐÂ¹¤¾ß
+echo ==============================================================
 echo.
-echo  è‹¥ä¿®æ”¹äº†"ç”¨æˆ·æ–‡ä»¶å¤¹"çš„ä½ç½®ï¼Œæœ¬ç¨‹åºéƒ¨ç½²å®ŒæˆåŽï¼Œéœ€è¦æ‰‹åŠ¨æŠŠæ‰€æœ‰æ–‡ä»¶ä»Žç›®å½•ï¼š%appdata%\Rime å¤åˆ¶åˆ°ä½ æŒ‡å®šçš„ä½ç½®ï¼
+echo   ½ÓÏÂÀ´»áÒÀ´Î×ö 6 ²½£º
+echo     1. ´Ó GitHub ÏÂÔØ×îÐÂÅäÖÃ°ü£¨Ê§°Ü¾Í×Ô¶¯»»¹ÙÍø±¸ÓÃÍ¨µÀ£©
+echo     2. ¼ì²éÏÂÔØµ½µÄÑ¹Ëõ°üÊÇ·ñÍêÕû
+echo     3. Çå¿Õ %APPDATA%\Rime ÀïµÄÈ«²¿¾ÉÅäÖÃ
+echo     4. °ÑÑ¹Ëõ°ü½âÑ¹µ½ÏµÍ³»º´æÄ¿Â¼
+echo     5. °ÑÐÂÅäÖÃ¸´ÖÆ½ø %APPDATA%\Rime
+echo     6. ÇåµôÁÙÊ±ÎÄ¼þ£¬È»ºó´ò¿ªÕâ¸öÎÄ¼þ¼Ð
+echo   ×îºóÒ»²½ÒªÄã×Ô¼º×ö£ºÓÒ¼üÐ¡ÀÇºÁÍÐÅÌÍ¼±ê£¬Ñ¡¡¸ÖØÐÂ²¿Êð¡¹²Å»áÉúÐ§¡£
 echo.
-echo  è‹¥ä¿®æ”¹è¿‡ä¸ªäººè¯åº“ï¼ˆä¾‹å¦‚ï¼Œå¯å¯äº”ç¬”86ç‰ˆæ˜¯ï¼škeke_wubi_86_user.dict.yamlï¼‰ï¼Œè¯·åŠ¡å¿…å¤‡ä»½ä¸ªäººè¯åº“æ–‡ä»¶ï¼
+echo   Á½¼þ±ØÐëÏÈÖªµÀµÄÊÂ£º
+echo     A. µÚ 3 ²½»á°Ñ¾ÉÅäÖÃÈ«²¿É¾µô£¬¸öÈË´Ê¿âÒ²ÔÚÆäÖÐ£¬Èý¸ö°æ±¾·Ö±ðÊÇ
+echo        keke_wubi_dict\keke_wubi_86_user.dict.yaml
+echo        keke_wubi_dict\keke_wubi_98_user.dict.yaml
+echo        keke_wubi_dict\keke_wubi_nc_user.dict.yaml
+echo        ÏëÁô×ÅËüÃÇ£¬ÇëÏÈ¸´ÖÆµ½±ðµÄÎÄ¼þ¼Ð¡£
+echo     B. Èç¹ûÄã¸Ä¹ý¡¸ÓÃ»§ÎÄ¼þ¼Ð¡¹µÄÎ»ÖÃ£¬±¾½Å±¾Ö»»á¸üÐÂ
+echo        %APPDATA%\Rime ÕâÒ»¸öÄ¿Â¼£¬×°Íê»¹Òª°ÑÎÄ¼þÊÖ¶¯¸´ÖÆµ½Äã×Ô¶¨ÒåµÄµØ·½¡£
 echo.
-echo  é¡¹ç›®è‹¥ä¸‹è½½æˆåŠŸä¸”æ ¡éªŒé€šè¿‡åŽï¼Œä¼šæ¸…ç©ºRimeå…¨éƒ¨æ—§å†…å®¹ï¼Œç¡®è®¤å·²å¤‡ä»½å†ç»§ç»­ï¼
-echo.
-echo  å¦‚æžœå‡†å¤‡å¥½æ›´æ–°ï¼ŒæŒ‰ä»»æ„é”®ç»§ç»­ï¼›ä¸æƒ³æ›´æ–°ç›´æŽ¥å…³é—­çª—å£é€€å‡ºã€‚
+echo   ×¼±¸ºÃÁË¾Í°´ÈÎÒâ¼ü¿ªÊ¼£»ÏÖÔÚÖ±½Ó¹Øµô´°¿Ú¾ÍÊÇÈ¡Ïû¡£
 echo.
 pause >nul
 echo.
-echo  å·²ç¡®è®¤ã€‚å¼€å§‹æ‰§è¡Œæ›´æ–°æµç¨‹...
+echo   ÒÑÈ·ÈÏ£¬¿ªÊ¼¸üÐÂ...
 echo.
-:: ==================================================================
 
-:: ä¸‹è½½æºï¼šä¸»ç”¨GitHubï¼Œå¯å¯äº”ç¬”å¤‡ç”¨å®˜ç½‘ï¼ˆæ–‡ä»¶å†…å®¹å®Œå…¨ä¸€è‡´ï¼‰
+rem ---------- download sources ----------
 set "ZIP_GITHUB=https://github.com/KeKeWubi/Rime-KeKeWubi/archive/refs/heads/main.zip"
 set "ZIP_OFFICIAL=https://keke.kim/DownLoad/Rime-KeKeWubi-main.zip"
 
-:: åˆ›å»ºRimeæ–‡ä»¶å¤¹ï¼ˆä¸å­˜åœ¨åˆ™æ–°å»ºï¼‰
-if not exist "%RIMENEW%" md "%RIMENEW%"
-
-echo 1. æ¸…ç†ç³»ç»Ÿç¼“å­˜å†…æ—§ä¸´æ—¶æ–‡ä»¶
+echo 1/6 ÇåÀíÏµÍ³»º´æÀïµÄ¾ÉÁÙÊ±ÎÄ¼þ
 rmdir /s /q "%TMP_DIR%" 2>nul
 del /f /q "%ZIP_TEMP%" 2>nul
+echo.
 
-echo 2. ä¼˜å…ˆä»ŽGitHubä¸‹è½½æºç åŒ…è‡³ç³»ç»Ÿä¸´æ—¶ç›®å½•...
+echo 2/6 ÏÂÔØÅäÖÃ°ü£¨ÓÅÏÈ GitHub£©
 curl -fsSL --insecure -A "%UA%" -o "%ZIP_TEMP%" "%ZIP_GITHUB%"
-if %errorlevel% neq 0 (
-    echo è­¦å‘Šï¼šGitHubä¸‹è½½å¤±è´¥ï¼ˆå¯èƒ½ç½‘ç»œè¶…æ—¶ï¼‰ï¼Œè‡ªåŠ¨åˆ‡æ¢å¯å¯äº”ç¬”å®˜ç½‘å¤‡ç”¨é€šé“...
-    del /f /q "%ZIP_TEMP%" 2>nul
-    curl -fsSL --insecure -A "%UA%" -o "%ZIP_TEMP%" "%ZIP_OFFICIAL%"
-    :: ä¸ä¾èµ–curlè¿”å›žå€¼ï¼Œç›´æŽ¥æ£€æŸ¥æ–‡ä»¶æ˜¯å¦å­˜åœ¨ä¸”éžç©º
-    if exist "%ZIP_TEMP%" (
-        for %%f in ("%ZIP_TEMP%") do if %%~zf gtr 0 (
-            echo å¯å¯äº”ç¬”å®˜ç½‘é€šé“ä¸‹è½½æˆåŠŸ
-            goto :CHECK_ZIP
-        )
-    )
-    echo é”™è¯¯ï¼šå®˜ç½‘ä¸‹è½½å¤±è´¥ï¼Œæ–‡ä»¶ä¸å­˜åœ¨æˆ–ä¸ºç©º
-    echo.
-    echo è¯·æ‰‹åŠ¨ä¸‹è½½åŽ‹ç¼©åŒ…æ›´æ–°ï¼Œæˆ–åˆ‡æ¢ç½‘ç»œåŽé‡è¯•
-    pause
-    exit /b 1
-)
-echo GitHubä¸‹è½½æˆåŠŸ
+if errorlevel 1 goto :TRY_BACKUP
+if not exist "%ZIP_TEMP%" goto :TRY_BACKUP
+echo      GitHub ÏÂÔØ³É¹¦
+goto :CHECK_ZIP
+
+:TRY_BACKUP
+echo      ¾¯¸æ£ºGitHub ÏÂÔØÊ§°Ü£¬×Ô¶¯ÇÐ»»¿É¿ÉÎå±Ê¹ÙÍø±¸ÓÃÍ¨µÀ...
+del /f /q "%ZIP_TEMP%" 2>nul
+curl -fsSL --insecure -A "%UA%" -o "%ZIP_TEMP%" "%ZIP_OFFICIAL%"
+if not exist "%ZIP_TEMP%" goto :ERR_DOWNLOAD
+for %%f in ("%ZIP_TEMP%") do if %%~zf gtr 0 goto :BACKUP_OK
+goto :ERR_DOWNLOAD
+:BACKUP_OK
+echo      ¹ÙÍøÍ¨µÀÏÂÔØ³É¹¦
 
 :CHECK_ZIP
-:: äºŒæ¬¡æ ¡éªŒæ–‡ä»¶å­˜åœ¨ä¸”éžç©ºï¼ˆé˜²æ­¢æ„å¤–ï¼‰
-if not exist "%ZIP_TEMP%" (
-    echo é”™è¯¯ï¼šæœªç”ŸæˆåŽ‹ç¼©åŒ…ï¼Œä¸‹è½½å¤±è´¥
-    pause
-    exit /b 1
-)
-for %%f in ("%ZIP_TEMP%") do if %%~zf equ 0 (
-    echo é”™è¯¯ï¼šä¸‹è½½å¾—åˆ°ç©ºæ–‡ä»¶ï¼Œç½‘ç»œä¸­æ–­ï¼Œè¯·é‡è¯•
-    del "%ZIP_TEMP%"
-    pause
-    exit /b 1
-)
-
-echo 3. æ ¡éªŒåŽ‹ç¼©åŒ…å®Œå¥½ï¼Œæ¸…ç©ºRimeç›®å½•å…¨éƒ¨åŽŸæœ‰å†…å®¹
-for /d %%d in ("%RIMENEW%\*") do rmdir /s /q "%%d" 2>nul
-:: åˆ é™¤Rimeä¸‹æ‰€æœ‰æ–‡ä»¶ï¼Œä»…ä¿ç•™å½“å‰batè„šæœ¬è‡ªèº«
-for %%f in ("%RIMENEW%\*.*") do (
-    setlocal enabledelayedexpansion
-    if /i not "%%~nxf"=="%~nx0" del /f /q "%%f" 2>nul
-    endlocal
-)
-echo    Rimeæ—§æ–‡ä»¶æ¸…ç†å®Œæˆï¼Œç›®å½•å¹²å‡€æ— æ®‹ç•™
+if not exist "%ZIP_TEMP%" goto :ERR_DOWNLOAD
+set "ZSIZE=0"
+for %%f in ("%ZIP_TEMP%") do set "ZSIZE=%%~zf"
+if "%ZSIZE%"=="0" goto :ERR_EMPTY
 echo.
 
-echo 4. åœ¨ç³»ç»Ÿç¼“å­˜ç›®å½•è§£åŽ‹åŽ‹ç¼©åŒ…
-powershell Expand-Archive -Path "%ZIP_TEMP%" -DestinationPath "%TMP_DIR%" -Force
-if not exist "%TMP_DIR%\Rime-KeKeWubi-main" (
-    echo é”™è¯¯ï¼šåŽ‹ç¼©åŒ…æŸåï¼Œè§£åŽ‹å¤±è´¥
-    del "%ZIP_TEMP%"
-    rmdir /s /q "%TMP_DIR%" 2>nul
-    pause
-    exit /b 1
-)
+echo 3/6 Çå¿Õ %APPDATA%\Rime ÀïµÄ¾ÉÎÄ¼þ
+rem This script runs from %TEMP%, so the whole Rime folder can go.
+attrib -h -s -r "%RIMENEW%\*.*" >nul 2>&1
+for /d %%d in ("%RIMENEW%\*") do rmdir /s /q "%%~fd" 2>nul
+for %%f in ("%RIMENEW%\*.*") do del /f /q /a "%%~ff" 2>nul
+echo      ¾ÉÎÄ¼þÇåÀíÍê³É
+echo.
 
-echo 5. å°†ä»“åº“å†…æ‰€æœ‰æ–‡ä»¶ç›´æŽ¥å¤åˆ¶åˆ°Rimeæ ¹ç›®å½•
-xcopy "%TMP_DIR%\Rime-KeKeWubi-main\*" "%RIMENEW%\" /e /h /y
+echo 4/6 ½âÑ¹ÅäÖÃ°ü
+if not exist "%TMP_DIR%" md "%TMP_DIR%" >nul 2>&1
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Expand-Archive -LiteralPath '%ZIP_TEMP%' -DestinationPath '%TMP_DIR%' -Force" 2>nul
+if exist "%TMP_DIR%\Rime-KeKeWubi-main" goto :UNZIPPED
+rem PowerShell failed, retry with the tar.exe shipped since Win10 1803
+echo      PowerShell ½âÑ¹Î´³É¹¦£¬¸ÄÓÃÏµÍ³ tar ÖØÊÔ...
+tar -xf "%ZIP_TEMP%" -C "%TMP_DIR%" 2>nul
+if not exist "%TMP_DIR%\Rime-KeKeWubi-main" goto :ERR_UNZIP
 
-echo 6. æ¸…ç†ç³»ç»Ÿå…¨éƒ¨ä¸´æ—¶æ–‡ä»¶
-rmdir /s /q "%TMP_DIR%"
-del /f /q "%ZIP_TEMP%"
+:UNZIPPED
+echo.
+echo 5/6 ¸´ÖÆµ½ %APPDATA%\Rime
+xcopy "%TMP_DIR%\Rime-KeKeWubi-main\*" "%RIMENEW%" /e /h /y /r
+echo.
 
+echo 6/6 ÇåÀíÁÙÊ±ÎÄ¼þ
+rmdir /s /q "%TMP_DIR%" 2>nul
+del /f /q "%ZIP_TEMP%" 2>nul
 echo.
-echo ==============================================
-echo å¯å¯äº”ç¬”é…ç½®æ–‡ä»¶å·²æ‹·è´åˆ°ç›®å½•ï¼š%appdata%\Rime
+
+echo ==============================================================
+echo   ¸üÐÂÍê³É£¬ÅäÖÃÎÄ¼þÒÑ¾­·Åµ½ %APPDATA%\Rime
+echo ==============================================================
 echo.
-echo æŽ¥ä¸‹æ¥ï¼ŒæŒ‰ä»»æ„é”®ä¼šæ‰“å¼€æ­¤ç›®å½•ã€‚
+echo   ½ÓÏÂÀ´»¹Òª×öÁ½²½£º
+echo     1. °´ÈÎÒâ¼ü£¬»á´ò¿ªÕâ¸öÎÄ¼þ¼Ð
+echo     2. ÓÒ¼üÈÎÎñÀ¸µÄÐ¡ÀÇºÁÍÐÅÌÍ¼±ê£¬Ñ¡¡¸ÖØÐÂ²¿Êð¡¹£¬µÈËüÅÜÍêÔÙ´ò×Ö
 echo.
-echo å¦‚æžœä½ æ”¹è¿‡Rimeé»˜è®¤ç”¨æˆ·ç›®å½•ï¼Œæ‰‹åŠ¨æŠŠå…¨éƒ¨æ–‡ä»¶å¤åˆ¶åˆ°ä½ è‡ªå®šä¹‰æ–‡ä»¶å¤¹ï¼›
+echo   Èç¹ûÄã°Ñ¡¸ÓÃ»§ÎÄ¼þ¼Ð¡¹¸Äµ½ÁË±ðµÄÎ»ÖÃ£¬Çë°ÑÉÏÃæÕâ¸öÄ¿Â¼ÀïµÄ
+echo   È«²¿ÎÄ¼þÊÖ¶¯¸´ÖÆµ½Äã×Ô¶¨ÒåµÄÄ¿Â¼£¬ÔÙÖ´ÐÐÖØÐÂ²¿Êð¡£
 echo.
-echo æœªä¿®æ”¹ç›®å½•åˆ™ç›´æŽ¥å³é”®å°ç‹¼æ¯«æ‰˜ç›˜å›¾æ ‡ â†’ é‡æ–°éƒ¨ç½² ç”Ÿæ•ˆæ–¹æ¡ˆ
-echo.
-echo ==============================================
+echo   ±¾½Å±¾ÒÑËæÐÂ°üÒ»Æð¸üÐÂ£¬Î»ÖÃ£ºtools\keke_wubi_update_Windows.bat
 echo.
 pause
-start "" "%RIMENEW%"
-exit
+if exist "%RIMENEW%" start "" explorer.exe "%RIMENEW%"
+endlocal
+exit /b 0
+
+rem ---------- error exits ----------
+:ERR_DOWNLOAD
+echo.
+echo ´íÎó£ºÏÂÔØÊ§°Ü£¬Ñ¹Ëõ°ü²»´æÔÚ»òÎª¿Õ¡£
+echo Çë¼ì²éÍøÂçºóÖØÊÔ£¬»òÊÖ¶¯ÏÂÔØÑ¹Ëõ°üÌæ»»£º
+echo   https://github.com/KeKeWubi/Rime-KeKeWubi
+goto :FAIL
+
+:ERR_EMPTY
+del /f /q "%ZIP_TEMP%" 2>nul
+echo.
+echo ´íÎó£ºÏÂÔØµ½µÄÊÇ¿ÕÎÄ¼þ£¬ÍøÂçÖÐ¶Ï£¬ÇëÖØÊÔ¡£
+goto :FAIL
+
+:ERR_UNZIP
+del /f /q "%ZIP_TEMP%" 2>nul
+rmdir /s /q "%TMP_DIR%" 2>nul
+echo.
+echo ´íÎó£ºÑ¹Ëõ°ü½âÑ¹Ê§°Ü£¬ÎÄ¼þ¿ÉÄÜÒÑËð»µ£¬ÇëÖØÊÔ¡£
+goto :FAIL
+
+:NO_APPDATA
+echo ´íÎó£º¶Á²»µ½ APPDATA »·¾³±äÁ¿£¬ÎÞ·¨È·¶¨ Rime Ä¿Â¼£¬½Å±¾ÍË³ö¡£
+goto :FAIL
+
+:FAIL
+echo.
+echo ±¾´Î¸üÐÂÃ»ÓÐÍê³É¡£°´ÈÎÒâ¼ü¹Ø±Õ´°¿Ú¡£
+pause >nul
+endlocal
+exit /b 1
