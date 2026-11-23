@@ -58,10 +58,11 @@ function Generate-Idx {
     $RimeDir = $RimeDir.TrimEnd('\', '/')
 
     # ---- 1. 读取三本词典，收单字 ----
+    # 目录布局：common 在 Rime 根目录，system / rare 在 keke_wubi_dict/ 下
     $groups = @(
         @(1, "keke_wubi_${V}_common"),
-        @(2, "keke_wubi_${V}_system"),
-        @(3, "keke_wubi_${V}_rare")
+        @(2, "keke_wubi_dict/keke_wubi_${V}_system"),
+        @(3, "keke_wubi_dict/keke_wubi_${V}_rare")
     )
 
     $seen  = New-Object 'System.Collections.Generic.HashSet[string]'
@@ -127,14 +128,10 @@ function Generate-Idx {
     $n    = $entries.Count
     $dlen = [int]$msData.Length
 
-    # ---- 4. 签名（三本词典按名称字典序 + 条目数）----
-    $nameList = New-Object 'System.Collections.Generic.List[string]'
-    foreach ($k in $sizes.Keys) { $nameList.Add([string]$k) }
-    $nameList.Sort([System.StringComparer]::Ordinal)
-
+    # ---- 4. 签名（三本词典按层级序 common → system → rare + 条目数，与 lua 端一致）----
     $sig = [uint32]0
-    foreach ($nm in $nameList) {
-        $sig = [uint32](([uint64]$sig * 131 + [uint64]$sizes[$nm]) -band 0xFFFFFFFF)
+    foreach ($g in $groups) {
+        $sig = [uint32](([uint64]$sig * 131 + [uint64]$sizes[$g[1]]) -band 0xFFFFFFFF)
     }
     $sig = [uint32](([uint64]$sig -bxor [uint64]$n) -band 0xFFFFFFFF)
 

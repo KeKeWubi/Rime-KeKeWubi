@@ -27,7 +27,8 @@ def q_of(code):
         v = v * 26 + (ord(ch) - 97)
     return len(code) * 1048576 + v
 
-groups = [(1, f"keke_wubi_{VER}_common"), (2, f"keke_wubi_{VER}_system"), (3, f"keke_wubi_{VER}_rare")]
+# 目录布局：common 在 Rime 根目录，system / rare 在 keke_wubi_dict/ 下
+groups = [(1, f"keke_wubi_{VER}_common"), (2, f"keke_wubi_dict/keke_wubi_{VER}_system"), (3, f"keke_wubi_dict/keke_wubi_{VER}_rare")]
 
 seen = set()
 recs = []
@@ -78,7 +79,7 @@ for q, word, tier in recs:
     off += 2 + len(wb)
 
 sig = 0
-for name in sorted(sizes):
+for tier, name in groups:              # 层级序（common → system → rare），与 lua 端一致
     sig = (sig * 131 + sizes[name]) & 0xFFFFFFFF
 sig = (sig ^ len(entries)) & 0xFFFFFFFF
 

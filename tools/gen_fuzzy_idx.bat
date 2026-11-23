@@ -60,7 +60,7 @@ exit /b 0
 echo.
 echo [ERROR] Rebuild failed. Common causes:
 echo   1. The "lua" folder is not next to the "tools" folder
-echo   2. keke_wubi_XX_common/system/rare.dict.yaml missing in the Rime directory shown above
+echo   2. need keke_wubi_XX_common.dict.yaml in the Rime root and keke_wubi_dict\keke_wubi_XX_system.dict.yaml, keke_wubi_dict\keke_wubi_XX_rare.dict.yaml
 echo   3. PowerShell script execution blocked by policy
 pause
 exit /b 1
