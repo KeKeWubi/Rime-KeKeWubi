@@ -20,9 +20,12 @@
 --   加载也是分块拼接，避免建表期间出现 5MB 级瞬时峰值。
 --
 -- 词典位置（按顺序查找，取第一个存在的）：
---   1) <用户目录>/english_words.txt        ← 推荐，和 keke_wubi_global_pinyin 放一起
---   2) <用户目录>/lua/english_words.txt    ← 兼容旧位置
---   3) <共享目录>/english_words.txt
+--   1) <用户目录>/keke_wubi_dict/english_words.txt  ← 推荐，与其它被导入词库放一起
+--   2) <用户目录>/global/english_words.txt          ← 兼容旧位置
+--   3) <用户目录>/english_words.txt                 ← 兼容旧位置
+--   4) <用户目录>/lua/english_words.txt             ← 兼容旧位置
+--   5) <共享目录>/keke_wubi_dict/english_words.txt
+--   6) <共享目录>/english_words.txt
 --
 -- 词典格式：每行一个单词，行的先后决定候选先后。支持小写词、首字母大写词、
 --   全大写词（USA）、连字符词（e-mail）、撇号词（don't）；含空格的词组忽略。
@@ -117,6 +120,8 @@ function M.load()
   local d = {}
   dict = d                     -- 先占位，避免加载失败时反复重试
   for _, dir in ipairs(search_dirs()) do
+    if read_dict(d, dir .. "/keke_wubi_dict/" .. DICT_NAME) then return d end
+    if read_dict(d, dir .. "/global/" .. DICT_NAME) then return d end
     if read_dict(d, dir .. "/" .. DICT_NAME) then return d end
     if read_dict(d, dir .. "/lua/" .. DICT_NAME) then return d end
   end
