@@ -10,7 +10,7 @@
 * 连续按 F4 (或 Ctrl+` 或 Ctrl+0）切换三种五笔方案（可可五笔 - 86版、可可五笔 - 98版、可可五笔 - 新世纪版）。
 * 修改方案文件 keke_wubi_XX.schema.yaml 和 全局自定义文件 default.custom.yaml 这两个文件里的配置项即可实现不同的功能，修改完要重新部署。
 * 重要提醒：以上两个文件中没加备注的配置项，慎改、慎改、慎改。
-* 建议使用windows版本的可可五笔生成自己的词库（支持只导入词条，能自动生成编码）导出后复制到 keke_wubi_XX_user.dict.yaml 重新部署即可。
+* 建议使用windows版本的可可五笔生成自己的词库（支持只导入词条，能自动生成编码）导出后复制到 keke_wubi_dict/keke_wubi_XX_user.dict.yaml 重新部署即可。
 * 关于在线加词，这个功能会产生大量垃圾词汇。所以：自己的词库慢慢维护，能批量导入即可。
 * 关于跨平台，因为各平台功能有差异，比如在手机端或老版MacOs不支持左右shift，所以RIME移植版的可可“有限支持”英文词典。
 * 关于临时拼音，可可五笔是专业的五笔软件，临时拼音（z键引导）只支持全拼，以备用户忘字时应急，RIME平台移植的可可五笔“不支持”五笔反查。
@@ -20,31 +20,28 @@
 ```tree
 Rime/	                              #所有可用平台都是这个配置目录
 ├─ default.custom.yaml              #全局补丁
-├─keke_wubi_update_MacOS.command    #可可五笔MacOS自动更新脚本，可自动下载本仓库里的所有文件到Rime目录，下同
-├─keke_wubi_update_Windows.bat      #可可五笔Windows自动更新脚本
 三套输入方案
 ├─ keke_wubi_86.schema.yaml            #86版五笔方案
 ├─ keke_wubi_98.schema.yaml            #98版五笔方案
 ├─ keke_wubi_nc.schema.yaml            #新世纪版五笔方案
-可可五笔86版词典
-├─ keke_wubi_86_common.dict.yaml       #86版五笔常用字
-├─ keke_wubi_86_system.dict.yaml       #86版五笔系统字词
-├─ keke_wubi_86_rare.dict.yaml         #86版五笔生僻字
-可可五笔98版词典
-├─ keke_wubi_98_common.dict.yaml       #98版五笔常用字
-├─ keke_wubi_98_system.dict.yaml       #98版五笔系统字词
-├─ keke_wubi_98_rare.dict.yaml         #98版五笔生僻字
-可可五笔新世纪版词典
-├─ keke_wubi_nc_common.dict.yaml       #新世纪版五笔常用字
-├─ keke_wubi_nc_system.dict.yaml       #新世纪版五笔系统字词
-├─ keke_wubi_nc_rare.dict.yaml         #新世纪版五笔生僻字
-用户自己的词库（建议通过以下文件维护自己的词库，不要动其它文件）
-├─ keke_wubi_86_user.dict.yaml
-├─ keke_wubi_98_user.dict.yaml
-├─ keke_wubi_nc_user.dict.yaml
-全局词库
-└─ keke_wubi_global_symbols.dict.yaml	#可可特殊符号，z引导，如：zbd：常用标点；zys：圆圈数字等等
-└─ keke_wubi_global_pinyin.dict.yaml	#可可临时拼音，z引导，如：zkeke，输出 可可
+可可五笔主词典（入口，必须放在根目录，librime 不支持主词典带子目录）
+├─ keke_wubi_86_common.dict.yaml        #86版五笔常用字
+├─ keke_wubi_98_common.dict.yaml        #98版五笔常用字
+├─ keke_wubi_nc_common.dict.yaml        #新世纪版五笔常用字
+其余全部词典（由上面三本导入）
+├─ keke_wubi_dict/
+│  ├─ keke_wubi_86_system.dict.yaml    #86版五笔系统字词
+│  ├─ keke_wubi_86_rare.dict.yaml      #86版五笔生僻字
+│  ├─ keke_wubi_98_system.dict.yaml    #98版五笔系统字词
+│  ├─ keke_wubi_98_rare.dict.yaml      #98版五笔生僻字
+│  ├─ keke_wubi_nc_system.dict.yaml    #新世纪版五笔系统字词
+│  ├─ keke_wubi_nc_rare.dict.yaml      #新世纪版五笔生僻字
+│  ├─ keke_wubi_86_user.dict.yaml      #86版个人词库（建议只维护这三个 user 词库）
+│  ├─ keke_wubi_98_user.dict.yaml
+│  ├─ keke_wubi_nc_user.dict.yaml
+│  ├─ keke_wubi_global_symbols.dict.yaml	#可可特殊符号，z引导，如：zbd：常用标点；zys：圆圈数字等等
+│  ├─ keke_wubi_global_pinyin.dict.yaml	#可可临时拼音，z引导，如：zkeke，输出 可可
+│  └─ english_words.txt                #英文提示模式的词表（约 5.4 万词）
 配色方案
 └─ weasel.custom.yaml               #Windows默认配色方案，近似复刻可可皮肤
 └─ squirrel.custom.yaml             #MacOS默认配色方案，近似复刻可可皮肤
@@ -65,6 +62,8 @@ Rime/	                              #所有可用平台都是这个配置目录
    ├─ keke_wubi_charset_filter.lua     #过滤通用规范汉字表8105字的脚本
 工具
 ├─ tools/   #用户在本地修改除三个 user.dict.yaml 之外的任何一个 dict.yaml 之后都要重新制作索引文件而使用的工具（完成后重新部署）
+   └─ keke_wubi_update_MacOS.command    #可可五笔MacOS自动更新脚本，可自动下载本仓库里的所有文件到Rime目录，下同
+   └─ keke_wubi_update_Windows.bat      #可可五笔Windows自动更新脚本
    └─ gen_fuzzy_idx.bat             #Win一键脚本
    └─ gen_fuzzy_idx.ps1             #Win一键脚本
    └─ gen_fuzzy_idx.py              #Mac或Linux的Python脚本
