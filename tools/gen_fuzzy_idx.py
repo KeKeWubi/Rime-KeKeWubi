@@ -27,8 +27,8 @@ def q_of(code):
         v = v * 26 + (ord(ch) - 97)
     return len(code) * 1048576 + v
 
-# 目录布局：common 在 Rime 根目录，system / rare 在 keke_wubi_dict/ 下
-groups = [(1, f"keke_wubi_{VER}_common"), (2, f"keke_wubi_dict/keke_wubi_{VER}_system"), (3, f"keke_wubi_dict/keke_wubi_{VER}_rare")]
+# 目录布局：入口主词典 keke_wubi_XX 在 Rime 根目录，common / system / rare 在 keke_wubi_dict/ 下
+groups = [(1, f"keke_wubi_dict/keke_wubi_{VER}_common"), (2, f"keke_wubi_dict/keke_wubi_{VER}_system"), (3, f"keke_wubi_dict/keke_wubi_{VER}_rare")]
 
 seen = set()
 recs = []

@@ -58,9 +58,9 @@ function Generate-Idx {
     $RimeDir = $RimeDir.TrimEnd('\', '/')
 
     # ---- 1. 读取三本词典，收单字 ----
-    # 目录布局：common 在 Rime 根目录，system / rare 在 keke_wubi_dict/ 下
+    # 目录布局：入口主词典 keke_wubi_XX 在 Rime 根目录，common / system / rare 在 keke_wubi_dict/ 下
     $groups = @(
-        @(1, "keke_wubi_${V}_common"),
+        @(1, "keke_wubi_dict/keke_wubi_${V}_common"),
         @(2, "keke_wubi_dict/keke_wubi_${V}_system"),
         @(3, "keke_wubi_dict/keke_wubi_${V}_rare")
     )
