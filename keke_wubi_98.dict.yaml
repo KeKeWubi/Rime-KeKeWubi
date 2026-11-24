@@ -1,0 +1,29 @@
+#keke_wubi_98.dict.yaml
+---
+name: keke_wubi_98
+version: "1.0"
+sort: by_weight
+import_tables:
+  - keke_wubi_dict/keke_wubi_98_common
+  - keke_wubi_dict/keke_wubi_98_system
+  - keke_wubi_dict/keke_wubi_98_rare
+  - keke_wubi_dict/keke_wubi_98_user
+  - keke_wubi_dict/keke_wubi_global_symbols
+  - keke_wubi_dict/keke_wubi_global_pinyin
+use_preset_vocabulary: false
+columns:
+  - text
+  - code
+  - weight
+  - stem
+encoder:
+  exclude_patterns:
+    - '^z.*$'
+  rules:
+    - length_equal: 2
+      formula: "AaAbBaBb"
+    - length_equal: 3
+      formula: "AaBaCaCb"
+    - length_in_range: [4, 10]
+      formula: "AaBaCaZa"
+...
