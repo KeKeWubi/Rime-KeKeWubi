@@ -274,17 +274,16 @@ local function prepare(env)
   end)
   env.dict_prefix = prefix
   env.dict_ver = str_match(prefix, "keke_wubi_(%w+)$") or "86"
-  -- 目录布局：入口词典 keke_wubi_XX_common 在 Rime 根目录，
-  -- 其余词典（含 system / rare）统一放在 keke_wubi_dict/ 子目录
-  -- （librime 不支持入口词典带子目录）。
+  -- 目录布局：入口主词典 keke_wubi_XX 在 Rime 根目录（librime 不支持主词典带子目录），
+  -- 其余词典（含 common / system / rare）统一放在 keke_wubi_dict/ 子目录
   local sub = "keke_wubi_dict/" .. prefix .. "_"
   env.dict_names = {                 -- 层级序，与生成脚本算签名时一致
-    prefix .. "_common",
+    sub .. "common",
     sub .. "system",
     sub .. "rare",
   }
   env.dict_tier_names = {            -- 词频层级序
-    prefix .. "_common",
+    sub .. "common",
     sub .. "system",
     sub .. "rare",
   }
