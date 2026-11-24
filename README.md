@@ -24,12 +24,15 @@ Rime/	                              #所有可用平台都是这个配置目录
 ├─ keke_wubi_86.schema.yaml            #86版五笔方案
 ├─ keke_wubi_98.schema.yaml            #98版五笔方案
 ├─ keke_wubi_nc.schema.yaml            #新世纪版五笔方案
-可可五笔主词典（入口，必须放在根目录，librime 不支持主词典带子目录）
-├─ keke_wubi_86_common.dict.yaml        #86版五笔常用字
-├─ keke_wubi_98_common.dict.yaml        #98版五笔常用字
-├─ keke_wubi_nc_common.dict.yaml        #新世纪版五笔常用字
-其余全部词典（由上面三本导入）
+可可五笔主词典（入口，必须放在根目录，librime 不支持主词典带子目录；只含头部，通过 import_tables 导入下面全部词典）
+├─ keke_wubi_86.dict.yaml              #86版五笔入口主词典
+├─ keke_wubi_98.dict.yaml              #98版五笔入口主词典
+├─ keke_wubi_nc.dict.yaml              #新世纪版五笔入口主词典
+其余全部词典（由上面三本入口词典导入，统一放在 keke_wubi_dict/ 子目录）
 ├─ keke_wubi_dict/
+│  ├─ keke_wubi_86_common.dict.yaml    #86版五笔常用字
+│  ├─ keke_wubi_98_common.dict.yaml    #98版五笔常用字
+│  ├─ keke_wubi_nc_common.dict.yaml    #新世纪版五笔常用字
 │  ├─ keke_wubi_86_system.dict.yaml    #86版五笔系统字词
 │  ├─ keke_wubi_86_rare.dict.yaml      #86版五笔生僻字
 │  ├─ keke_wubi_98_system.dict.yaml    #98版五笔系统字词
