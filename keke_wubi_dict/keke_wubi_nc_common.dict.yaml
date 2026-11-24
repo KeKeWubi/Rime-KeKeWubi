@@ -1,0 +1,3847 @@
+#keke_wubi_nc_common.dict.yaml
+---
+name: keke_wubi_nc_common
+version: "1.0"
+sort: by_weight
+use_preset_vocabulary: false
+columns:
+  - text
+  - code
+  - weight
+  - stem
+encoder:
+  exclude_patterns:
+    - '^z.*$'
+  rules:
+    - length_equal: 2
+      formula: "AaAbBaBb"
+    - length_equal: 3
+      formula: "AaBaCaCb"
+    - length_in_range: [4, 10]
+      formula: "AaBaCaZa"
+...
+基	ad
+若	ad
+藏	ad
+莱	ago
+落	ait
+获	aqt
+鞋	akf
+艾	ar
+薄	aig
+苏	ae	300
+草	aj
+茶	aw
+臣	ah
+蒂	ay
+董	at
+菲	ah
+芬	aw
+甘	af
+戈	ag
+革	ak
+葛	aj
+工	aa
+薛	awn
+贡	am
+荷	aws
+花	aw
+荒	ay
+荒	ayn
+惑	akg
+或	akg
+蒋	auq
+戒	aa
+警	aq
+敬	aq
+敬	aqk
+莱	ag
+蓝	aj
+莉	at
+莲	al
+蒙	ap
+莫	aj
+某	af
+墓	ajd
+幕	ajd
+慕	ajd
+欧	ar
+匹	aq
+葡	aq
+巧	agn
+七	agn
+勤	ak
+荣	ap
+萨	ab
+菜	ae	999
+甚	adw
+散	ae
+卧	ahn
+萧	av
+蓄	ay
+雅	aht
+牙	aht
+燕	ak
+医	at
+英	am
+工	aaa
+黄	amw
+药	axq
+著	aft
+鞭	akf
+欺	adw
+东	aii
+功	aet
+昔	ajf
+陶	bqr
+降	bta
+承	bd
+除	bw
+聪	buk
+耳	bg
+防	by
+附	bw
+隔	bg
+孩	by
+阶	bw
+聚	bc
+及	byi
+孔	bn
+了	bn
+辽	bp
+聊	bq
+陵	bf
+隆	bt
+陆	bg
+孟	bl
+乃	bn
+陶	bq
+险	bw
+险	bwg
+陷	bq
+耶	bb
+也	b
+了	bnh
+盈	bc
+子	b
+阻	be
+阿	bsk
+孤	brc
+际	bfi
+也	bnh
+联	bud
+随	bde
+限	bve
+隐	bqv
+院	bpf
+职	bkw
+子	bbb
+阴	beg
+巴	c
+欢	cq
+鸡	cq
+马	c
+矛	cn
+柔	cnh
+骗	cg
+骑	cg
+予	cnh
+桑	cc
+圣	cf
+驶	cg
+双	cc
+能	cex
+勇	ceh
+又	ccc
+预	cnh
+巴	cnh
+驻	cgy
+参	cde
+观	cmq
+艰	cve
+难	cwy
+马	cgd
+石	dg
+威	dg
+厉	dg
+夏	dh
+慧	dh
+艳	dh
+戚	dh
+耕	dif
+碍	dj
+邦	dt
+帮	dtb
+奔	df
+布	dm
+厕	dmj
+成	dnx
+厨	dgk
+础	db
+大	d
+大	ddd
+而	dm
+否	dhk
+感	dgk
+耗	dit
+厚	dj
+灰	do
+夸	df
+夸	dfn
+励	dgq
+码	dc
+面	dmj
+耐	dm
+耐	dmj
+戚	dhg
+奇	ds
+牵	dp
+秦	dw
+确	dq
+辱	dfe
+三	d
+盛	dn
+石	dgt
+寿	dt
+碎	dy
+丈	dyi
+态	dy
+泰	dwi
+套	dd
+碗	dp
+袭	dx
+龙	dxy
+雄	dc
+压	df
+页	dm
+尤	dn
+愿	dr
+原	dri
+丈	dy
+奏	dwg
+春	dwj
+磁	dux
+顾	dbd
+还	dhp
+三	dgg
+在	dhf
+太	dyi
+厅	dsk
+牵	dpr
+爱	ep
+胞	eq
+彩	es
+脆	eq
+肚	ef
+股	ew
+贺	ek
+驾	ek
+架	ek
+脚	efc
+腊	ea
+腊	eaj
+脸	ew
+脉	ey
+膀	ey
+朋	ee
+鹏	ee
+受	ep
+腾	eu
+腾	eud
+腿	ev
+县	eg
+胁	ee
+悬	eg
+悬	egc
+腰	es
+遥	er
+助	eg
+办	ew
+胆	ejg
+服	ebc
+毁	eaw
+貌	erq
+脑	eyr
+胜	etg
+脱	euk
+胸	eqr
+须	edm
+月	eee
+脏	eof
+脂	exj
+才	f
+动	fc
+云	fc
+直	fh
+武	fh
+赵	fh
+朝	fj
+刊	fj
+坦	fj
+戴	fla
+声	fn
+卖	fn
+亏	fn
+韦	fn
+勃	fp
+博	fg
+场	fnr
+寸	fg
+戴	fl
+堤	fjg
+都	ftj
+堆	fw
+二	f
+寺	ff
+封	fff
+赶	fhf
+干	fg
+鼓	fk
+规	fw
+韩	fjf
+坏	fd
+零	fwy
+埋	fjf
+嘉	fku
+教	ftb
+劫	fce
+霍	fwy
+均	fq
+款	ff
+雷	fl
+截	fwy
+露	fkh
+南	fmu
+彭	fku
+墙	ff
+墙	ffu
+去	fcu
+坛	ff
+索	fp
+替	fw
+土	fff
+违	fnh
+未	fi
+雾	ft
+喜	fku
+霞	fnh
+献	fm
+孝	ft
+需	fd
+士	fgh
+域	fak
+元	fq
+袁	fk
+远	fq
+者	ft
+圳	fk
+震	fd
+裁	fye
+城	fdn
+地	fb
+进	fjp
+起	fhn
+霜	fsh
+协	few
+载	flx
+增	ful
+寸	fgh
+翰	fjf
+埔	fge
+支	fcu
+雨	fgh
+二	fgg
+志	fnu
+才	fte
+址	fhg
+带	gk
+副	gk
+丽	gm
+瑞	gm
+刺	gm
+遭	gm
+现	gmq
+列	gq
+残	gq
+殊	gq
+班	gy
+逼	gkl
+碧	gr
+玻	gh
+曹	gma
+致	gcf
+毒	gx
+顿	gb
+亚	gog
+恶	go
+更	gj
+环	gd
+惠	gj
+救	gi
+赖	gki
+来	goi
+璃	gy
+两	gmw
+烈	gqj
+裂	gqj
+琳	gs
+玛	gc
+灭	go
+晋	gog
+求	giy
+琴	gg
+球	gg
+素	gx
+吞	gd
+瓦	gn
+玩	gf
+五	g
+刑	gaj
+型	gaj
+严	go
+与	gng
+正	gh
+政	gh
+至	gc
+到	gcf
+班	gyt
+斑	gyg
+互	gxg
+画	glb
+平	guf
+妻	gvh
+事	gkv
+五	ggh
+一	ggl
+珍	gwe
+珠	gri
+速	gki
+屯	gbn
+整	gki
+殖	gqf
+非	h
+盼	hwv
+悲	hd
+辈	hd
+辈	hdh
+卜	hh
+步	hh
+柴	hx
+点	hk
+督	hg
+督	hgi
+非	hdh
+睛	hg
+卡	hg
+龄	hwb
+目	hh
+盼	hw
+频	hh
+颇	hc
+上	hg
+叔	hg
+些	hx
+战	hk
+止	h
+桌	hj
+卓	hj
+紫	hx
+餐	hqc
+歧	hfc
+睡	htf
+眼	hve
+止	hhg
+彪	haw
+光	i
+满	ia
+洪	ia
+汇	ia
+潜	ifw
+兴	ig
+辉	ig
+常	ip
+沉	ip
+沈	ip
+活	it
+洗	it
+劣	it
+济	iy
+洲	iy
+滚	iy
+波	ih
+潮	if
+党	ipk
+洞	im
+渡	io
+浮	ie
+港	iaw
+汗	ifh
+浩	itf
+湖	id
+滑	im
+梁	iv
+津	ivg
+漂	is
+酒	isg
+举	igw
+渴	ij
+染	iv
+汽	ir
+浅	if
+污	if
+渠	ian
+润	iug
+沙	ii
+赏	ipk
+尚	im
+涉	ih
+深	ipw
+湿	ij
+淑	ih
+水	i
+汤	in
+堂	ipk
+涛	id
+涂	iwg
+温	ijl
+沃	itd
+溪	ie
+消	ii
+小	i
+沿	iw
+洋	iug
+耀	igq
+涌	ic
+游	iyt
+誉	igw
+源	id
+泽	ic
+掌	ipk
+浙	ir
+泪	ihg
+治	ic
+滋	iu
+淡	ioo
+法	ifc
+沟	iqc
+光	igq
+河	isk
+渐	ilr
+流	iyc
+没	iwc
+泥	inx
+派	ire
+水	iii
+小	iht
+学	ipb
+涨	ixt
+婆	ihc
+浦	ige
+液	iyw
+少	ite
+油	img
+江	iag
+帅	jm
+昂	jq
+昌	jj
+畅	jh
+虫	jhn
+坚	jc
+览	jt
+监	jty
+鉴	jty
+颗	js
+里	jf
+临	jty
+曼	jl
+冒	jh
+盟	je
+景	jyk
+暖	je
+日	jjj
+蛇	jp
+师	jg
+题	jg
+贤	jc
+晓	ja
+星	jt
+野	jf
+易	jq
+影	jy
+映	jm
+遇	jmh
+早	jf
+昭	jv
+照	jvk
+暗	juj
+暴	jaw
+晨	jdf
+紧	jcx
+昆	jxx
+量	jgj
+显	jog
+最	jbc
+昨	jth
+旱	jfj
+明	jeg
+晚	jqk
+吕	k
+路	kh
+足	kh
+跑	kh
+贵	kh
+唱	kj
+川	kth
+串	kk
+吹	kq
+吊	km
+吨	kg
+哈	kw
+喊	kdg
+喝	kj
+呼	kt
+唤	kq
+患	kkh
+口	kkk
+哭	kkd
+啦	kr
+吗	kc
+鸣	kq
+呢	kn
+喷	kf
+品	kk
+器	kk
+史	kr
+叹	kc
+跳	khq
+吐	kf
+唯	kwy
+味	kf
+吴	kg
+吸	kb
+响	kt
+吁	kgf
+咬	kyw
+遗	khg
+跃	kht
+咱	kt
+啊	kbs
+吃	ktn
+号	kgn
+叫	knh
+嘛	kos
+顺	kdm
+喂	klg
+呀	kah
+转	lf
+黑	lf
+圈	lud
+轲	lsk
+车	l
+恩	ld
+罚	ly
+固	ld
+国	lg
+轰	lc
+辑	lk
+甲	lh
+轿	lt
+轲	ls
+辆	lg
+轮	lw
+逻	lq
+略	lt
+墨	lfo
+默	lfo
+畏	lge
+软	lq
+输	lw
+四	l
+四	lhn
+围	lfn
+圆	lk
+暂	lr
+置	lfh
+罪	lh
+车	lgn
+国	lgy
+较	lyw
+累	lxi
+轻	lca
+田	lll
+图	ltu
+团	lft
+岸	md
+岸	mdf
+贝	mh
+财	mf
+册	mmg
+崇	mp
+赋	mfh
+雕	mf
+赌	mft
+峰	mt
+赋	mf
+岗	mm
+购	mq
+骨	m
+巾	mh
+凯	mn
+肉	mw
+岁	mq
+贴	mhk
+同	mg
+网	mr
+岩	md
+由	m
+由	mhn
+周	mfk
+败	mt
+刚	mrj
+骨	mef
+峻	mcw
+山	mmm
+同	mgk
+峡	mgu
+幽	mxx
+赃	mof
+赠	mul
+崭	mlr
+曲	mad
+习	n
+己	nn
+书	nn
+快	nn
+忙	ny
+尺	ny
+壁	nku
+避	nku
+臂	nk
+惨	nc
+丑	nh
+蛋	nh
+愤	nf
+改	nt
+怀	nd
+恢	nd
+剧	nd
+情	ng
+悟	ngk
+眉	nh
+民	nna
+尼	nx
+恰	nwg
+屈	nb
+尸	nng
+刷	nm
+愉	nw
+尾	nt
+慰	nf
+惜	naj
+心	n
+心	nyn
+性	nt
+迅	nf
+已	n
+已	nnn
+以	nyw
+翼	nl
+忧	nd
+恰	nw
+发	ntc
+敢	nbt
+怪	ncf
+惯	nxf
+恨	nve
+屡	nov
+慢	njl
+那	ngb
+收	nht
+懈	nqe
+展	nae
+习	nud
+爆	oj
+床	os
+底	oqa
+烦	od
+废	on
+粉	ow
+腐	ow
+府	owf
+糊	od
+煌	org
+精	og
+康	ov
+库	ol
+烂	ou
+廊	oyv
+廉	ou
+炼	oa
+炼	oan
+粮	oy
+炉	oy
+麻	os
+煤	oa
+米	oy
+摩	oss
+磨	oss
+魔	oss
+庞	od
+炮	oq
+庆	od
+燃	oq
+烧	oa
+唐	ov
+糖	oo
+庭	otf
+席	oa
+序	ocn
+炎	oo
+炸	ot
+座	ow
+粗	oeg
+店	ohk
+度	oac
+断	onr
+广	oyg
+火	ooo
+料	ouf
+数	ovt
+烟	old
+应	oig
+籽	ob
+突	pw
+穷	pw
+礼	pyn
+案	pv
+宝	pg
+被	puh
+察	pwf
+额	pt
+福	py
+富	pg
+完	pf
+冠	pfq
+宏	pd
+官	phn
+寄	pd
+寂	ph
+家	pg
+客	ptk
+牢	pt
+塞	paw
+赛	paw
+神	py
+宋	ps
+宪	pt
+宿	pwd
+宴	pj
+宜	pe
+宅	pt
+祝	py
+宗	pf
+祖	py
+宾	prg
+定	pgh
+空	pwa
+宽	pam
+密	pnt
+社	pyf
+审	pjh
+实	pud
+之	ppp
+宫	pkk
+儿	q
+久	q
+触	qeh
+狠	qt
+饮	qn
+饱	qnq
+匆	qr
+岛	qy
+饰	qn
+饿	qnt
+鸟	qyn
+钢	qm
+够	qkq
+忽	qr
+昏	qa
+错	qaj
+急	qv
+键	qv
+键	qvg
+角	qe
+金	qq
+锦	qr
+久	qyi
+免	qk
+链	ql
+铃	qw
+留	qyv
+鲁	qg
+贸	qy
+猛	qtb
+象	qk
+勉	qkq
+铺	qg
+钦	qq
+卿	qtv
+然	qdy
+氏	qa
+铜	qm
+铜	qmg
+外	qhy
+危	qd
+鲜	qg
+钟	qk
+银	qv
+犹	qtd
+鱼	qg
+怨	qb
+针	qf
+镇	qfh
+争	qvh
+钻	qh
+儿	qtn
+饭	qnr
+钱	qfx
+铁	qrw
+印	qgb
+迎	qbp
+狱	qty
+操	rkk
+扬	rn
+扭	rn
+拨	rn
+换	rqm
+托	rt
+搬	rt
+斤	rt
+手	rtg
+扮	rwv
+摘	ryu
+控	rp
+拔	rd
+拜	rd
+抱	rq
+兵	rg
+搏	rge
+皇	rg
+按	rp
+擦	rpw
+操	rk
+撤	ry
+持	rf
+抽	rm
+担	rj
+盾	rf
+反	rc
+扶	rf
+搞	ry
+瓜	rc
+挂	rff
+鬼	rq
+捕	rg
+揭	rj
+捐	rk
+看	rh
+抗	ry
+扣	rk
+年	rhf
+爬	rhy
+拍	rr
+排	rh
+执	rv
+批	rx
+迫	rp
+扑	rh
+气	r
+抢	rw
+缺	rm
+势	rvy
+杀	rs
+摄	rb
+报	rbc
+热	rvy
+誓	rry
+手	r
+搜	reh
+所	rnr
+抬	rc
+探	rpw
+提	rjg
+挑	rq
+挺	rtf
+投	rw
+推	rwy
+挖	rpw
+舞	rl
+希	rd
+凶	rb
+岳	rg
+抓	rrh
+哲	rr
+振	rdf
+抛	rv
+制	rmh
+抓	rr
+捉	rk
+摆	rlf
+摆	rl
+搬	rte
+后	rgk
+护	ryn
+损	rkm
+摇	rer
+指	rxj
+质	rfm
+措	raj
+气	rnb
+择	rcf
+本	s
+术	s
+可	s
+标	sf
+票	sf
+杜	sf
+桂	sf
+柏	sr
+板	sr
+杯	sd
+本	sgd
+楚	ss
+丁	sg
+概	sv
+歌	sk
+哥	sks
+杭	sy
+核	sy
+极	sb
+检	sw
+禁	ss
+柯	ss
+酷	sg
+框	sag
+柳	sq
+楼	so
+梅	st
+梦	ss
+棉	sr
+木	sss
+飘	sfi
+票	sfi
+朴	sh
+枪	sw
+桥	st
+树	sc
+松	sw
+杰	sou
+桃	sq
+西	sgh
+想	sh
+样	sug
+要	sv
+椅	sd
+植	sfh
+醉	sgy
+板	src
+查	sjg
+档	siv
+顶	sdm
+格	stk
+根	sve
+构	sqc
+模	saj
+棚	see
+杨	snr
+校	syw
+相	shg
+程	tk
+入	t
+长	t
+彻	tav
+短	td
+敌	td
+籍	td
+甜	td
+先	tf
+千	tf
+午	tf
+垂	tfa
+重	tgj
+自	th
+片	th
+竹	th
+延	thp
+微	tm
+奥	tm
+射	tm
+币	tm
+秩	trw
+般	tew
+版	thg
+愁	ton
+筹	tdt
+臭	thd
+辞	tdu
+签	twg
+街	tff
+乏	tp
+番	to
+翻	tol
+繁	tx
+繁	txt
+符	tw
+复	tj
+稿	ty
+告	tfk
+行	tg
+很	tve
+衡	tq
+乎	tuf
+徽	tmg
+季	tb
+特	tff
+径	tc
+靠	tfk
+科	tuf
+篮	tjt
+黎	tq
+利	tj
+律	tv
+每	tx
+秘	tn
+敏	tx
+牧	tt
+穆	tr
+牛	tg
+牌	thg
+篇	ty
+答	twg
+身	tmd
+牲	tt
+剩	tux
+释	to
+私	tc
+躺	tmd
+等	tff
+廷	tfp
+透	tb
+徒	tfh
+往	ty
+委	tv
+物	tqr
+牺	ts
+悉	to
+系	tx
+笔	ttf
+香	tj
+箱	ts
+笑	tt
+徐	tw
+选	tfq
+血	tl
+御	tr
+赞	tfq
+造	tfk
+毛	tfn
+秩	tr
+种	tk
+得	tjg
+第	txh
+管	tph
+乐	tni
+秒	tit
+我	trx
+稀	trd
+向	tmk
+长	tay
+知	tdk
+务	ter
+和	tkg
+北	u
+兰	ud
+状	ud
+减	ud
+券	ud
+半	ug
+美	ug
+善	ug
+羊	ug
+阅	uuk
+凉	uyk
+辩	udy
+部	uk
+曾	ul
+慈	uxx
+盗	uq
+姿	uqw
+道	uth
+弟	ux
+递	uxh
+冯	uc
+阁	ut
+痕	uv
+剪	ue
+将	uq
+净	uq
+竞	uk
+竟	uj
+况	ukq
+阔	ui
+冷	uw
+凉	uy
+疗	ub
+门	u
+闹	uy
+凝	ux
+判	ugj
+疲	uh
+瓶	ua
+前	uej
+首	ut
+瘦	ue
+塑	ub
+遂	ue
+疼	ut
+童	ujf
+闲	us
+辛	uf
+新	us
+颜	ut
+养	uf
+益	uw
+毅	ue
+阅	uu
+韵	ujq
+站	uhk
+准	uwy
+资	uqw
+兹	ux
+次	uqw
+总	uk
+尊	us
+遵	usg
+端	umd
+兼	uvo
+决	unw
+立	uuu
+门	uyh
+普	uog
+痛	uce
+着	ugh
+卷	udb
+凌	ufw
+章	ujf
+产	ute
+单	ulj
+彰	ujf
+娃	vff
+刀	v
+妨	vy
+即	vcb
+既	vc
+姐	ve
+九	v
+君	vt
+妈	vc
+妹	vf
+妙	vi
+娜	vn
+奶	vb
+女	vv
+群	vtk
+忍	vy
+始	vc
+肃	vi
+她	vb
+退	vep
+娃	vf
+巡	vp
+姚	vq
+召	vk
+婚	vqa
+嫁	vpg
+建	vgp
+媒	vaf
+娘	vyv
+嫌	vuv
+姻	vld
+剥	vij
+暨	vca
+九	vtn
+伟	wf
+仁	wf
+舍	wf
+佳	wf
+使	wg
+余	wg
+例	wg
+傅	wg
+作	wt
+任	wt
+件	wt
+作	wth
+众	ww
+偷	ww
+谷	ww
+今	wy
+住	wy
+令	wy
+仿	wy
+傲	wgq
+八	w
+爸	wr
+伴	wug
+堡	wk
+保	wks
+侧	wm
+倡	wj
+创	wb
+促	wk
+代	way
+贷	way
+袋	way
+但	wj
+登	wgk
+低	wq
+段	wd
+朵	ws
+风	w
+凤	wc
+佛	wx
+伏	wd
+父	wr
+估	wd
+含	wyn
+合	wgk
+何	ws
+侯	wn
+华	wx
+货	wx
+仅	wc
+俊	wc
+俩	wgm
+邻	wyc
+领	wyc
+命	wgk
+拿	wgk
+念	wyn
+您	wq
+你	wqi
+偶	wj
+佩	wwg
+偏	wyn
+凭	wtf
+倾	wx
+俗	www
+仍	wb
+伸	wj
+似	wn
+公	wcu
+舒	wfk
+人	www
+贪	wyn
+途	wgs
+伪	wyt
+翁	wc
+像	wq
+斜	wgs
+休	ws
+修	wh
+叙	wgs
+仰	wq
+爷	wr
+伊	wv
+亿	wn
+悠	wht
+欲	wwk
+仔	wb
+仗	wdy
+值	wfh
+仲	wk
+仲	wkh
+颁	wvd
+偿	wip
+会	wfc
+假	wnh
+体	wsg
+信	wyg
+做	wdt
+传	wfn
+丛	wwg
+追	wnn
+停	wyk
+愈	wge
+阜	wnn
+介	wjj
+俏	wie
+俏	wieg
+疆	xfg
+编	xy
+缠	xo
+纷	xw
+缝	xtd
+弗	xj
+贯	xf
+缓	xe
+幻	xn
+绘	xw
+纪	xnn
+绩	xg
+疆	xf
+皆	xx
+结	xf
+纠	xn
+绝	xq
+练	xa
+弥	xq
+母	xnn
+纳	xm
+纽	xnh
+绕	xa
+绍	xv
+绳	xk
+强	xkj
+丝	xx
+维	xw
+乡	xt
+绪	xf
+疑	xt
+幼	xe
+张	xta
+织	xk
+旨	xj
+纸	xq
+综	xp
+纵	xw
+组	xeg
+纯	xgb
+费	xjm
+纲	xmr
+给	xwg
+级	xby
+缴	xry
+经	xc
+经	xca
+绿	xvi
+顷	xdm
+弱	xux
+纱	xit
+缩	xpw
+统	xyc
+线	xfx
+约	xqy
+缘	xxg
+义	y
+高	yk
+京	yk
+误	yk
+户	yn
+忘	yn
+启	yn
+谊	ype
+话	yt
+施	yt
+州	yt
+旗	yta
+该	yyn
+帝	yup
+读	yf
+方	y
+方	yyg
+郭	ykb
+计	yfh
+肩	yne
+交	yw
+郊	ywr
+课	yj
+郎	yv
+离	yr
+率	yxi
+亩	yl
+评	yg
+齐	yj
+敲	ykm
+认	yw
+设	yw
+诗	yf
+市	ymh
+衰	ykg
+谁	ywy
+诉	yr
+调	ym
+扇	ynn
+望	yne
+文	yy
+为	ytn
+夜	yw
+议	yy
+译	yc
+谊	yp
+诱	ytb
+育	yc
+这	yp
+诸	yf
+主	yg
+变	yoc
+诚	ydn
+充	ycq
+就	yki
+良	yve
+谋	yaf
+请	yge
+让	yhg
+说	yuk
+谓	yle
+询	yqj
+毫	ykp
+豪	ykp
+郎	yvc
+亮	ykp
+亭	ykp
+享	ykb
+效	ywr
+赢	ynk
+放	yty
+记	ynn
+东	ai	999
+范	ai	999
+世	an	999
+工	a	999
+莎	ai	999
+艺	an	999
+戈	agn	999
+散	aet	999
+莎	aii	999
+式	aa	999
+菜	aes	999
+蔡	awf	999
+苍	awb	999
+藏	adn	999
+草	ajf	999
+茶	aws	999
+臣	ahn	999
+茨	auq	999
+萃	ayw	999
+荡	ain	999
+蒂	ayu	999
+荡	ai	999
+董	atg	999
+范	aib	999
+芳	ay	999
+菲	ahd	999
+芬	awv	999
+革	akf	999
+葛	ajq	999
+七	a
+苏	a
+功	ae	300
+攻	at	999
+共	aw	999
+菇	avd	999
+花	awx	999
+划	aj	999
+黄	am	999
+或	ak	999
+获	aq	999
+基	adw	999
+荐	adh	999
+蒋	au	999
+节	ab	999
+荆	aga	999
+警	aqk	999
+菊	aqo	999
+菌	alt	999
+恐	awy	999
+蓝	ajt	999
+劳	ape	999
+劳	ap	999
+蕾	afl	999
+莉	atj	999
+莲	alp	999
+芦	ayn	999
+蔓	ajl	999
+茫	aiy	999
+茅	acn	999
+茂	adx	999
+蒙	apf	999
+苗	al	999
+莫	ajd	999
+某	afs	999
+欧	arq	999
+萍	aig	999
+葡	aqg	999
+七	ag	999
+其	ad	999
+切	av	999
+勤	akg	999
+区	ar	999
+荣	aps	999
+若	adk	999
+萨	abu	999
+巨	an	999
+式	aay	999
+蔬	anh	999
+斯	adw	999
+苏	aew	999
+萄	aqr	999
+藤	aeu	999
+萎	atv	999
+芜	afq	999
+项	adm	999
+巷	awn	999
+萧	avi	999
+薪	aus	999
+蓄	ayx	999
+牙	ah	999
+燕	aku	999
+药	ax	999
+医	atd	999
+艺	anb	999
+英	amd	999
+营	apk	999
+苑	aqb	999
+蕴	axj	999
+葬	agq	999
+蒸	abi	999
+著	af	999
+区	ari	999
+世	anv	999
+共	awu	999
+切	avt	999
+节	abj	999
+划	ajh	999
+苦	adf	999
+攻	aty	999
+巨	and	999
+芳	ayr	999
+贡	amu	999
+甘	afd	999
+苗	alf	999
+匹	aqv	999
+芝	apu	999
+戒	aak	999
+艾	aru	999
+联	bu	999
+孙	bi	999
+聪	bu	999
+陪	bu	999
+陈	bai	999
+阻	beg	999
+阿	bs	999
+陈	ba	999
+承	bdi	999
+出	bm	999
+除	bwg	999
+队	bw	999
+耳	bgh	999
+附	bwf	999
+隔	bgk	999
+孤	br	999
+孩	byn	999
+函	bib	999
+及	by	999
+亟	bkc	999
+际	bf	999
+降	bt	999
+阶	bwj	999
+聚	bci	999
+了	b	999
+障	bu	999
+聊	bqt	999
+陵	bfw	999
+隆	btg	999
+陋	bgm	999
+陆	bgb	999
+陌	bdj	999
+聂	bcc	999
+陪	buk	999
+聘	bmg	999
+取	bc	999
+陕	bgu	999
+随	bd	999
+隧	bue	999
+函	bi	999
+卫	bg	999
+限	bv	999
+陷	bqe	999
+逊	bip	999
+阳	bj	999
+也	bn	999
+阴	be	999
+隐	bq	999
+盈	bcl	999
+院	bp	999
+障	buj	999
+阵	bl	999
+职	bk	999
+子	bb	999
+出	bmk	999
+取	bcy	999
+队	bwy	999
+防	byt	999
+阳	bjg	999
+卫	bgd	999
+孔	bnn	999
+孙	biy	999
+阵	blh	999
+乃	bnt	999
+辽	bpk	999
+孟	blf	999
+耶	bbh	999
+孕	bbf	999
+孜	bty	999
+戏	ca	999
+能	ce	999
+劝	ce	999
+通	ce	999
+矛	cnh	999
+熊	cex	999
+骗	cgy	999
+骑	cgd	999
+桑	ccc	999
+驶	cgk	999
+巴	cn	999
+参	cd	999
+叉	cy	999
+邓	cb	999
+对	cf	999
+观	cm	999
+欢	cqw	999
+鸡	cqy	999
+艰	cv	999
+骄	cgt	999
+劲	cae	999
+颈	cad	999
+马	cg	999
+难	cw	999
+熊	ce	999
+驱	cga	999
+台	ck	999
+通	ceh	999
+劲	ca	999
+验	cgw	999
+以	c	999
+又	cc	999
+允	cq	999
+骤	cgb	999
+对	cfy	999
+台	ckf	999
+双	ccy	999
+允	cqb	999
+圣	cff	999
+戏	cay	999
+邓	cbh	999
+劝	cet	999
+叉	cyi	999
+耗	di	999
+胡	de	999
+磁	du	999
+历	de	999
+有	de	999
+袭	dxy	999
+奇	dsk	999
+愿	dri	999
+碍	djg	999
+百	dj	999
+邦	dtb	999
+碑	drt	999
+奔	dfa	999
+布	dmh	999
+辰	dfe	999
+成	dn	999
+础	dbm	999
+春	dw	999
+碰	du	999
+存	dhb	999
+磋	dug	999
+达	dp	999
+大	dd	999
+碘	dma	999
+夺	df	999
+而	dmj	999
+奋	dl	999
+奉	dwg	999
+辜	duf	999
+古	dgh	999
+故	dt	999
+顾	db	999
+还	dh	999
+耕	di	999
+厚	djb	999
+郁	de	999
+慧	dhd	999
+碱	ddg	999
+砍	dqw	999
+克	dq	999
+矿	do	999
+奎	dff	999
+厉	dgq	999
+磷	doq	999
+硫	dyc	999
+龙	dx	999
+码	dcg	999
+面	dm	999
+奈	dfi	999
+碰	duo	999
+破	dhc	999
+契	dhv	999
+牵	dpt	999
+秦	dwt	999
+犬	dyi	999
+确	dqe	999
+三	dg	999
+砂	dit	999
+厦	ddh	999
+盛	dnx	999
+寿	dtf	999
+爽	drr	999
+硕	ddm	999
+肆	dcv	999
+碎	dyw	999
+太	dy	999
+态	dyn	999
+碳	dmd	999
+套	ddc	999
+厅	ds	999
+歪	dhg	999
+碗	dpq	999
+威	dgv	999
+夏	dht	999
+咸	dgk	999
+厢	dsh	999
+雄	dcw	999
+压	dfy	999
+研	dga	999
+艳	dhq	999
+雁	dww	999
+硬	dgj	999
+尤	dny	999
+友	dc	999
+右	dk	999
+郁	deb	999
+原	dr	999
+砸	dam	999
+在	d	999
+砖	dfn	999
+左	da	999
+不	dhi	999
+有	def	999
+百	djf	999
+达	dpi	999
+克	dqb	999
+历	dee	999
+厂	dgt	999
+左	daf	999
+故	dty	999
+右	dkf	999
+友	dcu	999
+矿	dot	999
+丰	dhk	999
+胡	deg	999
+夺	dfu	999
+奋	dlf	999
+灰	dou	999
+页	dmu	999
+泵	diu	999
+厄	dbv	999
+有	e	999
+用	e	999
+办	ewi	999
+爱	epd	999
+胞	eqn	999
+边	ep	999
+采	es	999
+彩	ese	999
+肠	enr	999
+脆	eqd	999
+胆	ej	999
+肥	ec	999
+肺	egm	999
+肤	efw	999
+服	eb	999
+腹	etj	999
+股	ewc	999
+贺	ekm	999
+毁	ea	999
+加	ek	999
+驾	ekc	999
+架	eks	999
+胶	eyw	999
+脚	ef	999
+力	en	999
+脸	ewg	999
+脉	eyn	999
+貌	er	999
+脑	ey	999
+膀	eyu	999
+鹏	eeq	999
+膨	efk	999
+腔	epw	999
+且	eg	999
+乳	ebn	999
+胜	et	999
+受	epc	999
+鼠	enu	999
+胎	eck	999
+腿	eve	999
+脱	eu	999
+妥	ev	999
+县	egc	999
+胁	eew	999
+胸	eq	999
+须	ed	999
+腰	esv	999
+遥	erm	999
+用	eh	999
+力	e	999
+舆	elg	999
+月	ee	999
+脏	eo	999
+胀	eta	999
+肢	efc	999
+脂	ex	999
+肿	ekh	999
+助	ege	999
+用	ehk	999
+力	ent	999
+加	ekg	999
+边	epe	999
+且	egd	999
+采	esu	999
+肥	ecn	999
+朋	eeg	999
+肚	efg	999
+妥	evf	999
+肌	ewn	999
+甩	env	999
+肝	efh	999
+域	fa	999
+赤	fo	999
+霸	fa	999
+增	fu	999
+堪	fa	999
+丧	fu	999
+干	fgg	999
+鼓	fku	999
+卖	fnu	999
+十	fgh	999
+雾	fte	999
+埃	fct	999
+霸	fak	999
+勃	fpb	999
+博	fge	999
+埠	fwn	999
+才	ft	999
+裁	fy	999
+超	fhv	999
+朝	fjf	999
+城	fd	999
+赫	fo	999
+翅	fcn	999
+地	f	999
+动	fce	999
+堵	fft	999
+堆	fwy	999
+二	fg	999
+夫	fw	999
+赴	fhh	999
+规	fwm	999
+过	fp	999
+郝	fob	999
+赫	fof	999
+壶	fpo	999
+坏	fdh	999
+魂	fcr	999
+进	fj	999
+境	fuj	999
+均	fqu	999
+堪	fad	999
+坎	fqw	999
+考	ftg	999
+壳	fpw	999
+坑	fyw	999
+块	fnw	999
+款	ffi	999
+老	ftx	999
+南	fm	999
+培	fuk	999
+坪	fgu	999
+坡	fhc	999
+起	fh	999
+趋	fhq	999
+去	fc	999
+趣	fhb	999
+却	fcb	999
+壤	fyk	999
+丧	fue	999
+示	fi	999
+霜	fs	999
+索	fpx	999
+塌	fjn	999
+塔	faw	999
+坛	ffc	999
+坦	fjg	999
+塘	fov	999
+替	fwf	999
+填	ffh	999
+土	ff	999
+顽	fqd	999
+韦	fnh	999
+无	fq	999
+武	fhn	999
+喜	fk	999
+献	fmu	999
+孝	ftb	999
+协	fe	999
+幸	fuf	999
+需	fdm	999
+雪	fv	999
+盐	fhl	999
+塔	fa	999
+袁	fke	999
+远	fqp	999
+越	fhg	999
+云	fcu	999
+运	fcp	999
+栽	fsx	999
+载	fl	999
+幸	fu	999
+赵	fhr	999
+者	ftj	999
+真	fhw	999
+震	fdf	999
+志	fn	999
+专	fny	999
+过	fpi	999
+地	fbn	999
+无	fqv	999
+直	fhf	999
+走	fhu	999
+声	fnr	999
+示	fiu	999
+元	fqb	999
+夫	fwi	999
+未	fii	999
+雷	flf	999
+雪	fvf	999
+井	fjk	999
+刊	fjh	999
+赤	fou	999
+吉	fkf	999
+圭	fff	999
+亏	fnv	999
+坝	fmy	999
+寺	ffu	999
+坊	fyt	999
+卉	faj	999
+垃	fug	999
+圳	fkh	999
+表	ge	999
+平	gu	999
+开	ga	999
+静	ge	999
+弄	ga	999
+逐	ge	999
+甫	geh	999
+顿	gbn	999
+救	giy	999
+碧	grd	999
+甫	ge	999
+丙	gmw	999
+玻	ghc	999
+残	gqf	999
+蚕	gdj	999
+琛	gpw	999
+刺	gmi	999
+带	gkp	999
+到	gc	999
+豆	gku	999
+恶	gog	999
+副	gkl	999
+更	gjr	999
+互	gx	999
+画	gl	999
+环	gdh	999
+惠	gjh	999
+击	gb	999
+夹	gud	999
+柬	gli	999
+静	geq	999
+形	ga	999
+来	go	999
+璃	gyr	999
+理	gjf	999
+理	gj	999
+丽	gmy	999
+列	gqj	999
+琳	gss	999
+玲	gwy	999
+玛	gcg	999
+迈	gqp	999
+麦	gt	999
+灭	goi	999
+末	gs	999
+囊	gkh	999
+夹	gu	999
+妻	gv	999
+琴	ggw	999
+求	gi	999
+球	ggi	999
+融	gkm	999
+瑞	gmd	999
+事	gk	999
+殊	gqr	999
+束	gki	999
+死	gqx	999
+素	gxi	999
+天	gd	999
+吞	gdk	999
+瓦	gnn	999
+玩	gfq	999
+万	gq	999
+王	ggg	999
+五	gg	999
+下	gh	999
+现	gm	999
+邢	gab	999
+形	gae	999
+严	god	999
+瑶	ger	999
+一	g	999
+于	gf	999
+与	gn	999
+玉	gy	999
+再	gmf	999
+遭	gma	999
+珍	gw	999
+政	ght	999
+至	gcf	999
+珠	gr	999
+逐	gep	999
+于	gfk	999
+下	ghi	999
+开	gak	999
+天	gdi	999
+表	geu	999
+正	ghd	999
+万	gqe	999
+青	gef	999
+击	gbj	999
+责	gmu	999
+末	gsi	999
+玉	gyi	999
+毒	gxu	999
+麦	gtu	999
+弄	gaj	999
+吾	gkf	999
+歹	gqi	999
+虑	ha	999
+虎	ha	999
+虑	han	999
+龄	hw	999
+悲	hdh	999
+餐	hq	999
+柴	hxs	999
+齿	hwb	999
+此	hx	999
+点	hko	999
+盯	hs	999
+鼎	hnd	999
+睹	hft	999
+非	hd	999
+虎	haw	999
+睛	hge	999
+旧	hj	999
+卡	hgh	999
+肯	he	999
+睐	hgo	999
+卢	hn	999
+虚	ha	999
+眠	hnn	999
+瞄	hal	999
+目	hhh	999
+睦	hfw	999
+皮	hc	999
+频	hhd	999
+颇	hcd	999
+歧	hf	999
+上	h	999
+叔	hgi	999
+睡	ht	999
+瞬	hep	999
+些	hxf	999
+虚	hao	999
+眼	hv	999
+占	hk	999
+战	hka	999
+止	hh	999
+瞩	hnt	999
+桌	hjs	999
+卓	hjf	999
+紫	hxx	999
+上	hgd	999
+此	hxn	999
+具	hwu	999
+步	hhr	999
+占	hkf	999
+皮	hci	999
+旧	hjg	999
+肯	hef	999
+卜	hhy	999
+卢	hnr	999
+盯	hsh	999
+不	i	999
+洞	img	999
+辉	igq	999
+劣	ite	999
+满	iag	999
+漫	ijl	999
+演	ipg	999
+澳	itm	999
+滨	ipr	999
+波	ihc	999
+渤	ifp	999
+沧	iwb	999
+测	imj	999
+尝	ipf	999
+常	ipk	999
+潮	ifj	999
+沉	ipw	999
+池	ib	999
+淡	io	999
+当	iv	999
+滴	iyu	999
+涤	its	999
+渡	ioa	999
+法	if	999
+泛	itp	999
+沸	ixj	999
+浮	ieb	999
+溉	ivc	999
+沟	iq	999
+灌	iak	999
+光	ig	999
+滚	iyw	999
+海	itx	999
+涵	ibi	999
+汉	ic	999
+河	is	999
+洪	iaw	999
+鸿	iaq	999
+湖	ide	999
+沪	iyn	999
+滑	ime	999
+淮	iwy	999
+浑	ipl	999
+混	ijx	999
+活	itd	999
+激	iry	999
+脊	iwe	999
+济	iyj	999
+尖	id	999
+渐	il	999
+江	ia	999
+浇	iat	999
+觉	ipm	999
+洁	ifk	999
+浸	ivp	999
+渴	ijq	999
+澜	iug	999
+滥	ijt	999
+浪	iyv	999
+涝	iap	999
+梁	ivw	999
+淋	iss	999
+流	iy	999
+漏	inf	999
+洛	itk	999
+沫	igs	999
+漠	iaj	999
+泥	in	999
+浓	ipe	999
+派	ir	999
+潘	ito	999
+泡	iqn	999
+漂	isf	999
+漆	isw	999
+汽	irn	999
+洽	iwg	999
+浅	ifx	999
+清	ige	999
+染	ivs	999
+沙	iit	999
+尚	imk	999
+少	it	999
+涉	ihh	999
+沈	ipq	999
+渗	icd	999
+省	ith	999
+湿	ijo	999
+淑	ihg	999
+水	ii	999
+汰	idy	999
+滩	icw	999
+潭	isj	999
+汤	inr	999
+涛	idt	999
+淘	iqr	999
+添	igd	999
+湾	iyo	999
+温	ij	999
+污	ifn	999
+溪	iex	999
+洗	itf	999
+肖	ie	999
+消	iie	999
+小	ih	999
+兴	igw	999
+削	iej	999
+学	ip	999
+涯	idf	999
+淹	idj	999
+沿	iwk	999
+洋	iu	999
+溢	iuw	999
+淫	iet	999
+涌	ice	999
+油	im	999
+浴	iww	999
+源	idr	999
+泽	icg	999
+湛	iad	999
+涨	ix	999
+浙	irr	999
+汁	ifh	999
+治	ick	999
+滞	igk	999
+洲	iyt	999
+注	iyg	999
+淄	ivl	999
+滋	iux	999
+当	ivf	999
+汉	icy	999
+汇	ian	999
+尖	idu	999
+池	ibn	999
+尘	iff	999
+汪	igg	999
+肖	ief	999
+洒	isg	999
+汝	ivg	999
+沂	irh	999
+泊	irg	999
+汕	imh	999
+没	iw	999
+影	jyk	999
+暖	jeg	999
+暗	ju	999
+昂	jqb	999
+暴	ja	999
+畅	jhn	999
+晨	jd	999
+电	jn	999
+遏	jqw	999
+蜂	jtd	999
+归	jv	999
+果	js	999
+坚	jcf	999
+紧	jc	999
+晶	jjj	999
+景	jy	999
+颗	jsd	999
+昆	jx	999
+览	jty	999
+量	jg	999
+螺	jlx	999
+曼	jlc	999
+盟	jel	999
+明	je	999
+晴	jge	999
+日	jj	999
+蛇	jpx	999
+申	jh	999
+师	jgm	999
+时	jf	999
+是	j	999
+暑	jft	999
+帅	jmh	999
+题	jgh	999
+晚	jq	999
+晤	jgk	999
+晰	jsr	999
+贤	jcm	999
+显	jo	999
+晓	jat	999
+星	jtg	999
+野	jfc	999
+易	jqr	999
+映	jmd	999
+遇	jm	999
+早	jfj	999
+昭	jvk	999
+最	jb	999
+昨	jt	999
+时	jfy	999
+里	jfd	999
+电	jnv	999
+果	jsi	999
+归	jvg	999
+昌	jjf	999
+申	jhk	999
+冒	jhf	999
+旦	jgf	999
+旺	jgg	999
+虹	jag	999
+另	ke	999
+跌	khr	999
+贵	khg	999
+哪	kng	999
+啊	kb	999
+吧	kc	999
+别	kej	999
+唱	kjj	999
+吃	kt	999
+串	kkh	999
+吹	kqw	999
+呆	ks	999
+吊	kmh	999
+吨	kgb	999
+跟	khv	999
+哈	kwg	999
+号	kg	999
+喝	kjq	999
+哄	kaw	999
+呼	ktu	999
+唤	kqm	999
+践	khf	999
+叫	kn	999
+距	kha	999
+咖	kek	999
+喀	kpt	999
+跨	khd	999
+啦	kru	999
+别	ke	999
+吕	kk	999
+骂	kkc	999
+吗	kcg	999
+嘛	ko	999
+鸣	kqy	999
+呢	knx	999
+跑	khq	999
+喷	kfa	999
+啤	krt	999
+品	kkk	999
+器	kkd	999
+哨	kie	999
+顺	kd	999
+虽	kj	999
+踏	khi	999
+踢	khj	999
+听	kr	999
+味	kfi	999
+喂	kl	999
+吴	kgd	999
+吸	kby	999
+响	ktm	999
+兄	kq	999
+勋	kme	999
+呀	ka	999
+咬	ky	999
+叶	kf	999
+员	km	999
+咱	kth	999
+只	kw	999
+中	k	999
+忠	khn	999
+嘱	knt	999
+踪	khp	999
+嘴	khx	999
+中	khk	999
+只	kwu	999
+员	kmu	999
+史	kri	999
+听	krh	999
+另	ker	999
+足	khu	999
+虽	kju	999
+叶	kfh	999
+吧	kcn	999
+呈	kgf	999
+兄	kqb	999
+呆	ksu	999
+叹	kcy	999
+吐	kfg	999
+吕	kkf	999
+甲	lhn	999
+署	lft	999
+罢	lfc	999
+车	lg	999
+恩	ldn	999
+罚	lyj	999
+辐	lgk	999
+辅	lge	999
+轨	lv	999
+国	l	999
+黑	lfo	999
+轰	lcc	999
+回	lk	999
+辑	lkb	999
+轿	ltd	999
+较	ly	999
+界	lwj	999
+界	lw	999
+困	ls	999
+累	lx	999
+连	lp	999
+辆	lgm	999
+轮	lwx	999
+罗	lq	999
+逻	lqp	999
+略	ltk	999
+男	le	999
+畔	lug	999
+轻	lc	999
+圈	lu	999
+软	lqw	999
+输	lwg	999
+思	ln	999
+四	lh	999
+田	ll	999
+图	lt	999
+团	lf	999
+辖	lpd	999
+鸭	lqy	999
+因	ld	999
+园	lfq	999
+圆	lkm	999
+暂	lrj	999
+轴	lm	999
+转	lfn	999
+罪	lhd	999
+因	ldi	999
+回	lkd	999
+思	lnu	999
+连	lpk	999
+固	ldd	999
+罗	lqu	999
+困	lsi	999
+轴	lmg	999
+男	ler	999
+轨	lvn	999
+轧	lnn	999
+胃	lef	999
+轩	lfh	999
+曲	ma	999
+贝	mhn	999
+雕	mfk	999
+贬	mtp	999
+财	mft	999
+崇	mpf	999
+崔	mwy	999
+丹	my	999
+迪	mp	999
+典	maw	999
+帆	mhw	999
+贩	mrc	999
+峰	mtd	999
+幅	mhg	999
+刚	mr	999
+岗	mmr	999
+购	mqc	999
+骨	me	999
+贿	mde	999
+见	mq	999
+峻	mc	999
+凯	mnw	999
+岚	mwr	999
+赂	mtk	999
+帽	mhj	999
+内	mw	999
+帕	mhr	999
+赔	muk	999
+岐	mfc	999
+岂	mn	999
+典	ma	999
+肉	mww	999
+山	mm	999
+炭	mdo	999
+同	m	999
+网	mrr	999
+巍	mtv	999
+峡	mg	999
+央	md	999
+婴	mmv	999
+幽	mx	999
+由	mh	999
+邮	mb	999
+赃	mo	999
+则	mj	999
+赠	mu	999
+崭	ml	999
+帐	mht	999
+周	mf	999
+贮	mpg	999
+赚	muv	999
+幢	mhu	999
+内	mwi	999
+见	mqb	999
+则	mjh	999
+央	mdi	999
+岁	mqu	999
+败	mty	999
+岩	mdf	999
+丹	myd	999
+邮	mbh	999
+岂	mnb	999
+巾	mhk	999
+迪	mpd	999
+冈	mri	999
+习	nu	999
+飞	nu	999
+尿	ni	999
+展	na	999
+惜	na	999
+惊	nyk	999
+买	nud	999
+必	nt	999
+避	nk	999
+臂	nku	999
+惨	ncd	999
+层	nfc	999
+迟	nyp	999
+丑	nhf	999
+翠	nyw	999
+蛋	nhj	999
+导	nf	999
+殿	naw	999
+懂	nat	999
+愤	nfa	999
+敢	nb	999
+怪	nc	999
+惯	nx	999
+恨	nv	999
+恒	ngj	999
+怀	ndh	999
+恢	ndo	999
+悔	ntx	999
+己	nng	999
+届	nm	999
+尽	nyu	999
+居	nd	999
+局	nnk	999
+剧	ndj	999
+慨	nvc	999
+快	nnw	999
+愧	nrq	999
+屡	no	999
+履	ntt	999
+慢	nj	999
+忙	nyn	999
+民	n	999
+那	ng	999
+恼	nyr	999
+悄	ni	999
+怕	nr	999
+屏	nua	999
+悄	nie	999
+情	nge	999
+屈	nbm	999
+慎	nfh	999
+收	nh	999
+书	nnh	999
+疏	nhy	999
+属	ntk	999
+刷	nmh	999
+司	ngk	999
+屠	nft	999
+尾	ntf	999
+慰	nfi	999
+屋	ngc	999
+买	nu	999
+懈	nq	999
+心	ny	999
+性	ntg	999
+迅	nfp	999
+乙	nnl	999
+已	nn	999
+异	naj	999
+翼	nla	999
+忧	ndn	999
+愉	nwg	999
+羽	nny	999
+悦	nuk	999
+异	na	999
+昼	nyj	999
+民	nav	999
+必	nte	999
+导	nfu	999
+改	nty	999
+飞	nui	999
+怕	nrg	999
+居	ndd	999
+尼	nxv	999
+尺	nyi	999
+忆	nnn	999
+届	nmd	999
+眉	nhd	999
+尿	nii	999
+忌	nnu	999
+为	o	999
+广	o	999
+火	o	999
+腐	owf	999
+爆	oja	999
+炳	ogm	999
+灿	omh	999
+炒	oit	999
+粗	oe	999
+灯	os	999
+底	oq	999
+店	oh	999
+度	oa	999
+断	on	999
+烦	odm	999
+废	ont	999
+粉	owv	999
+府	ow	999
+广	oy	999
+焊	ojf	999
+糊	ode	999
+焕	oqm	999
+煌	or	999
+火	oo	999
+精	oge	999
+炬	oan	999
+康	ovi	999
+烤	oft	999
+烂	oud	999
+类	od	999
+廉	ouv	999
+粮	oyv	999
+料	ou	999
+炉	oyn	999
+麻	oss	999
+煤	oaf	999
+迷	op	999
+米	oyt	999
+庙	om	999
+庞	odx	999
+炮	oqn	999
+燃	oqd	999
+烧	oat	999
+数	ov	999
+唐	ovh	999
+糖	oov	999
+庭	ot	999
+业	o	999
+烯	ord	999
+席	oam	999
+序	oc	999
+烟	ol	999
+业	og	999
+应	oi	999
+庸	ove	999
+炸	oth	999
+庄	of	999
+座	oww	999
+业	ogd	999
+类	odu	999
+庆	odi	999
+灯	osh	999
+粒	oug	999
+床	osi	999
+庄	ofd	999
+库	olk	999
+迷	opi	999
+庙	omd	999
+炎	oou	999
+灶	ofg	999
+籽	obg	999
+实	pu	999
+宽	pa	999
+补	pu	999
+额	ptk	999
+割	pdh	999
+安	pv	999
+案	pvs	999
+宝	pgy	999
+宾	pr	999
+补	puh	999
+宠	pdx	999
+初	puv	999
+穿	pwa	999
+窗	pwt	999
+定	pg	999
+福	pyg	999
+富	pgk	999
+宫	pk	999
+官	ph	999
+害	pd	999
+寒	paw	999
+罕	pwf	999
+鹤	pwy	999
+宏	pdc	999
+寄	pds	999
+寂	phg	999
+家	pge	999
+究	pwv	999
+军	pl	999
+客	pt	999
+空	pw	999
+窟	pwn	999
+裤	puo	999
+寒	pa	999
+牢	ptg	999
+禄	pyv	999
+密	pn	999
+宁	ps	999
+农	pe	999
+穷	pwe	999
+容	pww	999
+衫	pue	999
+社	py	999
+神	pyj	999
+审	pj	999
+裤	pu	999
+视	pym	999
+室	pgc	999
+守	pf	999
+它	px	999
+突	pwd	999
+完	pfq	999
+窝	pwk	999
+宪	ptf	999
+祥	pyu	999
+写	pgn	999
+袖	pum	999
+宣	pgj	999
+宴	pjv	999
+宜	peg	999
+宇	pgf	999
+寓	pjm	999
+裕	puw	999
+灾	po	999
+宰	puf	999
+宅	pta	999
+这	p	999
+之	pp	999
+祝	pyk	999
+字	pb	999
+宗	pfi	999
+祖	pye	999
+它	pxb	999
+军	plj	999
+农	pei	999
+安	pvf	999
+字	pbf	999
+守	pfu	999
+宁	psj	999
+宋	psu	999
+灾	pou	999
+穴	pwu	999
+销	qi	999
+镜	qu	999
+尔	qi	999
+锁	qi	999
+销	qie	999
+昏	qaj	999
+狂	qtg	999
+铃	qwy	999
+夕	qtn	999
+钟	qkh	999
+猪	qtf	999
+鲍	qgq	999
+饼	qnu	999
+钞	qit	999
+匆	qry	999
+错	qa	999
+岛	qyn	999
+甸	ql	999
+钓	qqy	999
+独	qtj	999
+锻	qwd	999
+多	qq	999
+儿	qt	999
+犯	qtb	999
+饭	qn	999
+锋	qtd	999
+负	qm	999
+钢	qmr	999
+钩	qqc	999
+狗	qtq	999
+馆	qnp	999
+锅	qkm	999
+狠	qtv	999
+忽	qrn	999
+饥	qnw	999
+急	qvn	999
+角	qeh	999
+解	qe	999
+金	qqq	999
+锦	qrm	999
+镜	quj	999
+久	qy	999
+馈	qnk	999
+链	qlp	999
+鲁	qgj	999
+锣	qlq	999
+铝	qkk	999
+猫	qta	999
+贸	qyv	999
+免	qkq	999
+名	qk	999
+铭	qqk	999
+铺	qge	999
+铅	qwk	999
+钱	qf	999
+欠	qw	999
+钦	qqw	999
+然	qd	999
+饶	qna	999
+锐	quk	999
+色	qc	999
+蚀	qnj	999
+饰	qnt	999
+锁	qim	999
+逃	qip	999
+铁	qr	999
+外	qh	999
+危	qdb	999
+我	q	999
+乌	qng	999
+锡	qjq	999
+鲜	qgu	999
+象	qke	999
+逃	qi	999
+匈	qrb	999
+旬	qj	999
+银	qve	999
+饮	qnq	999
+印	qg	999
+迎	qb	999
+怨	qbn	999
+争	qv	999
+铸	qdt	999
+邹	qvb	999
+钻	qhk	999
+多	qqu	999
+名	qkf	999
+色	qcb	999
+包	qnv	999
+尔	qiu	999
+负	qmu	999
+针	qfh	999
+句	qkd	999
+鱼	qgf	999
+氏	qav	999
+勾	qci	999
+旬	qjd	999
+兆	qii	999
+欠	qwu	999
+甸	qld	999
+找	ra	999
+朱	ri	999
+搭	ra	999
+拼	ru	999
+挡	ri	999
+摇	re	999
+授	re	999
+拥	re	999
+拜	rdf	999
+摄	rbc	999
+插	rtf	999
+搭	raw	999
+摸	raj	999
+拾	rwg	999
+挨	rct	999
+按	rpv	999
+拔	rdc	999
+把	rc	999
+白	rrr	999
+报	rb	999
+抱	rqn	999
+兵	rgw	999
+拨	rnt	999
+播	rto	999
+捕	rge	999
+刹	rsj	999
+拆	rry	999
+抄	rit	999
+撤	ryc	999
+撑	rip	999
+持	rff	999
+挫	rww	999
+打	rs	999
+担	rjg	999
+挡	riv	999
+的	r	999
+抵	rqa	999
+掉	rhj	999
+盾	rfh	999
+返	rcp	999
+氛	rnw	999
+扶	rfw	999
+抚	rfq	999
+搞	ryk	999
+瓜	rcy	999
+鬼	rqc	999
+后	rg	999
+护	ry	999
+换	rq	999
+挥	rpl	999
+挤	ryj	999
+技	rfc	999
+接	ruv	999
+揭	rjq	999
+捷	rgv	999
+斤	rtt	999
+近	rp	999
+拘	rqk	999
+拒	ran	999
+据	rnd	999
+捐	rke	999
+掘	rnb	999
+抗	ryw	999
+控	rpw	999
+扩	ro	999
+括	rtd	999
+拉	ru	999
+拦	rud	999
+揽	rjt	999
+捞	rap	999
+描	ral	999
+拟	rny	999
+年	rh	999
+扭	rnh	999
+排	rhd	999
+乓	rgy	999
+抛	rve	999
+捧	rdw	999
+批	rxx	999
+披	rhc	999
+拼	rua	999
+乒	rgt	999
+气	rn	999
+抢	rwb	999
+邱	rgb	999
+缺	rmn	999
+扰	rdn	999
+热	rv	999
+撒	rae	999
+擅	ryl	999
+失	rw	999
+逝	rrp	999
+手	rt	999
+授	rep	999
+摔	ryx	999
+损	rk	999
+抬	rck	999
+摊	rcw	999
+掏	rqr	999
+提	rj	999
+挑	rqi	999
+投	rwc	999
+托	rta	999
+拖	rtb	999
+握	rng	999
+舞	rlg	999
+希	rdm	999
+掀	rrq	999
+欣	rqw	999
+掩	rdj	999
+扬	rnr	999
+氧	rnu	999
+邀	ryt	999
+援	re	999
+抑	rqb	999
+殷	rvn	999
+拥	reh	999
+援	reg	999
+岳	rgm	999
+择	rcg	999
+招	rvk	999
+摸	ra	999
+折	rr	999
+哲	rrk	999
+振	rd	999
+挣	rqv	999
+执	rvy	999
+指	rx	999
+制	rm	999
+质	rf	999
+泉	ri	999
+撞	ruj	999
+捉	rkh	999
+把	rcn	999
+反	rci	999
+看	rhf	999
+打	rsh	999
+拉	rug	999
+近	rpk	999
+失	rwi	999
+找	ray	999
+扩	rot	999
+杀	rsu	999
+迫	rpd	999
+皇	rgf	999
+折	rrh	999
+朱	rii	999
+抽	rmg	999
+扎	rnn	999
+扫	rvg	999
+拍	rrg	999
+泉	riu	999
+扣	rkg	999
+斥	ryi	999
+扑	rhy	999
+凶	rbk	999
+丘	rgd	999
+押	rlh	999
+拓	rdg	999
+模	sa	999
+横	sa	999
+样	su	999
+框	sa	999
+栏	su	999
+杉	set	999
+榜	syu	999
+杯	sdh	999
+本	sg	999
+标	sfi	999
+彬	sse	999
+材	sft	999
+查	sj	999
+酬	sgy	999
+楚	ssn	999
+村	sf	999
+档	si	999
+顶	sd	999
+栋	sai	999
+覆	stt	999
+概	svc	999
+歌	sks	999
+格	st	999
+根	sv	999
+构	sq	999
+柜	san	999
+桂	sff	999
+杭	syw	999
+核	syn	999
+横	sam	999
+机	sw	999
+极	sby	999
+贾	sm	999
+检	swg	999
+椒	shg	999
+杰	so	999
+禁	ssf	999
+桔	sfk	999
+柯	ssk	999
+棵	sjs	999
+可	sk	999
+枯	sdg	999
+酷	sgt	999
+栏	sud	999
+李	sb	999
+林	ss	999
+柳	sqt	999
+楼	sov	999
+梅	stx	999
+梦	ssq	999
+棉	srm	999
+棋	sa	999
+攀	srr	999
+配	sgn	999
+棚	se	999
+棋	sad	999
+枪	swb	999
+桥	std	999
+权	sc	999
+森	sss	999
+枢	sar	999
+术	sy	999
+述	syp	999
+树	scf	999
+松	swc	999
+酸	sgc	999
+桃	sqi	999
+梯	sux	999
+桶	sce	999
+析	sr	999
+相	sh	999
+想	shn	999
+橡	sqk	999
+械	saa	999
+醒	sgj	999
+杨	sn	999
+梯	su	999
+要	s	999
+椅	sds	999
+枝	sfc	999
+株	sri	999
+柱	syg	999
+桩	sof	999
+要	svf	999
+可	skd	999
+机	swn	999
+权	scy	999
+术	syi	999
+林	ssy	999
+李	sbf	999
+村	sfy	999
+析	srh	999
+丁	sgh	999
+杆	sfh	999
+杜	sfg	999
+柏	srg	999
+朴	shy	999
+杠	sag	999
+杏	skf	999
+枚	sty	999
+贾	smu	999
+务	te	999
+长	ta	999
+科	tu	999
+乘	tu	999
+船	te	999
+秒	ti	999
+彻	ta	999
+简	tu	999
+升	ta	999
+程	tkg	999
+怎	thf	999
+智	tdk	999
+奥	tmo	999
+备	tl	999
+鼻	thl	999
+彼	thc	999
+笔	tt	999
+币	tmh	999
+秉	tgv	999
+舶	ter	999
+策	tgm	999
+称	tqi	999
+乘	tux	999
+处	th	999
+船	tew	999
+答	tw	999
+稻	tee	999
+得	tj	999
+德	tfl	999
+等	tf	999
+敌	tdt	999
+第	tx	999
+丢	tfc	999
+短	tdg	999
+番	tol	999
+逢	tdh	999
+符	twf	999
+复	tjt	999
+稿	tyk	999
+各	tk	999
+管	tp	999
+行	tgs	999
+航	tey	999
+和	t	999
+很	tv	999
+衡	tqd	999
+积	tkw	999
+籍	tdi	999
+简	tuj	999
+舰	tem	999
+箭	tue	999
+径	tca	999
+税	tu	999
+乐	tn	999
+梨	tjs	999
+黎	tqt	999
+笼	tdx	999
+乱	tdn	999
+律	tvg	999
+么	tc	999
+秘	tnt	999
+稍	ti	999
+敏	txt	999
+穆	tri	999
+盘	tel	999
+篇	tyn	999
+片	thg	999
+迁	tfp	999
+乔	tdj	999
+秋	to	999
+入	ty	999
+稍	tie	999
+射	tmd	999
+生	tg	999
+牲	ttg	999
+适	tdp	999
+释	toc	999
+税	tuk	999
+算	tha	999
+笋	tvt	999
+毯	tfn	999
+甜	tda	999
+条	ts	999
+艇	tet	999
+透	tbp	999
+往	tyg	999
+微	tmg	999
+魏	tvr	999
+稳	tqv	999
+午	tfj	999
+租	te	999
+物	tq	999
+息	thn	999
+悉	ton	999
+稀	tr	999
+系	txi	999
+先	tfq	999
+衔	tqg	999
+箱	tsh	999
+向	tm	999
+笑	ttd	999
+秀	tb	999
+徐	twg	999
+循	trf	999
+衍	tig	999
+移	tqq	999
+役	twc	999
+禹	tkm	999
+御	trh	999
+粤	tlo	999
+筑	ta	999
+征	tgh	999
+知	td	999
+种	tkh	999
+竹	tht	999
+筑	taw	999
+租	teg	999
+生	tgd	999
+自	thd	999
+各	tkf	999
+么	tcu	999
+利	tjh	999
+条	tsu	999
+入	tyi	999
+处	thi	999
+每	txu	999
+千	tfk	999
+备	tlf	999
+委	tvf	999
+升	tak	999
+血	tld	999
+秋	toy	999
+牛	tgk	999
+香	tjf	999
+私	tcy	999
+季	tbf	999
+冬	tuu	999
+秀	tbr	999
+牧	tty	999
+舟	tei	999
+乏	tpu	999
+牺	tsg	999
+牡	tfg	999
+颜	ute	999
+盗	uqw	999
+剪	uej	999
+美	ugd	999
+瓶	uag	999
+善	ugu	999
+癌	ukk	999
+北	ux	999
+背	uxe	999
+闭	uft	999
+弊	umi	999
+冰	ui	999
+并	ua	999
+病	ugm	999
+部	ukb	999
+曾	ulj	999
+差	uga	999
+产	u	999
+阐	uul	999
+冲	ukh	999
+次	uq	999
+凑	udw	999
+单	ul	999
+道	ut	999
+弟	uxh	999
+冻	uai	999
+斗	uf	999
+端	um	999
+冯	ucg	999
+盖	ugl	999
+音	ujf	999
+阁	utk	999
+痕	uve	999
+疾	utd	999
+冀	uxl	999
+间	uj	999
+兼	uv	999
+减	udg	999
+将	uqf	999
+浆	uqi	999
+奖	uqd	999
+净	uqv	999
+竞	ukq	999
+竟	ujq	999
+决	un	999
+竣	ucw	999
+阔	uit	999
+冷	uwy	999
+立	uu	999
+疗	ubk	999
+门	uy	999
+闹	uym	999
+凝	uxt	999
+疲	uhc	999
+剖	ukj	999
+普	uo	999
+前	ue	999
+亲	us	999
+拳	udr	999
+券	udv	999
+首	uth	999
+兽	ulg	999
+瘦	ueh	999
+送	udp	999
+塑	ubt	999
+遂	uep	999
+疼	utu	999
+痛	uc	999
+头	ud	999
+闻	ub	999
+问	uk	999
+翔	ugn	999
+新	usr	999
+阎	uqe	999
+养	ufw	999
+冶	uck	999
+疫	uwc	999
+益	uwl	999
+意	ujn	999
+毅	uew	999
+站	uh	999
+着	ug	999
+郑	udb	999
+症	ugh	999
+装	ufy	999
+状	udy	999
+准	uw	999
+兹	uxx	999
+总	ukn	999
+尊	usg	999
+关	udu	999
+间	ujd	999
+问	ukd	999
+并	uaj	999
+头	udi	999
+北	uxn	999
+斗	ufk	999
+半	ugk	999
+亲	usu	999
+兰	udf	999
+闻	ubd	999
+闪	uwi	999
+冰	uiy	999
+辛	ufj	999
+壮	ufg	999
+羊	ugj	999
+闲	usi	999
+闽	uji	999
+闸	ulk	999
+妆	uvg	999
+巢	vjs	999
+逮	vip	999
+刀	vn	999
+发	v	999
+妇	vv	999
+姑	vd	999
+好	vb	999
+婚	vq	999
+即	vc	999
+既	vca	999
+嫁	vp	999
+建	vg	999
+姐	veg	999
+九	vt	999
+君	vtk	999
+垦	vef	999
+恳	ven	999
+灵	vo	999
+录	vi	999
+妈	vcg	999
+媒	va	999
+妹	vfi	999
+妙	vit	999
+姆	vx	999
+娜	vng	999
+嫩	vgk	999
+娘	vy	999
+努	vce	999
+怒	vcn	999
+女	vvv	999
+忍	vyn	999
+如	vk	999
+邵	vkb	999
+始	vck	999
+肃	vij	999
+退	ve	999
+丸	vyi	999
+嫌	vu	999
+姓	vtg	999
+旭	vj	999
+寻	vf	999
+姚	vqi	999
+姻	vl	999
+杂	vs	999
+如	vkg	999
+好	vbg	999
+她	vbn	999
+杂	vsu	999
+灵	vou	999
+召	vkf	999
+录	viu	999
+刀	vnt	999
+妇	vvg	999
+姑	vdg	999
+奶	vbt	999
+隶	vii	999
+寻	vfu	999
+巡	vpv	999
+姆	vxy	999
+妨	vyt	999
+旭	vjd	999
+尹	vte	999
+们	wu	999
+代	wa	999
+伐	wa	999
+供	wa	999
+倍	wu	999
+堡	wks	999
+倡	wjj	999
+段	wdw	999
+您	wqi	999
+偷	wwg	999
+伟	wfn	999
+住	wyg	999
+八	wt	999
+爸	wrc	999
+保	wk	999
+倍	wuk	999
+便	wgj	999
+侧	wmj	999
+偿	wi	999
+储	wyf	999
+创	wbj	999
+从	ww	999
+促	wkh	999
+催	wmw	999
+借	wa	999
+但	wjg	999
+倒	wgc	999
+低	wqa	999
+俄	wtr	999
+分	wv	999
+份	wwv	999
+风	wr	999
+佛	wxj	999
+伏	wdy	999
+傅	wge	999
+个	wh	999
+公	wc	999
+供	waw	999
+估	wdg	999
+谷	wwk	999
+何	wsk	999
+侯	wnt	999
+候	whn	999
+华	wxf	999
+化	wx	999
+会	wf	999
+伙	wo	999
+货	wxm	999
+集	wys	999
+佳	wff	999
+假	wn	999
+价	wwj	999
+件	wtg	999
+剑	wgi	999
+健	wvg	999
+焦	wyo	999
+介	wj	999
+借	waj	999
+今	wyn	999
+俱	whw	999
+俊	wcw	999
+例	wgq	999
+令	wyc	999
+伦	wwx	999
+位	wu	999
+倪	weq	999
+你	wq	999
+偶	wjm	999
+盆	wvl	999
+贫	wvm	999
+侨	wtd	999
+侵	wvp	999
+倾	wxd	999
+全	wg	999
+人	w	999
+仁	wfg	999
+任	wtf	999
+儒	wfd	999
+伤	wte	999
+舍	wfk	999
+伸	wjh	999
+食	wyv	999
+使	wgk	999
+似	wny	999
+售	wyk	999
+颂	wcd	999
+他	wb	999
+体	ws	999
+翁	wcn	999
+仙	wm	999
+像	wqk	999
+信	wy	999
+修	wht	999
+仰	wqb	999
+爷	wrb	999
+伊	wvt	999
+依	wye	999
+仪	wyr	999
+优	wdn	999
+余	wgs	999
+仔	wbg	999
+债	wgm	999
+侦	whm	999
+众	www	999
+佐	wda	999
+坐	wwf	999
+做	wd	999
+个	whj	999
+他	wbn	999
+们	wun	999
+分	wvr	999
+化	wxn	999
+从	wwy	999
+全	wgf	999
+位	wug	999
+几	wtn	999
+什	wfh	999
+八	wty	999
+风	wri	999
+企	whf	999
+仅	wcy	999
+仍	wbt	999
+父	wru	999
+付	wfy	999
+凡	wyi	999
+伙	woy	999
+亿	wnn	999
+休	wsy	999
+伍	wgg	999
+仿	wyt	999
+伐	way	999
+凤	wci	999
+朵	wsu	999
+仙	wmh	999
+仆	why	999
+仑	wxb	999
+仓	wbb	999
+伯	wrg	999
+弱	xu	999
+缓	xeg	999
+绳	xkj	999
+比	xx	999
+毕	xxf	999
+编	xyn	999
+缠	xoj	999
+绸	xmf	999
+纯	xg	999
+弹	xul	999
+缔	xyu	999
+费	xj	999
+纷	xwv	999
+缚	xge	999
+纲	xm	999
+给	xw	999
+贯	xfm	999
+红	xa	999
+幻	xnn	999
+绘	xwf	999
+级	xb	999
+纪	xn	999
+继	xon	999
+继	xo	999
+绩	xgm	999
+缴	xr	999
+皆	xxr	999
+结	xfk	999
+经	x	999
+纠	xnh	999
+绝	xqc	999
+缆	xjt	999
+练	xan	999
+络	xtk	999
+绿	xv	999
+弥	xqi	999
+绵	xrm	999
+缅	xdm	999
+纳	xmw	999
+强	xk	999
+顷	xd	999
+绕	xat	999
+绒	xad	999
+弹	xu	999
+纱	xi	999
+绍	xvk	999
+丝	xxg	999
+缩	xp	999
+统	xy	999
+维	xwy	999
+细	xl	999
+纤	xtf	999
+线	xf	999
+绣	xtb	999
+绪	xft	999
+续	xfn	999
+疑	xtd	999
+引	xh	999
+约	xq	999
+张	xt	999
+织	xkw	999
+纸	xqa	999
+终	xtu	999
+综	xpf	999
+纵	xww	999
+组	xe	999
+比	xxn	999
+红	xag	999
+引	xhh	999
+细	xlg	999
+乡	xte	999
+纺	xyt	999
+纹	xyy	999
+幼	xet	999
+旨	xjf	999
+弗	xjk	999
+弘	xcy	999
+谋	ya	999
+变	yo	999
+谨	ya	999
+说	yu	999
+诺	ya	999
+恋	yo	999
+旁	yu	999
+谈	yo	999
+词	yng	999
+试	yaa	999
+忘	ynn	999
+旋	ytn	999
+文	yyg	999
+州	yty	999
+哀	yke	999
+亦	yo	999
+遍	ynm	999
+斌	yfh	999
+诚	yd	999
+充	yc	999
+畜	yxl	999
+诞	yth	999
+订	ys	999
+读	yfn	999
+方	yy	999
+房	yny	999
+放	yt	999
+高	ykm	999
+膏	ykp	999
+雇	ynw	999
+熟	ykb	999
+话	ytd	999
+计	yf	999
+记	yn	999
+迹	yop	999
+讲	yfj	999
+交	ywr	999
+谨	yak	999
+京	yki	999
+就	yk	999
+刻	ynt	999
+课	yjs	999
+朗	yvc	999
+离	yrb	999
+恋	yon	999
+良	yv	999
+谅	yyk	999
+刘	yj	999
+六	yw	999
+论	ywx	999
+旅	yte	999
+率	yx	999
+盲	ynh	999
+试	ya	999
+诺	yad	999
+旁	yup	999
+评	ygu	999
+谱	yuo	999
+启	ynk	999
+弃	yca	999
+谦	yuv	999
+请	yg	999
+让	yh	999
+商	yum	999
+设	ywc	999
+诗	yff	999
+施	ytb	999
+识	ykw	999
+市	ym	999
+详	yu	999
+诉	yry	999
+谈	yoo	999
+谭	ysj	999
+调	ymf	999
+弯	yox	999
+谓	yl	999
+误	ykg	999
+襄	ykk	999
+详	yug	999
+谐	yxx	999
+谢	ytm	999
+许	ytf	999
+询	yq	999
+讯	ynf	999
+言	yyy	999
+夜	ywt	999
+衣	ye	999
+义	yr	999
+议	yyr	999
+译	ycg	999
+永	yni	999
+语	ygk	999
+育	yce	999
+诊	ywe	999
+证	ygh	999
+诸	yft	999
+主	y	999
+族	ytt	999
+这	ypi	999
+主	ygd	999
+义	yri	999
+六	ywu	999
+认	ywy	999
+刘	yjh	999
+讨	yfy	999
+衣	yeu	999
+齐	yjj	999
+训	ykh	999
+户	yne	999
+访	yyt	999
+亦	you	999
+订	ysh	999
+亡	ynv	999
+亩	ylf	999
