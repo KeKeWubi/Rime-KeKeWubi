@@ -20,15 +20,15 @@
 ```tree
 Rime/	                              #所有可用平台都是这个配置目录
 ├─ default.custom.yaml              #全局补丁
-三套输入方案
+三套输入方案：
 ├─ keke_wubi_86.schema.yaml            #86版五笔方案
 ├─ keke_wubi_98.schema.yaml            #98版五笔方案
 ├─ keke_wubi_nc.schema.yaml            #新世纪版五笔方案
-三套方案对应的主词典（librime 主词典必须放在根目录；只含头部）
+三套方案对应的主词典（librime 主词典必须放在根目录；只含头部）：
 ├─ keke_wubi_86.dict.yaml              #86版五笔入口主词典
 ├─ keke_wubi_98.dict.yaml              #98版五笔入口主词典
 ├─ keke_wubi_nc.dict.yaml              #新世纪版五笔入口主词典
-可可五笔词典（由上面三本主词典导入）
+可可五笔词典目录（由上面三本主词典导入）:
 ├─ keke_wubi_dict/
 │  ├─ keke_wubi_86_common.dict.yaml    #86版五笔常用字
 │  ├─ keke_wubi_98_common.dict.yaml    #98版五笔常用字
@@ -45,10 +45,10 @@ Rime/	                              #所有可用平台都是这个配置目录
 │  ├─ keke_wubi_global_symbols.dict.yaml	#可可特殊符号，z引导，如：zbd：常用标点；zys：圆圈数字等等
 │  ├─ keke_wubi_global_pinyin.dict.yaml	#可可临时拼音，z引导，如：zkeke，输出 可可
 │  └─ english_words.txt                #英文提示模式的词表（约 5.4 万词）
-配色方案
+配色方案：
 └─ weasel.custom.yaml               #Windows默认配色方案，近似复刻可可皮肤
 └─ squirrel.custom.yaml             #MacOS默认配色方案，近似复刻可可皮肤
-脚本
+脚本：
 ├─ lua/                             #lua脚本目录（新Rime版本的脚本都放在此处）
 │  ├─keke_wubi_command_translator.lua	#命令翻译器，输入 rmb888.88 输出 捌佰捌拾捌元捌角捌分；或 help、time、date、week等
 │  ├─ keke_wubi_shift_modes.lua        #左右 Shift 双模式：左=单字母上屏，右=英文提示
@@ -63,7 +63,7 @@ Rime/	                              #所有可用平台都是这个配置目录
 │  ├─ keke_wubi_char_only.lua          #仅单字脚本，修选框里“仅单字”，单字派用这个功能
 │  ├─ keke_wubi_length_filter.lua      #设置第几码开始提示后续编码的脚本
 │  ├─ keke_wubi_charset_filter.lua     #过滤通用规范汉字表8105字的脚本
-工具
+工具：
 ├─ tools/
 │  └─ keke_wubi_update_MacOS.command    #可可五笔MacOS自动更新脚本，可自动下载本仓库里的所有文件到Rime目录，下同
 │  └─ keke_wubi_update_Windows.bat      #可可五笔Windows自动更新脚本
@@ -71,7 +71,7 @@ Rime/	                              #所有可用平台都是这个配置目录
 │  └─ gen_fuzzy_idx.ps1             #同上，Win一键脚本
 │  └─ gen_fuzzy_idx.py              #同上，Mac或Linux的Python脚本
 │  └─ IdxPythonCommand.txt          #各平台用Python脚本的命令
-图标
+图标：
 ├─ img/                             #自定义图标（目前仅windows平台可用）
    └─ en.ico                        #英文状态图标
    └─ zh.ico                        #中文状态图标
