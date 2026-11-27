@@ -40,8 +40,8 @@ Rime/	                              #所有可用平台都是这个配置目录
 │  ├─ keke_wubi_nc_system.dict.yaml    #新世纪版五笔系统字词
 │  ├─ keke_wubi_nc_rare.dict.yaml      #新世纪版五笔生僻字
 │  ├─ keke_wubi_86_user.dict.yaml      #86版个人词库（建议只维护这三个 user 词库）
-│  ├─ keke_wubi_98_user.dict.yaml
-│  ├─ keke_wubi_nc_user.dict.yaml
+│  ├─ keke_wubi_98_user.dict.yaml      #98版个人词库
+│  ├─ keke_wubi_nc_user.dict.yaml      #新世纪版个人词库
 │  ├─ keke_wubi_global_symbols.dict.yaml	#可可特殊符号，z引导，如：zbd：常用标点；zys：圆圈数字等等
 │  ├─ keke_wubi_global_pinyin.dict.yaml	#可可临时拼音，z引导，如：zkeke，输出 可可
 │  └─ english_words.txt                #英文提示模式的词表（约 5.4 万词）
