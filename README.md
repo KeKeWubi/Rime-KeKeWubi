@@ -64,13 +64,13 @@ Rime/	                              #所有可用平台都是这个配置目录
 │  ├─ keke_wubi_length_filter.lua      #设置第几码开始提示后续编码的脚本
 │  ├─ keke_wubi_charset_filter.lua     #过滤通用规范汉字表8105字的脚本
 工具
-├─ tools/   #用户在本地修改除三个 user.dict.yaml 之外的任何一个 dict.yaml 之后都要重新制作索引文件而使用的工具（完成后重新部署）
+├─ tools/
 │  └─ keke_wubi_update_MacOS.command    #可可五笔MacOS自动更新脚本，可自动下载本仓库里的所有文件到Rime目录，下同
 │  └─ keke_wubi_update_Windows.bat      #可可五笔Windows自动更新脚本
-│  └─ gen_fuzzy_idx.bat             #Win一键脚本
-│  └─ gen_fuzzy_idx.ps1             #Win一键脚本
-│  └─ gen_fuzzy_idx.py              #Mac或Linux的Python脚本
-│  └─ IdxPythonCommand.txt       #各平台用Python脚本的命令
+│  └─ gen_fuzzy_idx.bat             #用户修改common/system/rare这三个词典的 dict.yaml 之后都要重新制作索引文件并重新部署
+│  └─ gen_fuzzy_idx.ps1             #同上，Win一键脚本
+│  └─ gen_fuzzy_idx.py              #同上，Mac或Linux的Python脚本
+│  └─ IdxPythonCommand.txt          #各平台用Python脚本的命令
 图标
 ├─ img/                             #自定义图标（目前仅windows平台可用）
    └─ en.ico                        #英文状态图标
