@@ -131,9 +131,13 @@ end
 -- 处理器/翻译器共用同一个上限，保证"候选窗里有几个"和"能翻几页"完全一致
 M.CAP = CAP
 
--- 释放词典（内存紧张时调用；下次 words() 会自动重新加载）
+-- 释放词典（退出英文提示模式时调用；下次 words() 会自动重新加载）
 function M.unload()
+  if dict == nil then return end
   dict = nil
+  -- 一轮完整回收即可释放 blob / raw / buckets 三份大字符串。
+  -- 不做双轮：第二轮收益极小，只会平白增加退出瞬间的停顿。
+  collectgarbage("collect")
 end
 
 -- 查询候选：返回数组（可能为空表）。精确命中排最前，其后是前缀匹配。

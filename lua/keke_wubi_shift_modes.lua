@@ -225,13 +225,27 @@ local function goto_page(env, page)
   dbg("翻页 -> 第 " .. (page + 1) .. " 页")
 end
 
+-- 退出英文提示模式时释放词典：v2 紧凑词典常驻约 1.5MB，
+-- 不 unload 的话进程内存会一直停在英文模式的峰值上。
+local function release_en_memory()
+  local d = get_dict()
+  if d and type(d.unload) == "function" then
+    pcall(d.unload)
+  else
+    pcall(collectgarbage, "collect")
+  end
+end
+
 -- 退出一切英文模式，回到中文
 local function exit_all(ctx, env)
+  local was_hint = false
+  pcall(function() was_hint = ctx:get_option(OPT_ENHINT) end)
   set_opt(ctx, OPT_ENHINT, false)
   set_opt(ctx, OPT_LETTER, false)
   set_opt(ctx, "ascii_mode", false)
   clear_composition(ctx)
   set_page(env, 0)
+  if was_hint then release_en_memory() end
 end
 
 -- 当前页的首选候选（翻页后用户看到的第 1 个；词典没有该词时原样返回输入）
@@ -254,11 +268,13 @@ local function startup_reset(ctx, env)
   if inited then return end
   inited = true
   if ctx:get_option(OPT_ENHINT) or ctx:get_option(OPT_LETTER) then
+    local was_hint = ctx:get_option(OPT_ENHINT)
     set_opt(ctx, OPT_ENHINT, false)
     set_opt(ctx, OPT_LETTER, false)
     set_opt(ctx, "ascii_mode", false)
     clear_composition(ctx)
     set_page(env, 0)
+    if was_hint then release_en_memory() end
     dbg("启动清理：残留的英文模式状态已归零")
   end
 end
